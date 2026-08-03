@@ -1068,9 +1068,9 @@ img {
   .hero h1 { font-size: 26px; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; justify-content: center; }
-  .trust-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; justify-items: center; }
+  .trust-items { display: grid; grid-template-columns: 1fr; gap: 16px; justify-items: stretch; }
   .trust-item { justify-content: flex-start; width: 100%; }
-  .trust-item:last-child { grid-column: 1 / -1; justify-content: center; }
+  .trust-item:last-child { justify-content: flex-start; }
   .trust-bar .container { padding: 20px 16px; }
   .about-features { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr; }
