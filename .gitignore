@@ -1,0 +1,19 @@
+# Credentials & config with secrets
+wp-config.php
+config/ai.php
+includes/recaptcha-config.php
+includes/eventbrite-config.php
+
+# Backups
+*.bak
+*.bak-*
+*.baknew
+
+# Archives
+*.zip
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

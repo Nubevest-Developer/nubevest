@@ -1,0 +1,680 @@
+<?php
+$page = 'solutions';
+$seo_title = 'Managed IT & Cybersecurity Melbourne | Nubevest';
+$meta_desc = 'Support users, devices, cloud systems and cybersecurity with clearly scoped managed IT services, projects and technology planning from Nubevest.';
+include __DIR__ . '/../includes/header.php';
+?>
+
+<style>
+/* Managed IT — page-specific accents */
+.mi-shield {
+  position:relative;
+  background: linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
+  border-radius:20px; padding:22px; color:#fff;
+  box-shadow: 0 30px 60px -20px rgba(37,99,235,0.5), 0 0 0 6px #fff, 0 0 0 7px rgba(59,130,246,0.2);
+  overflow:hidden;
+}
+.mi-shield::before { content:''; position:absolute; top:-40%; right:-15%; width:380px; height:380px; border-radius:50%; background: radial-gradient(circle, rgba(59,130,246,0.35), transparent 60%); }
+.mi-shield::after { content:''; position:absolute; bottom:-30%; left:-10%; width:280px; height:280px; border-radius:50%; background: radial-gradient(circle, rgba(16,185,129,0.25), transparent 60%); }
+.mi-shield > * { position:relative; }
+
+.mi-shield__head { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.mi-shield__logo { width:32px; height:32px; border-radius:8px; background: linear-gradient(135deg,#2563eb,#7c3aed); display:grid; place-items:center; color:#fff; }
+.mi-shield__t { font-size:0.95rem; font-weight:800; letter-spacing:-0.01em; }
+.mi-shield__s { font-size:0.7rem; color:#94a3b8; font-weight:600; }
+.mi-shield__badge { margin-left:auto; padding:4px 10px; background: rgba(16,185,129,0.15); color:#34d399; border-radius:999px; font-size:0.62rem; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; display:inline-flex; align-items:center; gap:5px;}
+.mi-shield__badge::before{ content:''; width:5px; height:5px; border-radius:50%; background:#10b981; box-shadow:0 0 0 3px rgba(16,185,129,0.3);}
+
+.mi-score {
+  display:grid; grid-template-columns: 100px 1fr; gap:16px;
+  align-items:center;
+  background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px; padding:16px; margin-bottom:12px;
+}
+.mi-score__ring { position:relative; width:80px; height:80px; }
+.mi-score__ring svg { transform: rotate(-90deg); }
+.mi-score__ring-val { position:absolute; inset:0; display:grid; place-items:center; font-size:1.4rem; font-weight:800; letter-spacing:-0.02em; color:#fff; }
+.mi-score__t { font-size:0.8rem; font-weight:800; color:#e2e8f0; letter-spacing:-0.01em; margin-bottom:2px; }
+.mi-score__s { font-size:0.7rem; color:#94a3b8; margin-bottom:8px; }
+.mi-score__bars { display:flex; flex-direction:column; gap:5px; }
+.mi-score__bar { display:flex; align-items:center; gap:8px; font-size:0.65rem; color:#cbd5e1; }
+.mi-score__bar-t { min-width:60px; font-weight:700; }
+.mi-score__bar-track { flex:1; height:5px; border-radius:999px; background: rgba(255,255,255,0.1); overflow:hidden; }
+.mi-score__bar-fill { height:100%; border-radius:999px; }
+
+/* Alert rows */
+.mi-alerts { background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:12px 14px; margin-bottom:12px; }
+.mi-alerts__h { font-size:0.7rem; font-weight:800; color:#e2e8f0; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+.mi-alerts__h svg { color:#fbbf24; }
+.mi-alert { display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.75rem; }
+.mi-alert:last-child { border-bottom:0; }
+.mi-alert__ico { width:22px; height:22px; border-radius:6px; display:grid; place-items:center; flex-shrink:0; }
+.mi-alert__t { color:#e2e8f0; font-weight:600; flex:1; }
+.mi-alert__pill { padding:2px 8px; border-radius:999px; font-size:0.6rem; font-weight:800; letter-spacing:0.04em; }
+.mi-alert__pill.crit { background: rgba(239,68,68,0.15); color:#f87171; }
+.mi-alert__pill.warn { background: rgba(245,158,11,0.15); color:#fbbf24; }
+.mi-alert__pill.ok { background: rgba(16,185,129,0.15); color:#34d399; }
+
+/* Uptime strip */
+.mi-uptime { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; }
+.mi-uptime__c { background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; text-align:center; }
+.mi-uptime__l { font-size:0.6rem; color:#94a3b8; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:2px; }
+.mi-uptime__v { font-size:0.95rem; font-weight:800; letter-spacing:-0.02em; }
+
+/* Floating badges */
+.mi-float {
+  position:absolute; z-index:3;
+  background:#fff; border:1px solid #eef1f5; border-radius:12px;
+  padding:8px 12px 8px 10px;
+  display:flex; align-items:center; gap:10px;
+  box-shadow: 0 18px 36px -12px rgba(15,23,42,0.22);
+}
+.mi-float--top { top:-14px; right:14px; }
+.mi-float--bot { bottom:-16px; left:-14px; }
+.mi-float__ico { width:30px; height:30px; border-radius:8px; display:grid; place-items:center; color:#fff; }
+.mi-float__t { font-size:0.78rem; font-weight:800; color:#0f172a; letter-spacing:-0.01em; }
+.mi-float__s { font-size:0.65rem; color:#64748b; font-weight:600; }
+
+/* Metric strip */
+.mi-metric {
+  margin-top:32px; padding:26px;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  border-radius:20px; color:#fff;
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  position:relative; overflow:hidden;
+}
+.mi-metric::before{ content:''; position:absolute; top:-40%; right:-10%; width:400px; height:400px; border-radius:50%; background: radial-gradient(circle, rgba(59,130,246,0.3), transparent 60%); }
+.mi-metric__item { position:relative; }
+.mi-metric__n { font-size:1.8rem; font-weight:800; letter-spacing:-0.02em; background:linear-gradient(90deg,#60a5fa,#34d399); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.mi-metric__l { font-size:0.85rem; color:#cbd5e1; font-weight:600; margin-top:4px; }
+@media (max-width: 780px){ .mi-metric { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px){
+  .mi-metric { grid-template-columns: 1fr 1fr; gap: 16px 14px; padding: 20px; }
+  .mi-metric__n { font-size: 1.15rem; line-height: 1.2; white-space: normal; }
+  .mi-metric__l { font-size: 0.72rem; line-height: 1.4; }
+}
+@media (max-width: 380px){
+  .mi-metric { grid-template-columns: 1fr; gap: 14px; }
+  .mi-metric__n { font-size: 1.3rem; }
+}
+</style>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="ab-hero">
+  <div class="container ab-hero__container reveal">
+    <div class="ab-hero__left">
+      <span class="kicker kicker--pill ab-hero__kicker"><i></i>MANAGED IT, CLOUD &amp; CYBERSECURITY &middot; A NUBEVEST SOLUTION</span>
+      <h1 class="ab-hero__title">Reliable technology, clearer support &mdash; <span class="hero__title-gradient">fewer avoidable disruptions.</span></h1>
+      <p class="ab-hero__lead">Support users, improve the day-to-day technology environment and manage security risks through practical, clearly scoped services &mdash; not a shopping list of tools.</p>
+      <div class="ab-hero__cta">
+        <a href="/contact.php" class="btn btn--primary">Request an IT Review</a>
+        <a href="#capabilities" class="btn btn--secondary btn--arrow-blue">See What&rsquo;s Covered</a>
+      </div>
+    </div>
+
+    <div class="ab-hero__right">
+      <div class="mi-shield">
+        <div class="mi-shield__head">
+          <div class="mi-shield__logo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" fill="#fff"/></svg></div>
+          <div>
+            <div class="mi-shield__t">Security posture</div>
+            <div class="mi-shield__s">Fleet &middot; live monitor</div>
+          </div>
+          <span class="mi-shield__badge">Protected</span>
+        </div>
+
+        <div class="mi-score">
+          <div class="mi-score__ring">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+              <circle cx="40" cy="40" r="34" fill="none" stroke="url(#miGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="32"/>
+              <defs>
+                <linearGradient id="miGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#34d399"/>
+                  <stop offset="100%" stop-color="#60a5fa"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="mi-score__ring-val">85</div>
+          </div>
+          <div>
+            <div class="mi-score__t">Security score</div>
+            <div class="mi-score__s">Good &middot; 3 items to review</div>
+            <div class="mi-score__bars">
+              <div class="mi-score__bar"><span class="mi-score__bar-t">MFA</span><span class="mi-score__bar-track"><span class="mi-score__bar-fill" style="width:96%; background:#10b981"></span></span><span>96%</span></div>
+              <div class="mi-score__bar"><span class="mi-score__bar-t">Patched</span><span class="mi-score__bar-track"><span class="mi-score__bar-fill" style="width:82%; background:#3b82f6"></span></span><span>82%</span></div>
+              <div class="mi-score__bar"><span class="mi-score__bar-t">Backups</span><span class="mi-score__bar-track"><span class="mi-score__bar-fill" style="width:74%; background:#f59e0b"></span></span><span>74%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mi-alerts">
+          <div class="mi-alerts__h"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 3l10 18H2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v5M12 18v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Priority items</div>
+          <div class="mi-alert"><span class="mi-alert__ico" style="background:rgba(239,68,68,0.15); color:#f87171"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 3l10 18H2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span class="mi-alert__t">2 devices missing OS updates</span><span class="mi-alert__pill crit">High</span></div>
+          <div class="mi-alert"><span class="mi-alert__ico" style="background:rgba(245,158,11,0.15); color:#fbbf24"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v5M12 16v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="mi-alert__t">External sharing on 1 folder</span><span class="mi-alert__pill warn">Med</span></div>
+          <div class="mi-alert"><span class="mi-alert__ico" style="background:rgba(16,185,129,0.15); color:#34d399"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="mi-alert__t">Nightly backup verified</span><span class="mi-alert__pill ok">OK</span></div>
+        </div>
+
+        <div class="mi-uptime">
+          <div class="mi-uptime__c"><div class="mi-uptime__l">Uptime</div><div class="mi-uptime__v" style="color:#34d399">99.9%</div></div>
+          <div class="mi-uptime__c"><div class="mi-uptime__l">Devices</div><div class="mi-uptime__v" style="color:#60a5fa">48</div></div>
+          <div class="mi-uptime__c"><div class="mi-uptime__l">MFA on</div><div class="mi-uptime__v" style="color:#a78bfa">96%</div></div>
+          <div class="mi-uptime__c"><div class="mi-uptime__l">Backups</div><div class="mi-uptime__v" style="color:#fbbf24">7/7</div></div>
+        </div>
+      </div>
+
+      <div class="mi-float mi-float--top">
+        <div class="mi-float__ico" style="background:linear-gradient(135deg,#3b82f6,#2563eb)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><div class="mi-float__t">Ticket #482 resolved</div><div class="mi-float__s">SLA &middot; 22 min</div></div>
+      </div>
+
+      <div class="mi-float mi-float--bot">
+        <div class="mi-float__ico" style="background:linear-gradient(135deg,#10b981,#059669)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><div class="mi-float__t">Patch cycle clean</div><div class="mi-float__s">Last 30 days</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="ab-model">
+  <div class="container">
+    <div class="au-head au-head--center reveal">
+      <span class="kicker kicker--pill"><i></i>WHAT&rsquo;S COVERED</span>
+      <h2 class="au-h2">Everything the technology stack needs &mdash; <span class="au-grad">covered by one accountable partner.</span></h2>
+      <p>From helpdesk to cloud to security &mdash; scoped clearly, delivered predictably, and reported honestly.</p>
+    </div>
+
+    <div class="solutions-grid reveal stagger">
+
+      <a href="#" class="sol-card sol-card--blue">
+        <div class="sol-card__inner">
+          <div class="sol-card__body">
+            <div class="sol-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3 class="sol-card__title">User &amp; helpdesk support</h3>
+            <p class="sol-card__desc">Real people helping your team &mdash; password resets to platform issues &mdash; within agreed hours and SLAs.</p>
+            <span class="sol-card__link">Included <svg class="sol-card__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="sol-card__art" aria-hidden="true">
+            <svg viewBox="0 0 130 100" fill="none"><rect x="10" y="14" width="110" height="74" rx="8" fill="#eff6ff" stroke="#bfdbfe"/><rect x="18" y="22" width="60" height="28" rx="6" fill="#dbeafe"/><path d="M22 32h50M22 40h34" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round"/><rect x="54" y="56" width="60" height="24" rx="6" fill="#2563eb"/><path d="M60 66h48M60 72h32" stroke="#dbeafe" stroke-width="1.8" stroke-linecap="round"/><circle cx="106" cy="30" r="8" fill="#93c5fd"/><path d="M102 30l3 3 5-5" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="sol-card sol-card--purple">
+        <div class="sol-card__inner">
+          <div class="sol-card__body">
+            <div class="sol-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3 class="sol-card__title">Device &amp; endpoint management</h3>
+            <p class="sol-card__desc">Deployment, onboarding, offboarding, patching and lifecycle across laptops, mobiles and workstations.</p>
+            <span class="sol-card__link">Included <svg class="sol-card__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="sol-card__art" aria-hidden="true">
+            <svg viewBox="0 0 130 100" fill="none"><rect x="10" y="20" width="60" height="46" rx="4" fill="#f5f3ff" stroke="#ddd6fe"/><rect x="14" y="24" width="52" height="30" rx="2" fill="#8b5cf6"/><rect x="30" y="70" width="20" height="6" fill="#c4b5fd"/><rect x="20" y="78" width="40" height="4" rx="2" fill="#8b5cf6"/><rect x="78" y="30" width="26" height="42" rx="5" fill="#f5f3ff" stroke="#ddd6fe"/><rect x="82" y="34" width="18" height="26" rx="1" fill="#a78bfa"/><rect x="108" y="40" width="14" height="30" rx="3" fill="#f5f3ff" stroke="#ddd6fe"/><rect x="110" y="42" width="10" height="20" rx="1" fill="#8b5cf6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="sol-card sol-card--green">
+        <div class="sol-card__inner">
+          <div class="sol-card__body">
+            <div class="sol-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 18a4 4 0 0 1 0-8 6 6 0 0 1 12 0 4 4 0 0 1 0 8H6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+            <h3 class="sol-card__title">Cloud, M365 &amp; Workspace</h3>
+            <p class="sol-card__desc">Microsoft 365 and Google Workspace, file access, storage, sharing and backup planning &mdash; done right.</p>
+            <span class="sol-card__link">Included <svg class="sol-card__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="sol-card__art" aria-hidden="true">
+            <svg viewBox="0 0 130 100" fill="none"><rect x="10" y="14" width="110" height="74" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/><path d="M40 60c-8 0-14-6-14-14 0-6 5-11 12-12 2-8 10-12 18-10 6 2 10 8 10 14 4 1 8 5 8 10 0 6-6 12-14 12H40z" fill="#10b981"/><rect x="20" y="76" width="14" height="6" rx="2" fill="#a7f3d0"/><rect x="40" y="76" width="14" height="6" rx="2" fill="#a7f3d0"/><rect x="60" y="76" width="14" height="6" rx="2" fill="#10b981"/><rect x="80" y="76" width="14" height="6" rx="2" fill="#a7f3d0"/><rect x="100" y="76" width="14" height="6" rx="2" fill="#a7f3d0"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="sol-card sol-card--amber">
+        <div class="sol-card__inner">
+          <div class="sol-card__body">
+            <div class="sol-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 16 0M7 12a5 5 0 0 1 10 0M10 12a2 2 0 0 1 4 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="18" r="1.4" fill="currentColor"/></svg></div>
+            <h3 class="sol-card__title">Network, Wi-Fi &amp; comms</h3>
+            <p class="sol-card__desc">Business internet, Wi-Fi coverage, VPN and phone/comms designed for how the team actually works.</p>
+            <span class="sol-card__link">Included <svg class="sol-card__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="sol-card__art" aria-hidden="true">
+            <svg viewBox="0 0 130 100" fill="none"><rect x="10" y="14" width="110" height="74" rx="8" fill="#fffbeb" stroke="#fde68a"/><circle cx="65" cy="72" r="8" fill="#f59e0b"/><path d="M35 60a35 35 0 0 1 60 0" stroke="#f59e0b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M45 52a25 25 0 0 1 40 0" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M55 44a15 15 0 0 1 20 0" stroke="#fcd34d" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="sol-card sol-card--pink">
+        <div class="sol-card__inner">
+          <div class="sol-card__body">
+            <div class="sol-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 class="sol-card__title">Cybersecurity &amp; MFA</h3>
+            <p class="sol-card__desc">Email security, multi-factor authentication, endpoint protection and access reviews &mdash; where they count.</p>
+            <span class="sol-card__link">Included <svg class="sol-card__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="sol-card__art" aria-hidden="true">
+            <svg viewBox="0 0 130 100" fill="none"><path d="M65 12l38 12v14c0 20-18 32-38 40-20-8-38-20-38-40V24z" fill="#fdf2f8" stroke="#fbcfe8"/><path d="M50 46l10 10 22-22" stroke="#ec4899" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="sol-card sol-card--cyan">
+        <div class="sol-card__inner">
+          <div class="sol-card__body">
+            <div class="sol-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v11H8l-4 4V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3 class="sol-card__title">vCIO &amp; roadmaps</h3>
+            <p class="sol-card__desc">Technology planning, lifecycle, security and budget guidance &mdash; a strategic voice in the room, on retainer.</p>
+            <span class="sol-card__link">Included <svg class="sol-card__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="sol-card__art" aria-hidden="true">
+            <svg viewBox="0 0 130 100" fill="none"><rect x="10" y="14" width="110" height="74" rx="8" fill="#ecfeff" stroke="#a5f3fc"/><path d="M18 74l16-18 14 10 20-24 16 16 24-14" stroke="#06b6d4" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="56" r="3" fill="#06b6d4"/><circle cx="48" cy="66" r="3" fill="#06b6d4"/><circle cx="68" cy="42" r="3" fill="#06b6d4"/><circle cx="84" cy="58" r="3" fill="#06b6d4"/><circle cx="108" cy="44" r="3" fill="#06b6d4"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="mi-metric reveal">
+      <div class="mi-metric__item"><div class="mi-metric__n">SLA-backed</div><div class="mi-metric__l">Documented response times</div></div>
+      <div class="mi-metric__item"><div class="mi-metric__n">MFA</div><div class="mi-metric__l">Enforced across the fleet</div></div>
+      <div class="mi-metric__item"><div class="mi-metric__n">Backups</div><div class="mi-metric__l">Verified, not just scheduled</div></div>
+      <div class="mi-metric__item"><div class="mi-metric__n">One partner</div><div class="mi-metric__l">Users, cloud &amp; security</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT THAT FITS -->
+<section class="au-model">
+  <div class="container">
+    <div class="au-head au-head--center reveal">
+      <span class="kicker kicker--pill"><i></i>SUPPORT MODELS</span>
+      <h2 class="au-h2">Support that fits <span class="au-grad">the business.</span></h2>
+      <p>Start with a single review, deliver a defined project, run ongoing support &mdash; or plan the roadmap ahead.</p>
+    </div>
+
+    <div class="au-model__grid reveal">
+      <div class="au-model__card">
+        <div class="au-model__num">01</div>
+        <div class="au-model__icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="#2563eb" stroke-width="1.8"/><path d="M20 20l-4-4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>IT health review</h3>
+        <p>Understand the current environment, material risks, recurring issues and highest-priority improvements.</p>
+        <ul class="au-model__list"><li>Environment audit</li><li>Risk register</li><li>Prioritised backlog</li><li>Written report</li></ul>
+      </div>
+
+      <div class="au-model__card au-model__card--featured">
+        <div class="au-model__num">02</div>
+        <div class="au-model__icon-wrap au-model__icon-wrap--purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Ongoing managed support</h3>
+        <p>Support agreed users, systems and devices within documented service hours, responsibilities and escalation paths.</p>
+        <ul class="au-model__list"><li>Defined SLAs</li><li>Single point of contact</li><li>Monthly reporting</li><li>Continuous hardening</li></ul>
+        <span class="au-model__ribbon">Most common</span>
+      </div>
+
+      <div class="au-model__card">
+        <div class="au-model__num">03</div>
+        <div class="au-model__icon-wrap au-model__icon-wrap--green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V10l6-6 6 6v11" stroke="#10b981" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Defined IT project</h3>
+        <p>Plan and deliver a migration, office setup, network improvement, device rollout or other agreed initiative.</p>
+        <ul class="au-model__list"><li>Fixed scope</li><li>Milestones</li><li>Clean handover</li><li>Optional support</li></ul>
+      </div>
+
+      <div class="au-model__card">
+        <div class="au-model__num">04</div>
+        <div class="au-model__icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#2563eb" stroke-width="1.8"/><path d="M7 9h10M7 13h6M7 17h8" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Technology planning</h3>
+        <p>Create a practical roadmap for lifecycle, security, cloud, systems and technology investment over the next 12&ndash;24 months.</p>
+        <ul class="au-model__list"><li>Quarterly reviews</li><li>Budget guidance</li><li>Vendor management</li><li>Executive summary</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CYBERSECURITY APPROACH -->
+<section class="csa">
+  <div class="container">
+    <div class="csa__wrap">
+      <div class="csa__text">
+        <span class="kicker kicker--pill"><i></i>CYBERSECURITY APPROACH</span>
+        <h2 class="csa__title">Cybersecurity is a discipline &mdash; <span class="csa__grad">not a purchase.</span></h2>
+        <p class="csa__lead">You can&rsquo;t buy your way out of risk. We help identify what matters, put appropriate controls in place, and support safer day-to-day practices &mdash; so an incident is much less likely, and much easier to handle when it does happen.</p>
+
+        <div class="csa__pillars">
+          <div class="csa__pillar">
+            <span class="csa__pillar-ico" style="background:rgba(59,130,246,0.10);color:#2563eb">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <strong>Identify what&rsquo;s material</strong>
+              <span>Not every risk needs attention. We focus on the ones that would actually hurt.</span>
+            </div>
+          </div>
+          <div class="csa__pillar">
+            <span class="csa__pillar-ico" style="background:rgba(124,58,237,0.10);color:#7c3aed">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Prioritise the right controls</strong>
+              <span>MFA, backups, patching, access &mdash; boring beats fancy, every time.</span>
+            </div>
+          </div>
+          <div class="csa__pillar">
+            <span class="csa__pillar-ico" style="background:rgba(16,185,129,0.12);color:#059669">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Respond within scope</strong>
+              <span>Agreed playbook, agreed people, agreed timing. Not improv when it counts.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="csa__note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          No provider can eliminate every risk or guarantee an incident will never happen &mdash; but a proper posture makes it far less likely, and far easier to handle.
+        </p>
+      </div>
+
+      <div class="csa__visual" aria-hidden="true">
+        <div class="csa__glow"></div>
+        <div class="csa__panel">
+          <div class="csa__panel-head">
+            <div class="csa__shield">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="csa__shield-ring"></span>
+            </div>
+            <div class="csa__panel-title">
+              <strong>Security posture</strong>
+              <span><span class="csa__pulse"></span>Actively monitored</span>
+            </div>
+            <span class="csa__grade">A</span>
+          </div>
+
+          <div class="csa__meters">
+            <div class="csa__meter">
+              <div class="csa__meter-head">
+                <span class="csa__meter-lbl">MFA coverage</span>
+                <span class="csa__meter-val csa__meter-val--good">98%</span>
+              </div>
+              <div class="csa__bar"><span class="csa__bar-fill csa__bar-fill--good" style="width:98%"></span></div>
+            </div>
+            <div class="csa__meter">
+              <div class="csa__meter-head">
+                <span class="csa__meter-lbl">Endpoint patching</span>
+                <span class="csa__meter-val csa__meter-val--good">94%</span>
+              </div>
+              <div class="csa__bar"><span class="csa__bar-fill csa__bar-fill--good" style="width:94%"></span></div>
+            </div>
+            <div class="csa__meter">
+              <div class="csa__meter-head">
+                <span class="csa__meter-lbl">Backup verified</span>
+                <span class="csa__meter-val csa__meter-val--warn">Last night</span>
+              </div>
+              <div class="csa__bar"><span class="csa__bar-fill csa__bar-fill--warn" style="width:88%"></span></div>
+            </div>
+            <div class="csa__meter">
+              <div class="csa__meter-head">
+                <span class="csa__meter-lbl">Access reviewed</span>
+                <span class="csa__meter-val csa__meter-val--good">This quarter</span>
+              </div>
+              <div class="csa__bar"><span class="csa__bar-fill csa__bar-fill--good" style="width:100%"></span></div>
+            </div>
+          </div>
+
+          <div class="csa__events">
+            <div class="csa__event">
+              <span class="csa__event-dot csa__event-dot--good"></span>
+              <span>2 phishing attempts blocked</span>
+              <span class="csa__event-time">Today</span>
+            </div>
+            <div class="csa__event">
+              <span class="csa__event-dot csa__event-dot--warn"></span>
+              <span>1 stale account flagged for review</span>
+              <span class="csa__event-time">Yesterday</span>
+            </div>
+            <div class="csa__event">
+              <span class="csa__event-dot csa__event-dot--good"></span>
+              <span>Quarterly access review completed</span>
+              <span class="csa__event-time">2d</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="csa__float csa__float--top">
+          <span class="csa__float-dot"></span>
+          Monitored 24/7
+        </div>
+        <div class="csa__float csa__float--bot">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Playbook ready
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IT REVIEW PROCESS -->
+<style>
+.irv-wrap { padding: 60px 0; background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%); }
+.irv-head { text-align:center; max-width: 720px; margin: 0 auto 44px; }
+.irv-head .kicker { display:inline-flex; align-items:center; gap:6px; padding:6px 14px; background:#fff; border:1px solid #e2e8f0; border-radius:999px; font-size:0.7rem; font-weight:800; letter-spacing:0.08em; color:#2563eb; text-transform:uppercase; margin-bottom:14px; box-shadow:0 4px 12px rgba(37,99,235,0.08); }
+.irv-head .kicker i { width:6px; height:6px; border-radius:50%; background:#10b981; box-shadow:0 0 0 3px rgba(16,185,129,0.25); }
+.irv-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight:800; color:#0f172a; letter-spacing:-0.02em; margin:0 0 12px; }
+.irv-head h2 .grad { background: linear-gradient(135deg,#2563eb,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.irv-head p { color:#64748b; font-size:0.95rem; line-height:1.6; margin:0; }
+
+.irv-track { position:relative; display:grid; grid-template-columns: repeat(5, 1fr); gap:18px; }
+.irv-track::before {
+  content:''; position:absolute; top:38px; left:6%; right:6%; height:2px;
+  background: repeating-linear-gradient(90deg, #93c5fd 0 8px, transparent 8px 16px);
+  z-index:0;
+}
+
+.irv-step { position:relative; z-index:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:44px 18px 20px; text-align:center; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; box-shadow: 0 4px 14px rgba(15,23,42,0.04); }
+.irv-step:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -18px rgba(37,99,235,0.35); border-color:#c7d2fe; }
+.irv-step::before {
+  content:''; position:absolute; top:0; left:16px; right:16px; height:4px; border-radius:0 0 4px 4px;
+  background: linear-gradient(90deg, var(--irv-c1), var(--irv-c2));
+}
+
+.irv-num {
+  position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+  width:44px; height:44px; border-radius:50%;
+  background:#fff; border:2px solid var(--irv-c1);
+  display:grid; place-items:center;
+  font-weight:900; font-size:1rem; color:var(--irv-c1);
+  box-shadow: 0 8px 20px -6px rgba(37,99,235,0.35);
+}
+
+.irv-ico { width:52px; height:52px; border-radius:14px; display:grid; place-items:center; margin: 6px auto 14px; background: var(--irv-bg); }
+.irv-title { font-weight:800; color:#0f172a; font-size:1.05rem; letter-spacing:-0.01em; margin-bottom:8px; }
+.irv-desc { color:#64748b; font-size:0.84rem; line-height:1.6; margin:0 0 14px; }
+.irv-tag { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; background:var(--irv-bg); color:var(--irv-c1); border-radius:999px; font-size:0.66rem; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; }
+.irv-tag svg { flex-shrink:0; }
+
+.irv-step--blue   { --irv-c1:#2563eb; --irv-c2:#7c3aed; --irv-bg:#dbeafe; }
+.irv-step--teal   { --irv-c1:#0891b2; --irv-c2:#2563eb; --irv-bg:#cffafe; }
+.irv-step--amber  { --irv-c1:#d97706; --irv-c2:#ef4444; --irv-bg:#fef3c7; }
+.irv-step--violet { --irv-c1:#7c3aed; --irv-c2:#ec4899; --irv-bg:#ede9fe; }
+.irv-step--green  { --irv-c1:#059669; --irv-c2:#10b981; --irv-bg:#d1fae5; }
+
+.irv-foot { margin-top: 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 22px; padding: 18px 24px; background:#fff; border:1px solid #e2e8f0; border-radius:14px; box-shadow: 0 4px 14px rgba(15,23,42,0.04); }
+.irv-foot__item { display:inline-flex; align-items:center; gap:8px; color:#334155; font-size:0.82rem; font-weight:600; }
+.irv-foot__item svg { color:#10b981; flex-shrink:0; }
+.irv-foot__sep { width:1px; height:16px; background:#e2e8f0; }
+
+@media (max-width: 960px) {
+  .irv-track { grid-template-columns: repeat(2, 1fr); gap:32px 16px; }
+  .irv-track::before { display:none; }
+}
+@media (max-width: 520px) {
+  .irv-track { grid-template-columns: 1fr; }
+  .irv-foot__sep { display:none; }
+}
+</style>
+<section class="irv-wrap">
+  <div class="container">
+    <div class="irv-head reveal">
+      <span class="kicker"><i></i>OUR PROCESS</span>
+      <h2>What happens in an <span class="grad">IT review</span></h2>
+      <p>A structured, no-obligation walkthrough of your environment &mdash; from scoping to a written recommendation you can act on.</p>
+    </div>
+
+    <div class="irv-track reveal">
+      <div class="irv-step irv-step--blue">
+        <div class="irv-num">01</div>
+        <div class="irv-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#2563eb" stroke-width="2"/><path d="M7 9h10M7 13h6" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="irv-title">Scope</div>
+        <p class="irv-desc">Confirm users, locations, systems, devices and business-critical services in scope.</p>
+        <span class="irv-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>30&ndash;45 min</span>
+      </div>
+
+      <div class="irv-step irv-step--teal">
+        <div class="irv-num">02</div>
+        <div class="irv-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="#0891b2" stroke-width="2"/><path d="M20 20l-4-4" stroke="#0891b2" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="irv-title">Review</div>
+        <p class="irv-desc">Recurring support issues, access, security controls and key dependencies.</p>
+        <span class="irv-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Evidence-based</span>
+      </div>
+
+      <div class="irv-step irv-step--amber">
+        <div class="irv-num">03</div>
+        <div class="irv-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l10 18H2z" stroke="#d97706" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v5M12 18v.01" stroke="#d97706" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="irv-title">Identify</div>
+        <p class="irv-desc">Urgent risks, operational gaps and lifecycle concerns surfaced clearly.</p>
+        <span class="irv-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Risk-flagged</span>
+      </div>
+
+      <div class="irv-step irv-step--violet">
+        <div class="irv-num">04</div>
+        <div class="irv-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#7c3aed" stroke-width="2"/><path d="M8 16v-4M12 16v-7M16 16v-2" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="irv-title">Prioritise</div>
+        <p class="irv-desc">Improvements ranked by business impact, effort and available budget.</p>
+        <span class="irv-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M6 12h12M9 18h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Ranked plan</span>
+      </div>
+
+      <div class="irv-step irv-step--green">
+        <div class="irv-num">05</div>
+        <div class="irv-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="#059669" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="irv-title">Recommend</div>
+        <p class="irv-desc">A project, support arrangement or staged roadmap &mdash; in writing.</p>
+        <span class="irv-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Written report</span>
+      </div>
+    </div>
+
+    <div class="irv-foot reveal">
+      <div class="irv-foot__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>No obligation to proceed</div>
+      <div class="irv-foot__sep"></div>
+      <div class="irv-foot__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Confidential &amp; NDA-ready</div>
+      <div class="irv-foot__sep"></div>
+      <div class="irv-foot__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered in 5&ndash;10 business days</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="ab-model">
+  <div class="container">
+    <div class="au-head au-head--center reveal">
+      <span class="kicker kicker--pill"><i></i>COMMON QUESTIONS</span>
+      <h2 class="au-h2">Practical questions we <span class="au-grad">get asked most.</span></h2>
+      <p>Short, honest answers on scope, support and what happens when things go wrong.</p>
+    </div>
+    <div class="accordion reveal" style="max-width:820px; margin:0 auto;">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false"><span>Do you support one-off projects?</span><span class="accordion__icon">+</span></button>
+        <div class="accordion__content"><div class="accordion__body">Yes. We can scope a defined technology project without requiring an ongoing managed-services agreement.</div></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false"><span>Can you support an existing environment?</span><span class="accordion__icon">+</span></button>
+        <div class="accordion__content"><div class="accordion__body">Yes, subject to an initial review, suitable access and agreement on the systems and responsibilities included.</div></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false"><span>Are support hours and response targets fixed?</span><span class="accordion__icon">+</span></button>
+        <div class="accordion__content"><div class="accordion__body">They are documented for the selected service arrangement. The proposal or service agreement explains what is included, when support is available and how requests are prioritised.</div></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false"><span>How do you handle a security incident?</span><span class="accordion__icon">+</span></button>
+        <div class="accordion__content"><div class="accordion__body">Within the agreed service scope, we contain the incident, restore service, preserve information required for review, and provide a written summary with recommended follow-up.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<style>
+.au-cta__body--split { max-width: 1040px; display:grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items:center; text-align:left; }
+.au-cta__body--split h2 { text-align:left; }
+.au-cta__body--split p { text-align:left; }
+.au-cta__body--split .au-cta__actions { justify-content:flex-start; }
+
+.au-cta__panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+}
+.au-cta__panel-t { color:#ffffff; font-size:0.78rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+.au-cta__panel-t i { width:6px; height:6px; border-radius:50%; background:#34d399; box-shadow:0 0 0 3px rgba(52,211,153,0.25); }
+.au-cta__list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+.au-cta__list li { display:flex; align-items:flex-start; gap:12px; color: rgba(255,255,255,0.85); font-size:0.9rem; line-height:1.5; }
+.au-cta__list li svg { flex-shrink:0; margin-top:2px; color:#34d399; }
+.au-cta__list li strong { color:#ffffff; font-weight:700; display:block; margin-bottom:2px; font-size:0.92rem; }
+
+@media (max-width: 860px) {
+  .au-cta__body--split { grid-template-columns: 1fr; gap: 28px; text-align:center; }
+  .au-cta__body--split h2, .au-cta__body--split p { text-align:center; }
+  .au-cta__body--split .au-cta__actions { justify-content:center; }
+}
+</style>
+<section class="au-cta">
+  <div class="container">
+    <div class="au-cta__card reveal">
+      <div class="au-cta__glow" aria-hidden="true"></div>
+      <div class="au-cta__body au-cta__body--split">
+        <div>
+          <span class="kicker kicker--pill au-cta__kicker"><i></i>START HERE</span>
+          <h2>Get a clearer view of <span class="au-grad">your technology environment.</span></h2>
+          <p>Start with the systems, risks and support issues affecting the business today. We&rsquo;ll help prioritise the next steps &mdash; and put a plan behind them.</p>
+          <div class="au-cta__actions">
+            <a href="/contact.php" class="btn btn--primary">Request an IT Review</a>
+            <a href="/contact.php" class="btn btn--secondary btn--arrow-blue">Discuss Your Support Needs</a>
+          </div>
+        </div>
+
+        <div class="au-cta__panel">
+          <div class="au-cta__panel-t"><i></i>What you&rsquo;ll get</div>
+          <ul class="au-cta__list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>A written recommendation</strong>Project, support plan or staged roadmap &mdash; in writing.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Prioritised risks &amp; gaps</strong>Ranked by business impact, effort and budget.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>No obligation</strong>Response within 1 business day. NDA on request.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

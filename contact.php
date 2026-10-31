@@ -1,0 +1,922 @@
+﻿<?php
+$page = 'contact';
+$seo_title = 'Contact Nubevest | Book a Call';
+$meta_desc = 'Tell us what is happening, what you want to improve and when you need it. Nubevest will connect you with the right team — one accountable relationship for growth, technology and operations.';
+include 'includes/header.php';
+?>
+
+<style>
+/* ============================================================
+   CONTACT PAGE — screenshot-matched design
+   ============================================================ */
+
+:root {
+  --cn-purple: #6d28d9;
+  --cn-purple-2: #7c3aed;
+  --cn-purple-soft: #ede9fe;
+  --cn-ink: #0f172a;
+  --cn-muted: #64748b;
+  --cn-line: #eef1f5;
+  --cn-bg: #f8f7ff;
+}
+
+.cn-page {
+  background: linear-gradient(180deg, #faf9ff 0%, #ffffff 60%);
+  padding: 80px 0 60px;
+  position:relative;
+}
+.cn-page__bg {
+  position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+}
+.cn-page__bg::before{
+  content:''; position:absolute; inset:0;
+  background-image: radial-gradient(#c4b5fd 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+  opacity: 0.22;
+  mask-image: radial-gradient(ellipse at 85% 20%, #000 0%, transparent 55%);
+  -webkit-mask-image: radial-gradient(ellipse at 85% 20%, #000 0%, transparent 55%);
+}
+.cn-page__bg::after{
+  content:''; position:absolute; top:-140px; left:-140px; width:360px; height:360px; border-radius:50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.14), transparent 60%);
+}
+.cn-page > .container { position:relative; z-index:1; }
+
+@media (max-width: 768px){ .cn-page { padding: 50px 0 40px; } }
+
+/* ---------- HERO ---------- */
+.cn-hero { display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 40px; align-items:center; padding-top: 20px; }
+@media (max-width: 960px){ .cn-hero { grid-template-columns:1fr; padding-top: 0; } }
+
+.cn-hero__kicker {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:0.72rem; font-weight:800; letter-spacing:0.18em; color: var(--cn-purple); text-transform:uppercase;
+  margin-bottom:20px;
+  padding: 6px 14px 6px 10px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.12), rgba(59,130,246,0.08));
+  border: 1px solid rgba(124,58,237,0.18);
+  border-radius: 999px;
+}
+.cn-hero__kicker::before {
+  content:''; width:8px; height:8px; border-radius:50%;
+  background: var(--cn-purple-2);
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.2);
+  animation: cn-pulse 2.4s ease-in-out infinite;
+}
+@keyframes cn-pulse { 0%,100%{ box-shadow:0 0 0 4px rgba(124,58,237,0.2);} 50%{ box-shadow:0 0 0 8px rgba(124,58,237,0.05);} }
+.cn-hero__title { font-size: clamp(2rem, 3.6vw, 3.1rem); line-height:1.1; font-weight:800; letter-spacing:-0.025em; color: var(--cn-ink); margin: 0 0 18px; }
+.cn-hero__title .cn-grad {
+  background: linear-gradient(90deg, #7c3aed 0%, #3b82f6 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position:relative;
+}
+.cn-hero__title .cn-grad::after {
+  content:''; display:block; width:110px; height:4px; margin-top:8px;
+  background: linear-gradient(90deg, #7c3aed, #3b82f6);
+  border-radius:999px;
+}
+.cn-hero__lead { font-size:1.02rem; line-height:1.65; color:#475569; max-width:520px; margin: 0 0 28px; }
+
+.cn-badges { display:flex; flex-wrap:wrap; gap:14px; }
+.cn-badge {
+  display:flex; align-items:center; gap:12px;
+  padding: 10px 16px 10px 12px;
+  background:#fff;
+  border:1px solid #eef1f5;
+  border-radius:14px;
+  box-shadow: 0 8px 20px -12px rgba(15,23,42,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.cn-badge:hover { transform: translateY(-3px); box-shadow: 0 14px 26px -12px rgba(124,58,237,0.25); border-color: rgba(124,58,237,0.25); }
+.cn-badge__ico {
+  width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  color: var(--cn-purple); flex-shrink:0;
+  position:relative;
+}
+.cn-badge:nth-child(2) .cn-badge__ico { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color:#2563eb; }
+.cn-badge:nth-child(3) .cn-badge__ico { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color:#059669; }
+.cn-badge__t { font-size:0.9rem; font-weight:800; color: var(--cn-ink); letter-spacing:-0.01em; }
+.cn-badge__s { font-size:0.76rem; color: var(--cn-muted); }
+.cn-badge__dot { position:absolute; top:-2px; right:-2px; width:10px; height:10px; border-radius:50%; background:#10b981; border:2px solid #fff; box-shadow:0 0 0 3px rgba(16,185,129,0.25); animation: cn-pulse-dot 2s ease-in-out infinite; }
+@keyframes cn-pulse-dot { 0%,100%{ box-shadow:0 0 0 3px rgba(16,185,129,0.25);} 50%{ box-shadow:0 0 0 6px rgba(16,185,129,0.05);} }
+
+/* Hero right — illustration */
+.cn-illus { position:relative; height:480px; padding-top: 30px; }
+@media (max-width: 960px){ .cn-illus { height: 380px; padding-top: 20px; } }
+.cn-illus__blob { position:absolute; inset: 30px 0 0 0; z-index:0; animation: cn-float-slow 9s ease-in-out infinite; }
+.cn-illus__blob svg { width:100%; height:100%; }
+@keyframes cn-float-slow { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} }
+
+.cn-illus__img {
+  position:absolute; top: 22%; left: 14%; right: 6%; bottom: 8%; z-index:1;
+  border-radius:18px; overflow:hidden;
+  box-shadow: 0 30px 60px -20px rgba(88,28,135,0.4), 0 0 0 6px #fff, 0 0 0 7px rgba(124,58,237,0.15);
+}
+.cn-illus__img svg,
+.cn-illus__img img { width:100%; height:100%; display:block; object-fit:cover; }
+
+.cn-illus__note { position:absolute; left:14%; top:0; transform: rotate(-6deg); z-index:2; animation: cn-wobble 6s ease-in-out infinite; }
+@keyframes cn-wobble { 0%,100%{ transform: rotate(-6deg) translateY(0);} 50%{ transform: rotate(-4deg) translateY(-4px);} }
+.cn-illus__note svg text { font-family: "Caveat", "Segoe Script", cursive; font-weight:700; }
+
+.cn-connect {
+  position:absolute; top:0; right:2%; z-index:3;
+  background:#fff; border:1px solid #eef1f5; border-radius:14px;
+  padding:10px 16px 10px 12px;
+  box-shadow: 0 18px 40px -12px rgba(124,58,237,0.35);
+  display:flex; align-items:center; gap:10px;
+  animation: cn-float 5s ease-in-out infinite;
+}
+@keyframes cn-float { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} }
+.cn-connect__ico {
+  width:34px; height:34px; border-radius:50%;
+  background: linear-gradient(135deg, var(--cn-purple), var(--cn-purple-2));
+  color:#fff; display:grid; place-items:center;
+  box-shadow: 0 8px 20px -6px rgba(124,58,237,0.55);
+}
+.cn-connect__t { font-size:0.9rem; font-weight:800; color: var(--cn-ink); letter-spacing:-0.01em; }
+
+/* Floating stat card bottom-left */
+.cn-stat {
+  position:absolute; left:2%; bottom:6%; z-index:3;
+  background:#fff; border:1px solid #eef1f5; border-radius:14px;
+  padding:12px 16px;
+  display:flex; align-items:center; gap:12px;
+  box-shadow: 0 18px 40px -15px rgba(15,23,42,0.2);
+  animation: cn-float 6s ease-in-out infinite 0.5s;
+}
+.cn-stat__ico {
+  width:38px; height:38px; border-radius:10px;
+  background: linear-gradient(135deg,#10b981,#059669);
+  color:#fff; display:grid; place-items:center;
+  box-shadow: 0 8px 18px -6px rgba(16,185,129,0.55);
+}
+.cn-stat__n { font-size:1.1rem; font-weight:800; color:var(--cn-ink); letter-spacing:-0.01em; line-height:1; }
+.cn-stat__l { font-size:0.72rem; color:var(--cn-muted); font-weight:600; }
+
+/* Sparkles */
+.cn-spark {
+  position:absolute; z-index:2; pointer-events:none;
+  animation: cn-twinkle 2.4s ease-in-out infinite;
+}
+.cn-spark--1 { top: 6%; left: 42%; }
+.cn-spark--2 { top: 30%; left: 4%; animation-delay: 0.6s; }
+.cn-spark--3 { bottom: 20%; right: 8%; animation-delay: 1.2s; }
+@keyframes cn-twinkle { 0%,100%{ opacity: 0.3; transform: scale(0.85);} 50%{ opacity: 1; transform: scale(1.1);} }
+
+/* ---------- CARD ---------- */
+.cn-card {
+  margin-top: 44px;
+  background:#fff; border:1px solid #eef1f5;
+  border-radius:24px;
+  box-shadow: 0 40px 80px -40px rgba(88,28,135,0.25), 0 20px 40px -30px rgba(15,23,42,0.08);
+  overflow:hidden; position:relative;
+}
+.cn-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:5px;
+  background: linear-gradient(90deg,#7c3aed 0%, #3b82f6 33%, #10b981 66%, #f59e0b 100%);
+  z-index:2;
+}
+.cn-card__grid { display:grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap:0; }
+@media (max-width: 960px){ .cn-card__grid { grid-template-columns:1fr; } }
+
+/* Info column */
+.cn-info {
+  padding: 40px 32px 34px;
+  background: linear-gradient(180deg, #faf9ff 0%, #ffffff 100%);
+  border-right:1px solid #f1f5f9;
+  display:flex; flex-direction:column;
+  position:relative; overflow:hidden;
+}
+.cn-info::before {
+  content:''; position:absolute; top:-80px; right:-80px; width:220px; height:220px; border-radius:50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.12), transparent 65%);
+  pointer-events:none;
+}
+.cn-info > * { position:relative; }
+@media (max-width: 960px){ .cn-info { border-right:0; border-bottom:1px solid #f1f5f9; } }
+.cn-info__title { font-size:1.5rem; font-weight:800; letter-spacing:-0.02em; color: var(--cn-ink); margin: 0 0 8px; }
+.cn-info__lead { font-size:0.92rem; color: var(--cn-muted); line-height:1.55; margin: 0 0 24px; }
+
+.cn-info__list { display:flex; flex-direction:column; gap:18px; }
+.cn-info__item {
+  display:flex; gap:14px; align-items:flex-start;
+  padding:10px 12px;
+  border-radius:12px;
+  margin: 0 -12px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.cn-info__item:hover { background:#f5f3ff; transform: translateX(3px); }
+.cn-info__ico {
+  width:44px; height:44px; border-radius:12px;
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  color: var(--cn-purple); display:grid; place-items:center; flex-shrink:0;
+  box-shadow: 0 6px 14px -6px rgba(124,58,237,0.4);
+  transition: transform 0.2s ease;
+}
+.cn-info__item:hover .cn-info__ico { transform: rotate(-6deg) scale(1.05); }
+.cn-info__item:nth-child(2) .cn-info__ico { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color:#2563eb; box-shadow: 0 6px 14px -6px rgba(37,99,235,0.4); }
+.cn-info__item:nth-child(3) .cn-info__ico { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color:#059669; box-shadow: 0 6px 14px -6px rgba(5,150,105,0.4); }
+.cn-info__item:nth-child(5) .cn-info__ico { background: linear-gradient(135deg, #fef3c7, #fde68a); color:#d97706; box-shadow: 0 6px 14px -6px rgba(217,119,6,0.4); }
+.cn-info__lbl { font-size:0.98rem; font-weight:700; color: var(--cn-ink); letter-spacing:-0.01em; margin:0 0 2px; }
+.cn-info__val { font-size:0.9rem; color:#334155; line-height:1.5; margin:0; }
+.cn-info__val a { color:#334155; text-decoration:none; }
+.cn-info__val a:hover { color: var(--cn-purple); }
+
+.cn-info__divider { height:1px; background:#eef1f5; margin:6px 0; }
+
+.cn-follow { margin-top: auto; padding-top:24px; display:flex; align-items:center; gap:14px; }
+.cn-follow__lbl { font-size:0.88rem; color:#475569; font-weight:600; }
+.cn-follow__list { display:flex; gap:10px; }
+.cn-follow__list a {
+  width:36px; height:36px; border-radius:10px;
+  background:#f1f5f9;
+  color: var(--cn-purple);
+  display:grid; place-items:center;
+  transition: all 0.25s ease;
+  position:relative; overflow:hidden;
+}
+.cn-follow__list a::before {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(135deg, var(--cn-purple-2), var(--cn-purple));
+  opacity:0; transition: opacity 0.25s ease;
+}
+.cn-follow__list a svg { position:relative; z-index:1; }
+.cn-follow__list a:hover { color:#fff; transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px -8px rgba(124,58,237,0.5); }
+.cn-follow__list a:hover::before { opacity:1; }
+
+/* Form column */
+.cn-form { padding: 40px 36px 34px; background: #ffffff; position:relative; overflow:hidden; }
+.cn-form::before {
+  content:''; position:absolute; bottom:-100px; left:-100px; width:280px; height:280px; border-radius:50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.08), transparent 65%);
+  pointer-events:none;
+}
+.cn-form > * { position:relative; }
+.cn-form__title { font-size:1.5rem; font-weight:800; letter-spacing:-0.02em; color: var(--cn-ink); margin: 0 0 8px; }
+.cn-form__lead { font-size:0.92rem; color: var(--cn-muted); line-height:1.55; margin: 0 0 24px; }
+
+.cn-fgrid { display:grid; grid-template-columns:1fr 1fr; gap:20px 18px; }
+@media (max-width: 640px){ .cn-fgrid { grid-template-columns:1fr; } }
+.cn-fgrid .cn-full { grid-column: 1 / -1; }
+
+.cn-field { display:flex; flex-direction:column; gap:8px; }
+.cn-field__lbl { display:flex; align-items:center; gap:8px; font-size:0.8rem; font-weight:700; color:#334155; letter-spacing:.01em; text-transform:uppercase; }
+.cn-field__lbl .cn-req { color:#ef4444; margin-left:2px; }
+.cn-field__lbl svg { color: var(--cn-purple); opacity:.85; }
+
+.cn-input, .cn-select, .cn-textarea {
+  width:100%; padding:13px 14px 13px 42px;
+  background:#ffffff; border:1.5px solid #e2e8f0; border-radius:12px;
+  font-size:0.95rem; color: var(--cn-ink); font-family: inherit; font-weight:500;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.cn-input::placeholder, .cn-textarea::placeholder { color:#94a3b8; font-weight:400; }
+.cn-textarea { padding: 14px 16px; resize: vertical; min-height: 120px; line-height:1.55; }
+.cn-select {
+  padding-right:40px; appearance:none; -webkit-appearance:none; cursor:pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat:no-repeat; background-position: right 14px center;
+}
+.cn-input:hover, .cn-select:hover, .cn-textarea:hover { border-color:#cbd5e1; }
+.cn-input:focus, .cn-select:focus, .cn-textarea:focus {
+  outline:none;
+  border-color: var(--cn-purple-2);
+  background:#fff;
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.12), 0 2px 6px rgba(124,58,237,.08);
+}
+
+.cn-input-wrap { position:relative; }
+.cn-input-wrap > svg {
+  position:absolute; left:14px; top:50%; transform: translateY(-50%);
+  color:#94a3b8; pointer-events:none;
+  transition: color .2s ease;
+}
+.cn-input-wrap:focus-within > svg { color: var(--cn-purple); }
+
+/* Custom consent checkbox */
+.cn-consent {
+  display:flex; align-items:flex-start; gap:12px;
+  font-size:0.88rem; color:#475569; line-height:1.55;
+  padding:12px 14px;
+  background:#fafbff;
+  border:1px solid #eef2ff;
+  border-radius:12px;
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+.cn-consent:hover { background:#f5f3ff; border-color:#e0e7ff; }
+.cn-consent input {
+  appearance:none; -webkit-appearance:none;
+  width:20px; height:20px; flex-shrink:0;
+  border:1.5px solid #cbd5e1; border-radius:6px;
+  background:#fff;
+  margin-top:1px; cursor:pointer;
+  position:relative;
+  transition: border-color .15s ease, background .15s ease;
+}
+.cn-consent input:hover { border-color:#a78bfa; }
+.cn-consent input:checked {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  border-color:#7c3aed;
+}
+.cn-consent input:checked::after {
+  content:''; position:absolute; left:5px; top:1px;
+  width:6px; height:11px;
+  border:solid #fff; border-width:0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.cn-consent input:focus-visible { outline:none; box-shadow: 0 0 0 3px rgba(124,58,237,0.18); }
+.cn-consent a { color: var(--cn-purple); font-weight:700; }
+.cn-consent .cn-req { color:#ef4444; margin-left:2px; }
+
+.cn-actions {
+  display:flex; flex-direction:column; align-items:flex-end; gap:12px;
+  margin-top:10px;
+  padding-top:20px;
+  border-top:1px dashed #eef2f7;
+}
+.cn-actions .cn-recaptcha-notice { align-self:flex-end; text-align:right; max-width:420px; margin:0; }
+@media (max-width: 640px) {
+  .cn-actions { align-items:stretch; }
+  .cn-actions .cn-submit { width:100%; justify-content:center; }
+  .cn-actions .cn-recaptcha-notice { align-self:center; text-align:center; max-width:none; }
+}
+.cn-submit {
+  position:relative;
+  display:inline-flex; align-items:center; gap:10px; white-space:nowrap;
+  padding:14px 26px;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #4f46e5 100%);
+  background-size: 200% 200%;
+  color:#fff; border:0; border-radius:999px;
+  font-weight:700; font-size:0.92rem; letter-spacing:.005em; cursor:pointer;
+  box-shadow: 0 10px 26px -8px rgba(124,58,237,0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.4s ease;
+  overflow:hidden;
+}
+.cn-submit::before {
+  content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: left 0.6s ease;
+}
+.cn-submit:hover { transform: translateY(-2px); box-shadow: 0 22px 40px -10px rgba(124,58,237,0.75); background-position: 100% 0; }
+.cn-submit:hover::before { left: 100%; }
+.cn-submit svg { transition: transform 0.25s ease; }
+.cn-submit:hover svg { transform: translateX(3px) rotate(5deg); }
+
+/* ---------- MAP STRIP ---------- */
+.cn-map {
+  margin-top:26px; border-radius:24px; overflow:hidden; position:relative;
+  border:1px solid #eef1f5; height:340px;
+  box-shadow: 0 30px 60px -30px rgba(88,28,135,0.25), 0 20px 40px -25px rgba(15,23,42,0.08);
+}
+.cn-map__frame { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; filter: saturate(1.05); }
+.cn-map__bg { position:absolute; inset:0; }
+.cn-map__pin { position:absolute; top:50%; left:52%; transform: translate(-50%, -50%); z-index:2; }
+.cn-map__pin::before, .cn-map__pin::after {
+  content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:44px; height:44px; border-radius:50%;
+  background: rgba(124,58,237,0.25);
+  animation: cn-ping 2.4s cubic-bezier(0,0,0.2,1) infinite;
+}
+.cn-map__pin::after { animation-delay: 1.2s; }
+@keyframes cn-ping { 0%{ transform:translate(-50%,-50%) scale(1); opacity:0.7;} 100%{ transform:translate(-50%,-50%) scale(2.6); opacity:0;} }
+.cn-map__pin-outer {
+  position:relative; z-index:1;
+  width:48px; height:48px; border-radius:50%;
+  background:#fff; display:grid; place-items:center;
+  box-shadow: 0 12px 26px -6px rgba(109,40,217,0.5);
+}
+.cn-map__pin-inner {
+  width:30px; height:30px; border-radius:50%;
+  background: linear-gradient(135deg, var(--cn-purple-2), var(--cn-purple));
+  display:grid; place-items:center; color:#fff;
+}
+.cn-map__pin-inner svg { width:14px; height:14px; }
+.cn-map__label {
+  position:absolute; bottom:20px; left:20px; z-index:3;
+  background:#fff; border:1px solid #eef1f5; border-radius:16px;
+  padding:14px 18px;
+  display:flex; align-items:center; gap:12px;
+  box-shadow: 0 20px 40px -12px rgba(88,28,135,0.28);
+  max-width:320px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cn-map__label:hover { transform: translateY(-3px); box-shadow: 0 26px 46px -12px rgba(88,28,135,0.35); }
+.cn-map__label-ico { width:40px; height:40px; }
+@media (max-width: 640px){
+  .cn-map__label { left:12px; right:12px; bottom:12px; max-width:none; }
+}
+.cn-map__label-ico { width:42px; height:42px; border-radius:12px; background: linear-gradient(135deg, var(--cn-purple-2), var(--cn-purple)); color:#fff; display:grid; place-items:center; flex-shrink:0; }
+.cn-map__label-t { font-size:1rem; font-weight:800; color: var(--cn-ink); letter-spacing:-0.01em; margin: 0 0 2px; }
+.cn-map__label-s { font-size:0.82rem; color:#64748b; line-height:1.5; margin: 0 0 8px; }
+.cn-map__dir {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:0.82rem; font-weight:700; color: var(--cn-purple);
+  text-decoration:none;
+  transition: gap 0.2s ease;
+}
+.cn-map__dir:hover { gap:10px; }
+</style>
+
+<main id="main">
+
+<section class="cn-page">
+  <div class="cn-page__bg" aria-hidden="true"></div>
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="cn-hero reveal">
+      <div>
+        <span class="cn-hero__kicker">BOOK A BUSINESS SYSTEMS REVIEW</span>
+        <h1 class="cn-hero__title">Tell us what&rsquo;s <span class="cn-grad">getting in the way.</span></h1>
+        <p class="cn-hero__lead">You don&rsquo;t need to diagnose the technology or choose a Nubevest brand. Tell us what&rsquo;s happening, what you want to improve and when you need it &mdash; we&rsquo;ll connect you with the right Nubevest team and explain the next step.</p>
+
+        <div class="cn-badges">
+          <div class="cn-badge">
+            <span class="cn-badge__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v11H8l-4 4V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="cn-badge__dot"></span></span>
+            <div><div class="cn-badge__t">Quick Response</div><div class="cn-badge__s">We reply within 24 hours</div></div>
+          </div>
+          <div class="cn-badge">
+            <span class="cn-badge__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><div class="cn-badge__t">Your Privacy Matters</div><div class="cn-badge__s">Your data is safe with us</div></div>
+          </div>
+          <div class="cn-badge">
+            <span class="cn-badge__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 19c0-2 1.5-3.5 3.5-3.5S21 17 21 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><div class="cn-badge__t">Expert Team</div><div class="cn-badge__s">Talk to our professionals</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cn-illus" aria-hidden="true">
+        <!-- Purple watercolor blob -->
+        <div class="cn-illus__blob">
+          <svg viewBox="0 0 600 400" fill="none" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="blob1" cx="50%" cy="45%" r="55%">
+                <stop offset="0%" stop-color="#ede9fe" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#ddd6fe" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#f5f3ff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <path d="M120,180 C60,80 220,20 340,50 C470,80 560,140 550,240 C540,340 420,380 300,360 C180,340 180,280 120,180 Z" fill="url(#blob1)"/>
+            <path d="M160,220 C110,140 260,90 370,110 C480,130 540,190 520,280 C500,360 400,380 290,360 C180,340 210,300 160,220 Z" fill="#ede9fe" opacity="0.4"/>
+          </svg>
+        </div>
+
+        <!-- Building illustration -->
+        <div class="cn-illus__img">
+          <img src="/assets/images/contact-hero.png" alt="Modern glass office building">
+        </div>
+
+        <!-- Fallback SVG kept but hidden -->
+        <div class="cn-illus__img" style="display:none;">
+          <svg viewBox="0 0 500 380" fill="none" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#dbeafe"/>
+                <stop offset="100%" stop-color="#eff6ff"/>
+              </linearGradient>
+              <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#60a5fa"/>
+                <stop offset="100%" stop-color="#1e40af"/>
+              </linearGradient>
+              <linearGradient id="glass2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#93c5fd"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+              <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c2410c"/>
+                <stop offset="100%" stop-color="#7c2d12"/>
+              </linearGradient>
+            </defs>
+            <!-- Sky -->
+            <rect width="500" height="380" fill="url(#sky)"/>
+            <!-- Building main tower -->
+            <path d="M120 90 L380 60 L380 340 L120 340 Z" fill="url(#glass)"/>
+            <!-- Reflective panels -->
+            <g opacity="0.9">
+              <path d="M140 100 L200 96 L200 340 L140 340 Z" fill="url(#glass2)" opacity="0.6"/>
+              <path d="M210 96 L270 91 L270 340 L210 340 Z" fill="url(#glass2)" opacity="0.4"/>
+              <path d="M280 91 L340 86 L340 340 L280 340 Z" fill="url(#glass2)" opacity="0.5"/>
+            </g>
+            <!-- Horizontal floors -->
+            <g stroke="#1e3a8a" stroke-width="1.5" opacity="0.55">
+              <path d="M120 130 L380 120"/>
+              <path d="M120 170 L380 155"/>
+              <path d="M120 210 L380 190"/>
+              <path d="M120 250 L380 225"/>
+              <path d="M120 290 L380 260"/>
+            </g>
+            <!-- Vertical mullions -->
+            <g stroke="#1e3a8a" stroke-width="1" opacity="0.35">
+              <path d="M155 95 L155 340"/>
+              <path d="M190 95 L190 340"/>
+              <path d="M225 93 L225 340"/>
+              <path d="M260 91 L260 340"/>
+              <path d="M295 89 L295 340"/>
+              <path d="M330 87 L330 340"/>
+              <path d="M365 85 L365 340"/>
+            </g>
+            <!-- Highlights -->
+            <path d="M120 90 L200 87 L200 340 L120 340 Z" fill="#fff" opacity="0.08"/>
+            <!-- Wood/warm secondary building -->
+            <path d="M380 130 L470 120 L470 340 L380 340 Z" fill="url(#wood)"/>
+            <g stroke="#431407" stroke-width="1" opacity="0.5">
+              <path d="M380 165 L470 158"/>
+              <path d="M380 200 L470 195"/>
+              <path d="M380 235 L470 230"/>
+              <path d="M380 270 L470 265"/>
+              <path d="M380 305 L470 300"/>
+            </g>
+            <rect x="395" y="145" width="18" height="24" fill="#fdba74" opacity="0.85"/>
+            <rect x="420" y="145" width="18" height="24" fill="#fdba74" opacity="0.7"/>
+            <rect x="445" y="145" width="18" height="24" fill="#fdba74" opacity="0.85"/>
+            <rect x="395" y="180" width="18" height="24" fill="#fdba74" opacity="0.7"/>
+            <rect x="420" y="180" width="18" height="24" fill="#fdba74" opacity="0.85"/>
+            <rect x="445" y="180" width="18" height="24" fill="#fdba74" opacity="0.7"/>
+            <rect x="395" y="215" width="18" height="24" fill="#fdba74" opacity="0.8"/>
+            <rect x="420" y="215" width="18" height="24" fill="#fdba74" opacity="0.7"/>
+            <rect x="445" y="215" width="18" height="24" fill="#fdba74" opacity="0.85"/>
+            <rect x="395" y="250" width="18" height="24" fill="#fdba74" opacity="0.7"/>
+            <rect x="420" y="250" width="18" height="24" fill="#fdba74" opacity="0.85"/>
+            <rect x="445" y="250" width="18" height="24" fill="#fdba74" opacity="0.7"/>
+            <!-- Foreground trees -->
+            <g>
+              <circle cx="50" cy="330" r="34" fill="#166534"/>
+              <circle cx="80" cy="325" r="30" fill="#15803d"/>
+              <circle cx="115" cy="335" r="36" fill="#166534"/>
+              <circle cx="150" cy="330" r="32" fill="#22c55e" opacity="0.9"/>
+              <circle cx="380" cy="345" r="30" fill="#166534"/>
+              <circle cx="420" cy="340" r="34" fill="#15803d"/>
+              <circle cx="465" cy="345" r="30" fill="#166534"/>
+            </g>
+            <rect x="0" y="360" width="500" height="20" fill="#166534"/>
+          </svg>
+        </div>
+
+        <!-- "Ideas to Impact" hand note -->
+        <div class="cn-illus__note">
+          <svg width="180" height="90" viewBox="0 0 180 90" fill="none">
+            <text x="6" y="30" font-size="26" fill="#a855f7" style="font-family: 'Caveat', 'Segoe Script', cursive; font-weight:700;">Ideas to</text>
+            <text x="20" y="60" font-size="26" fill="#a855f7" style="font-family: 'Caveat', 'Segoe Script', cursive; font-weight:700;">Impact</text>
+            <path d="M80 68 Q 110 82 148 78 M148 78 L140 72 M148 78 L142 84" stroke="#a855f7" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Floating "Let's connect" card -->
+        <div class="cn-connect">
+          <div class="cn-connect__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 20l17-8L4 4v6l12 2-12 2v6z" fill="currentColor"/></svg></div>
+          <span class="cn-connect__t">Let&rsquo;s connect</span>
+        </div>
+
+        <!-- Floating stat card -->
+        <div class="cn-stat">
+          <div class="cn-stat__ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <div class="cn-stat__n">50+ Projects</div>
+            <div class="cn-stat__l">Delivered nationally</div>
+          </div>
+        </div>
+
+        <!-- Sparkles -->
+        <svg class="cn-spark cn-spark--1" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#a855f7"/></svg>
+        <svg class="cn-spark cn-spark--2" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#3b82f6"/></svg>
+        <svg class="cn-spark cn-spark--3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#10b981"/></svg>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="cn-card reveal">
+      <div class="cn-card__grid">
+
+        <!-- INFO LEFT -->
+        <div class="cn-info">
+          <h2 class="cn-info__title">Contact Information</h2>
+          <p class="cn-info__lead">Get in touch with us through any of the channels below.</p>
+
+          <div class="cn-info__list">
+            <div class="cn-info__item">
+              <span class="cn-info__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div class="cn-info__lbl">Phone</div>
+                <p class="cn-info__val"><a href="tel:1300959514">1300 959 514</a></p>
+              </div>
+            </div>
+
+            <div class="cn-info__item">
+              <span class="cn-info__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div class="cn-info__lbl">Email</div>
+                <p class="cn-info__val"><a href="mailto:info@nubevest.com.au">info@nubevest.com.au</a></p>
+              </div>
+            </div>
+
+            <div class="cn-info__item">
+              <span class="cn-info__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              <div>
+                <div class="cn-info__lbl">Melbourne Office</div>
+                <p class="cn-info__val">Unit 112/43 Danaher Drive,<br>South Morang VIC 3752.</p>
+              </div>
+            </div>
+
+            <div class="cn-info__divider"></div>
+
+            <div class="cn-info__item">
+              <span class="cn-info__ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              <div>
+                <div class="cn-info__lbl">Dubai Office</div>
+                <p class="cn-info__val">Office No. 315, 3rd Floor, Bank Street Building,<br>near BurJuman Mall, Khalid Bin Al Waleed Road,<br>Dubai, United Arab Emirates.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cn-follow">
+            <span class="cn-follow__lbl">Follow us</span>
+            <div class="cn-follow__list">
+              <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.5h4V21H3zM10 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4 0 4.75 2.63 4.75 6.05V21H18.6v-5.35c0-1.28-.03-2.92-1.78-2.92-1.78 0-2.05 1.39-2.05 2.83V21H10z"/></svg></a>
+              <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+              <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 3H22l-7.4 8.5L23 21h-6.8l-5.3-6.9L4.8 21H1.7l7.9-9L1 3h7l4.8 6.3L18.9 3zm-1.2 16h1.9L7.4 5h-2l12.3 14z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM RIGHT -->
+        <div class="cn-form">
+          <h2 class="cn-form__title">Send us a message</h2>
+          <p class="cn-form__lead">Fill out the form below and we&rsquo;ll get back to you as soon as possible.</p>
+
+          <div class="cn-form__alert" id="cnAlert" style="display:none;"></div>
+          <?php $recaptcha = include __DIR__ . '/includes/recaptcha-config.php'; ?>
+          <?php if (!empty($recaptcha['enabled'])): ?>
+            <script src="https://www.google.com/recaptcha/api.js?render=<?= htmlspecialchars($recaptcha['site_key'], ENT_QUOTES) ?>" async defer></script>
+          <?php endif; ?>
+          <form class="cn-fgrid" id="contactForm" action="/contact-submit.php" method="POST" novalidate
+                data-recaptcha-key="<?= !empty($recaptcha['enabled']) ? htmlspecialchars($recaptcha['site_key'], ENT_QUOTES) : '' ?>"
+                data-recaptcha-action="<?= htmlspecialchars($recaptcha['action'], ENT_QUOTES) ?>">
+            <input type="text" name="website" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;pointer-events:none;" aria-hidden="true">
+            <input type="hidden" name="g-recaptcha-response" id="cn-recaptcha-token" value="">
+            <div class="cn-field">
+              <label class="cn-field__lbl" for="cn-name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Your Name <span class="cn-req">*</span></label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <input class="cn-input" type="text" id="cn-name" name="name" placeholder="Your name" required>
+              </div>
+            </div>
+
+            <div class="cn-field">
+              <label class="cn-field__lbl" for="cn-business"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 6V4h6v2M4 12h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Business Name <span class="cn-req">*</span></label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 6V4h6v2M4 12h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <input class="cn-input" type="text" id="cn-business" name="business" placeholder="Your organisation">
+              </div>
+            </div>
+
+            <div class="cn-field">
+              <label class="cn-field__lbl" for="cn-email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Email <span class="cn-req">*</span></label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <input class="cn-input" type="email" id="cn-email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+
+            <div class="cn-field">
+              <label class="cn-field__lbl" for="cn-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Phone <span class="cn-req">*</span></label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <input class="cn-input" type="tel" id="cn-phone" name="phone" placeholder="+61 400 000 000">
+              </div>
+            </div>
+
+            <div class="cn-field cn-full">
+              <label class="cn-field__lbl" for="cn-service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg> What do you need help with? <span class="cn-req">*</span></label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>
+                <select class="cn-select" id="cn-service" name="service" required>
+                  <option value="">Choose an area</option>
+                  <option value="more-enquiries">More enquiries (positioning, SEO, campaigns)</option>
+                  <option value="follow-up-crm">Follow-up &amp; CRM</option>
+                  <option value="software-portal">Software or portal</option>
+                  <option value="it-cybersecurity">IT &amp; cybersecurity</option>
+                  <option value="domains-hosting-ssl">Domains, hosting &amp; SSL</option>
+                  <option value="hardware">Hardware &amp; devices</option>
+                  <option value="meeting-rooms-av">Meeting rooms &amp; A/V</option>
+                  <option value="event">Event delivery</option>
+                  <option value="workforce">Recruitment &amp; workforce</option>
+                  <option value="education-pathway">Education pathway / RPL</option>
+                  <option value="dubai-property">Dubai property support</option>
+                  <option value="long-term-vehicle-rental">Long-term vehicle rental</option>
+                  <option value="not-sure">Not sure &mdash; help me decide</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cn-field">
+              <label class="cn-field__lbl" for="cn-btype"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 9V5h6v4" stroke="currentColor" stroke-width="1.8"/></svg> Business type</label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 9V5h6v4" stroke="currentColor" stroke-width="1.8"/></svg>
+                <select class="cn-select" id="cn-btype" name="business_type">
+                  <option value="">Select business type</option>
+                  <option value="ndis">NDIS provider</option>
+                  <option value="construction">Builders &amp; construction</option>
+                  <option value="inspection">Building inspection</option>
+                  <option value="trades">Trades</option>
+                  <option value="property">Real estate &amp; property</option>
+                  <option value="professional">Professional services</option>
+                  <option value="education">Education / RTO</option>
+                  <option value="small-growing">Small &amp; growing business</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cn-field">
+              <label class="cn-field__lbl" for="cn-timing"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Timing</label>
+              <div class="cn-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <select class="cn-select" id="cn-timing" name="timing">
+                  <option value="">When do you need this?</option>
+                  <option value="now">Now &mdash; ready to start</option>
+                  <option value="1-3-months">Within 1&ndash;3 months</option>
+                  <option value="3-6-months">In 3&ndash;6 months</option>
+                  <option value="researching">Just researching</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cn-field cn-full">
+              <label class="cn-field__lbl" for="cn-situation"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg> Current situation <span class="cn-req">*</span></label>
+              <textarea class="cn-textarea" id="cn-situation" name="message" rows="3" placeholder="What&rsquo;s not working, or where is the business losing time / opportunities?" required></textarea>
+            </div>
+
+            <div class="cn-field cn-full">
+              <label class="cn-field__lbl" for="cn-result"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Desired result</label>
+              <textarea class="cn-textarea" id="cn-result" name="desired_result" rows="3" placeholder="What would a good outcome look like in 3&ndash;6 months?"></textarea>
+            </div>
+
+            <div class="cn-full">
+              <label class="cn-consent">
+                <input type="checkbox" id="cn-consent" name="consent" required>
+                <span>I consent to Nubevest using the information provided to respond to this enquiry, in accordance with the <a href="/privacy-policy.php">Privacy Policy</a>. <span class="cn-req">*</span></span>
+              </label>
+              <label class="cn-consent" style="margin-top:8px;">
+                <input type="checkbox" id="cn-marketing" name="marketing_consent">
+                <span>Optional: I&rsquo;d also like occasional useful updates from Nubevest (unsubscribe anytime).</span>
+              </label>
+            </div>
+
+            <div class="cn-actions cn-full">
+              <button type="submit" class="cn-submit" id="cnSubmitBtn">
+                <span class="cn-submit__label">Book a Call</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 20l17-8L4 4v6l12 2-12 2v6z" fill="currentColor"/></svg>
+              </button>
+              <?php if (!empty($recaptcha['enabled'])): ?>
+                <p class="cn-recaptcha-notice">
+                  This site is protected by reCAPTCHA and the Google
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.
+                </p>
+              <?php endif; ?>
+            </div>
+          </form>
+        </div>
+
+<style>
+  .cn-form__alert { padding:14px 16px; border-radius:12px; font-size:0.92rem; font-weight:600; margin-bottom:18px; }
+  .cn-recaptcha-notice { margin: 12px 0 0; font-size: .72rem; color: #94a3b8; line-height: 1.5; text-align: center; }
+  .cn-recaptcha-notice a { color: #64748b; text-decoration: underline; }
+  .cn-recaptcha-notice a:hover { color: #2563eb; }
+  .cn-form__alert--ok  { background:#dcfce7; color:#166534; border:1px solid #86efac; }
+  .cn-form__alert--err { background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; }
+  .cn-submit[disabled] { opacity:0.7; cursor:wait; }
+</style>
+
+<script>
+(function(){
+  const form  = document.getElementById('contactForm');
+  const alertBox = document.getElementById('cnAlert');
+  const btn   = document.getElementById('cnSubmitBtn');
+  const label = btn ? btn.querySelector('.cn-submit__label') : null;
+  if (!form) return;
+
+  // Preselect service from ?service=... query string
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const svc = params.get('service');
+    const svcEl = document.getElementById('cn-service');
+    if (svc && svcEl) {
+      const opt = Array.from(svcEl.options).find(o => o.value === svc);
+      if (opt) svcEl.value = svc;
+    }
+  } catch(_) {}
+
+  function showAlert(msg, ok) {
+    alertBox.textContent = msg;
+    alertBox.className = 'cn-form__alert ' + (ok ? 'cn-form__alert--ok' : 'cn-form__alert--err');
+    alertBox.style.display = 'block';
+    alertBox.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    // Basic client-side check
+    const name    = form.name.value.trim();
+    const email   = form.email.value.trim();
+    const message = form.message.value.trim();
+    const consent = form.consent.checked;
+    if (!name || !email || !message) { showAlert('Please fill in all required fields.', false); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showAlert('Please enter a valid email address.', false); return; }
+    if (!consent) { showAlert('Please accept the Privacy Policy to continue.', false); return; }
+
+    btn.disabled = true;
+    if (label) label.textContent = 'Sending…';
+    alertBox.style.display = 'none';
+
+    // Fetch a fresh reCAPTCHA v3 token (if configured)
+    const rcKey    = form.dataset.recaptchaKey || '';
+    const rcAction = form.dataset.recaptchaAction || 'contact_submit';
+    if (rcKey) {
+      try {
+        if (typeof grecaptcha === 'undefined' || !grecaptcha.execute) {
+          await new Promise((resolve, reject) => {
+            let tries = 0;
+            const t = setInterval(() => {
+              if (typeof grecaptcha !== 'undefined' && grecaptcha.execute) {
+                clearInterval(t); resolve();
+              } else if (++tries > 40) {
+                clearInterval(t); reject(new Error('reCAPTCHA failed to load'));
+              }
+            }, 100);
+          });
+        }
+        await new Promise(r => grecaptcha.ready(r));
+        const token = await grecaptcha.execute(rcKey, { action: rcAction });
+        document.getElementById('cn-recaptcha-token').value = token;
+      } catch (err) {
+        showAlert('Security check failed to load. Please refresh the page and try again.', false);
+        btn.disabled = false;
+        if (label) label.textContent = 'Book a Call';
+        return;
+      }
+    }
+
+    try {
+      const res  = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      });
+      const data = await res.json().catch(() => ({ ok:false, error:'Unexpected server response.' }));
+
+      if (data.ok) {
+        form.reset();
+        showAlert(data.message || 'Thanks — your enquiry has been received. We\'ll be in touch shortly.', true);
+      } else {
+        showAlert(data.error || 'Something went wrong. Please try again.', false);
+      }
+    } catch (err) {
+      showAlert('Network error. Please check your connection and try again.', false);
+    } finally {
+      btn.disabled = false;
+      if (label) label.textContent = 'Book a Call';
+    }
+  });
+})();
+</script>
+
+      </div>
+    </div>
+
+    <!-- MAP STRIP — Live Google Maps -->
+    <div class="cn-map reveal">
+      <iframe
+        class="cn-map__frame"
+        src="https://www.google.com/maps?q=Unit+112%2F43+Danaher+Drive,+South+Morang+VIC+3752,+Australia&z=15&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        title="Nubevest Melbourne HQ — Unit 112/43 Danaher Drive, South Morang VIC 3752"></iframe>
+
+      <div class="cn-map__label">
+        <div class="cn-map__label-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div>
+          <div class="cn-map__label-t">Melbourne HQ</div>
+          <p class="cn-map__label-s">Unit 112/43 Danaher Drive,<br>South Morang VIC 3752.</p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Unit+112%2F43+Danaher+Drive,+South+Morang+VIC+3752" target="_blank" rel="noopener" class="cn-map__dir">Get directions
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<?php include 'includes/footer.php'; ?>

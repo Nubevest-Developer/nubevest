@@ -1,0 +1,14 @@
+DirectoryIndex index.php index.html
+ErrorDocument 404 /404.php
+
+RewriteEngine On
+
+# Print & Signage (printing storefront) lives in /print-signage/. Send the old
+# promotions.php, /promotions/ and interim /printing/ URLs there.
+RewriteCond %{REQUEST_URI} ^(.*/)(?:promotions\.php|promotions/?|promotions/index\.php|printing/?)$
+RewriteRule ^(?:promotions\.php|promotions/?|promotions/index\.php|printing/?)$ %1print-signage/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]

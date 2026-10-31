@@ -1,0 +1,193 @@
+/* ============================================================
+   Nubi — floating AI chatbot widget
+   ============================================================ */
+.nvbot { position: fixed; right: 22px; bottom: 22px; z-index: 9999; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+/* Launcher pill */
+.nvbot__launcher {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 20px 14px 16px;
+  border: 0; cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6 55%, #ec4899);
+  color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.01em;
+  border-radius: 999px;
+  box-shadow: 0 18px 40px -14px rgba(99,102,241,0.6),
+              0 6px 16px -6px rgba(0,0,0,0.35);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.nvbot__launcher:hover { transform: translateY(-2px); box-shadow: 0 24px 50px -14px rgba(99,102,241,0.75); }
+.nvbot__launcher-ico {
+  width: 28px; height: 28px; display: grid; place-items: center;
+  background: rgba(255,255,255,0.20); border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.nvbot__launcher-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22c55e; box-shadow: 0 0 12px #22c55e;
+  animation: nvbotPulse 2s ease-in-out infinite;
+}
+@keyframes nvbotPulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%     { transform: scale(1.35); opacity: 0.7; }
+}
+
+/* Panel */
+.nvbot__panel {
+  position: fixed; right: 22px; bottom: 22px;
+  width: min(380px, calc(100vw - 32px));
+  height: min(600px, calc(100dvh - 40px));
+  max-height: min(600px, calc(100vh - 40px));
+  box-sizing: border-box;
+  background: #0f172a;
+  border-radius: 20px; overflow: hidden;
+  display: none; flex-direction: column;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6),
+              0 0 0 1px rgba(255,255,255,0.06);
+  animation: nvbotIn 0.24s ease;
+}
+.nvbot.is-open .nvbot__panel { display: flex; }
+.nvbot.is-open .nvbot__launcher { display: none; }
+@keyframes nvbotIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Header */
+.nvbot__head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6 60%, #ec4899);
+  color: #fff;
+}
+.nvbot__avatar {
+  width: 40px; height: 40px; flex: none;
+  border-radius: 50%; display: grid; place-items: center;
+  background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.28);
+  font-weight: 800; font-size: 15px;
+}
+.nvbot__title { display: flex; flex-direction: column; line-height: 1.25; flex: 1; min-width: 0; }
+.nvbot__title-t { font-weight: 800; font-size: 15px; }
+.nvbot__title-s { font-size: 11.5px; color: rgba(255,255,255,0.8); letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 6px; }
+.nvbot__title-s::before {
+  content: ''; width: 7px; height: 7px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e;
+}
+.nvbot__close, .nvbot__reset {
+  background: rgba(255,255,255,0.14); border: 0; color: #fff;
+  width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+  display: grid; place-items: center; transition: background 0.2s ease;
+}
+.nvbot__close:hover, .nvbot__reset:hover { background: rgba(255,255,255,0.24); }
+
+/* Body */
+.nvbot__body {
+  flex: 1; overflow-y: auto; padding: 18px 16px 8px;
+  background: #0f172a;
+  scroll-behavior: smooth;
+}
+.nvbot__body::-webkit-scrollbar { width: 6px; }
+.nvbot__body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+.nvbot-msg { display: flex; margin-bottom: 12px; animation: nvbotMsgIn 0.28s ease; }
+@keyframes nvbotMsgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.nvbot-msg--bot { justify-content: flex-start; }
+.nvbot-msg--user { justify-content: flex-end; }
+.nvbot-msg__bubble {
+  max-width: 78%; padding: 10px 14px; border-radius: 16px;
+  font-size: 14px; line-height: 1.5; word-wrap: break-word; white-space: pre-wrap;
+}
+.nvbot-msg--bot .nvbot-msg__bubble {
+  background: #1e293b; color: #e2e8f0;
+  border-bottom-left-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.nvbot-msg--user .nvbot-msg__bubble {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff; border-bottom-right-radius: 4px;
+  box-shadow: 0 6px 18px -8px rgba(99,102,241,0.5);
+}
+
+/* Typing dots */
+.nvbot-typing { display: inline-flex; align-items: center; gap: 4px; padding: 12px 16px; }
+.nvbot-typing span {
+  width: 7px; height: 7px; background: #94a3b8; border-radius: 50%;
+  animation: nvbotTyping 1.2s ease-in-out infinite;
+}
+.nvbot-typing span:nth-child(2) { animation-delay: 0.18s; }
+.nvbot-typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes nvbotTyping {
+  0%,60%,100% { transform: translateY(0); opacity: 0.4; }
+  30%         { transform: translateY(-5px); opacity: 1; }
+}
+
+/* Quick suggestions */
+.nvbot__quick {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 6px 16px 12px;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.nvbot__quick button {
+  background: rgba(139,92,246,0.14);
+  border: 1px solid rgba(139,92,246,0.35);
+  color: #c4b5fd;
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nvbot__quick button:hover { background: rgba(139,92,246,0.28); color: #fff; }
+
+/* Input */
+.nvbot__form {
+  display: flex; gap: 8px; padding: 12px 14px;
+  background: #0b1220; border-top: 1px solid rgba(255,255,255,0.06);
+}
+.nvbot__form .nvbot__input {
+  /* !important: the site's global mobile "form input/textarea { width:100% }" rule
+     (style.css, @media max-width:768px) otherwise wins over flex sizing here */
+  flex: 1 1 0% !important; width: auto !important; min-width: 0;
+  background: #1e293b; border: 1px solid rgba(255,255,255,0.08);
+  color: #f1f5f9; font: inherit; font-size: 14px;
+  padding: 11px 14px !important; border-radius: 12px; resize: none;
+  max-height: 100px; line-height: 1.4; box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+.nvbot__input:focus { outline: none; border-color: #6366f1; }
+.nvbot__input::placeholder { color: #64748b; }
+.nvbot__form .nvbot__send {
+  /* !important: counters the site's global mobile "form button { width:100% }" rule */
+  flex: none !important; width: 42px !important; height: 42px; border-radius: 12px; border: 0;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff; cursor: pointer; display: grid; place-items: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nvbot__send:hover { transform: translateY(-1px); }
+.nvbot__send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.nvbot__foot {
+  text-align: center; font-size: 10.5px; color: #64748b;
+  padding: 4px 12px 10px; background: #0b1220; letter-spacing: 0.02em;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .nvbot {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+  .nvbot__launcher span:not(.nvbot__launcher-ico):not(.nvbot__launcher-dot) { display: none; }
+  .nvbot__launcher { padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  /* Full-screen sheet so the panel never overflows the viewport or hides behind the keyboard */
+  .nvbot__panel {
+    top: env(safe-area-inset-top, 0px);
+    right: env(safe-area-inset-right, 0px);
+    bottom: env(safe-area-inset-bottom, 0px);
+    left: env(safe-area-inset-left, 0px);
+    width: auto; height: auto; max-height: none;
+    border-radius: 0;
+  }
+  .nvbot__head { padding: 14px max(14px, env(safe-area-inset-right)) 14px max(14px, env(safe-area-inset-left)); }
+  .nvbot__title-t { font-size: 14px; }
+  .nvbot__quick { padding: 6px 12px 10px; }
+  .nvbot__quick button { font-size: 11.5px; padding: 6px 10px; }
+  .nvbot__form { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+}
