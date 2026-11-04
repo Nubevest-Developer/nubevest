@@ -959,16 +959,41 @@ h4 { font-size: var(--fs-lg); }
   margin: 4px 0 24px;
 }
 .hero__outline-text {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: inherit;
-  font-weight: 800;
-  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1.5px #3b82f6;
-  text-stroke: 1.5px #3b82f6;
-  margin: -8px 0 20px;
+  -webkit-text-stroke: 1px #8b5cf6;
+  text-stroke: 1px #8b5cf6;
+  margin: 2px 0 22px;
+  position: relative;
+  padding-right: 54px;
+}
+.hero__outline-text::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+.hero__outline-text::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+  flex: none;
 }
 .hero__lead {
   color: #475569;
