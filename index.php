@@ -937,63 +937,6 @@ include 'includes/header.php';
       </div>
     </div>
 
-    <div class="partner__right reveal-right" hidden aria-hidden="true" style="display:none">
-      <div class="partner__hub">
-          <svg class="partner__hub-orbit" viewBox="0 0 500 500" aria-hidden="true">
-            <circle cx="250" cy="250" r="210" fill="none" stroke="#B0E5EA" stroke-width="1.5" stroke-dasharray="4 8"/>
-          </svg>
-          <span class="partner__orbit-dot partner__orbit-dot--1"></span>
-          <span class="partner__orbit-dot partner__orbit-dot--2"></span>
-          <span class="partner__orbit-dot partner__orbit-dot--3"></span>
-          <span class="partner__orbit-dot partner__orbit-dot--4"></span>
-          <span class="partner__orbit-dot partner__orbit-dot--5"></span>
-          <span class="partner__orbit-dot partner__orbit-dot--6"></span>
-          <div class="partner__hub-core">
-            <div class="partner__hub-core-glow" aria-hidden="true"></div>
-            <div class="partner__hub-core-logo">
-              <img src="/assets/images/nubevest-logo.png" alt="Nubevest">
-            </div>
-          </div>
-          <span class="partner__spoke partner__spoke--1">
-            <i>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="#fff" stroke-width="1.6"/></svg>
-            </i>
-            <span class="partner__spoke-text"><b>Websites</b><em>Attract &amp; engage</em></span>
-          </span>
-          <span class="partner__spoke partner__spoke--2">
-            <i>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </i>
-            <span class="partner__spoke-text"><b>Software</b><em>Build &amp; optimise</em></span>
-          </span>
-          <span class="partner__spoke partner__spoke--3">
-            <i>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </i>
-            <span class="partner__spoke-text"><b>CRM &amp; AI</b><em>Automate &amp; convert</em></span>
-          </span>
-          <span class="partner__spoke partner__spoke--4">
-            <i>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="16" r="3" stroke="#fff" stroke-width="2"/><path d="M10.2 13.8L20 4M17 4h3v3M15 6l2 2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </i>
-            <span class="partner__spoke-text"><b>Managed IT</b><em>Secure &amp; reliable</em></span>
-          </span>
-          <span class="partner__spoke partner__spoke--5">
-            <i>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 17 L8 12 L12 15 L18 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h4v4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </i>
-            <span class="partner__spoke-text"><b>Growth</b><em>Scale &amp; succeed</em></span>
-          </span>
-          <span class="partner__spoke partner__spoke--6">
-            <i>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="2" stroke="#fff" stroke-width="2"/><path d="M8 20h8M12 17v3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-            </i>
-            <span class="partner__spoke-text"><b>Workplace</b><em>Enable your team</em></span>
-          </span>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
