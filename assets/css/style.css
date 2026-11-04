@@ -960,51 +960,56 @@ h4 { font-size: var(--fs-lg); }
 }
 .hero__outline-text {
   display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  align-items: baseline;
+  gap: 10px;
   font-family: inherit;
-  font-weight: 800;
-  font-size: 0.78rem;
   line-height: 1;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #1e293b;
-  background: #ffffff;
-  border: 1px solid transparent;
-  background-image:
-    linear-gradient(#ffffff, #ffffff),
-    linear-gradient(90deg, #3b82f6, #8b5cf6);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  padding: 10px 18px 10px 14px;
-  border-radius: 999px;
-  margin: 4px 0 22px;
-  box-shadow: 0 6px 18px -8px rgba(59, 130, 246, 0.35);
+  margin: 6px 0 22px;
+  padding: 0 0 10px;
   position: relative;
+  border-bottom: 1px dashed rgba(139, 92, 246, 0.35);
 }
-.hero__outline-text::before {
-  content: "NEW";
-  display: inline-block;
-  font-size: 0.6rem;
+.hero__outline-text b {
   font-weight: 900;
-  letter-spacing: 0.12em;
-  padding: 3px 7px;
-  border-radius: 999px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1.25px #1e293b;
+  text-stroke: 1.25px #1e293b;
 }
-.hero__outline-text::after {
-  content: "\2192";
-  font-size: 1rem;
-  letter-spacing: 0;
+.hero__outline-text i {
+  font-style: normal;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  letter-spacing: -0.02em;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-left: 2px;
-  transition: transform 0.2s ease;
+  position: relative;
 }
-.hero__outline-text:hover::after { transform: translateX(3px); }
+.hero__outline-text i::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+.hero__outline-text em {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #64748b;
+  padding-left: 14px;
+  margin-left: 6px;
+  border-left: 1px solid rgba(100, 116, 139, 0.3);
+}
 .hero__lead {
   color: #475569;
   font-size: 1.02rem;
