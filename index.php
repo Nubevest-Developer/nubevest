@@ -319,6 +319,7 @@ include 'includes/header.php';
         One business partner for <br><span class="hero__title-gradient">growth, technology &amp; operations.</span>
       </h1>
       <span class="hero__underline" aria-hidden="true"></span>
+      <span class="hero__outline-text">Nubevest Next</span>
       <p class="hero__lead">From your website and first enquiry to the systems, technology and support behind the business, Nubevest brings the right services together through one accountable relationship.</p>
       <div class="hero__cta">
         <a href="/contact.php" class="btn btn--primary">Book a Call</a>

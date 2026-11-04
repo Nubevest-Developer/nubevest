@@ -958,6 +958,18 @@ h4 { font-size: var(--fs-lg); }
   background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
   margin: 4px 0 24px;
 }
+.hero__outline-text {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #3b82f6;
+  text-stroke: 1.5px #3b82f6;
+  margin: -8px 0 20px;
+}
 .hero__lead {
   color: #475569;
   font-size: 1.02rem;
