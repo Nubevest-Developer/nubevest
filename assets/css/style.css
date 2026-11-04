@@ -960,55 +960,40 @@ h4 { font-size: var(--fs-lg); }
 }
 .hero__outline-text {
   display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  font-family: inherit;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 22px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.18);
   line-height: 1;
-  margin: 6px 0 22px;
-  padding: 0 0 10px;
-  position: relative;
-  border-bottom: 1px dashed rgba(139, 92, 246, 0.35);
+}
+.hero__outline-text em {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  padding: 5px 9px;
+  border-radius: 999px;
 }
 .hero__outline-text b {
-  font-weight: 900;
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  letter-spacing: -0.02em;
-  color: transparent;
-  -webkit-text-stroke: 1.25px #1e293b;
-  text-stroke: 1.25px #1e293b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f172a;
+  letter-spacing: -0.005em;
 }
 .hero__outline-text i {
   font-style: normal;
-  font-weight: 900;
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-}
-.hero__outline-text i::after {
-  content: "";
-  position: absolute;
-  top: -4px;
-  right: -10px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #8b5cf6;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
-}
-.hero__outline-text em {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.82rem;
   color: #64748b;
-  padding-left: 14px;
-  margin-left: 6px;
-  border-left: 1px solid rgba(100, 116, 139, 0.3);
+  padding-left: 12px;
+  border-left: 1px solid rgba(100, 116, 139, 0.25);
 }
 .hero__lead {
   color: #475569;
