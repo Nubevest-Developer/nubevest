@@ -959,77 +959,92 @@ h4 { font-size: var(--fs-lg); }
   margin: 4px 0 24px;
 }
 .hero__outline-text {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin: 12px 0 24px;
-  padding: 7px 18px 7px 7px;
+  gap: 10px;
+  margin: 14px 0 26px;
+  padding: 6px 16px 6px 6px;
   border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid #e5e7fb;
-  box-shadow: 0 10px 30px -20px rgba(124, 58, 237, 0.35);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+    linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 30px -18px rgba(124, 58, 237, 0.35);
   text-decoration: none;
   line-height: 1;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  font-size: 0.86rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero__outline-text::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #8b5cf6, #3b82f6);
+  background-size: 300% 100%;
+  animation: hero-outline-sheen 6s linear infinite;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+@keyframes hero-outline-sheen {
+  to { background-position: 300% 0; }
 }
 .hero__outline-text:hover {
   transform: translateY(-1px);
-  border-color: #c7bbfa;
-  box-shadow: 0 16px 36px -18px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06), 0 18px 40px -16px rgba(124, 58, 237, 0.5);
 }
-.hero__outline-text-icon {
+.hero__outline-text-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-  flex: none;
-  box-shadow: 0 6px 14px -6px rgba(124, 58, 237, 0.55);
-}
-.hero__outline-text-icon svg {
-  width: 18px;
-  height: 18px;
-  fill: #ffffff;
-}
-.hero__outline-text-label {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
-}
-.hero__outline-text-label strong {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #ffffff;
   font-weight: 800;
-  font-size: 0.95rem;
-  color: #0f172a;
-  letter-spacing: -0.005em;
-  line-height: 1.1;
-}
-.hero__outline-text-label small {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: #6b7280;
-  letter-spacing: 0.01em;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
   line-height: 1;
+  flex: none;
+  box-shadow: 0 4px 10px -4px rgba(124, 58, 237, 0.55);
+}
+.hero__outline-text-body {
+  color: #334155;
+  font-weight: 500;
+}
+.hero__outline-text-body strong {
+  color: #0f172a;
+  font-weight: 700;
+  margin-left: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 55%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero__outline-text-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(124, 58, 237, 0.1);
-  color: #7c3aed;
-  font-size: 0.85rem;
-  font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease;
-  flex: none;
+  color: #8b5cf6;
+  transition: transform 0.2s ease;
 }
-.hero__outline-text:hover .hero__outline-text-arrow {
-  transform: translateX(3px);
-  background: rgba(124, 58, 237, 0.18);
+.hero__outline-text-arrow svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+.hero__outline-text:hover .hero__outline-text-arrow { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) {
+  .hero__outline-text::before { animation: none; }
 }
 .hero__lead {
   color: #475569;
