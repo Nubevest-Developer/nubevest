@@ -868,7 +868,7 @@ $categories = [
     <div class="container">
       <h2 class="pf-cta__title">Have a project in mind?</h2>
       <p class="pf-cta__lead">Tell us the business problem — we'll bring the right specialist team to solve it under one accountable relationship.</p>
-      <a href="/contact" class="pf-cta__btn">
+      <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="pf-cta__btn" target="_blank" rel="noopener">
         Book a Call
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>

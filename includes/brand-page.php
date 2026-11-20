@@ -158,7 +158,7 @@ include __DIR__ . '/header.php';
         <div class="bp-class"><?= htmlspecialchars($b['classification']) ?></div>
         <p class="bp-prop"><?= $b['proposition'] ?></p>
         <div class="bp-cta-row">
-          <a href="<?= $b['primary_cta_href'] ?? '/contact.php' ?>" class="bp-btn bp-btn--primary">
+          <a href="<?= $b['primary_cta_href'] ?? 'https://app.nubevest.com.au/index.php/schedly_booking' ?>" class="bp-btn bp-btn--primary" target="_blank" rel="noopener">
             <?= htmlspecialchars($b['primary_cta_label'] ?? 'Book a Call') ?>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -208,7 +208,7 @@ include __DIR__ . '/header.php';
         <div class="bp-endnote__t">One accountable Nubevest relationship.</div>
         <div class="bp-endnote__s">You engage Nubevest &mdash; not <?= htmlspecialchars($b['name']) ?> as a separate company. Every proposal identifies who&rsquo;s responsible for what.</div>
       </div>
-      <a href="/contact.php" class="bp-endnote__btn">
+      <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="bp-endnote__btn" target="_blank" rel="noopener">
         Book a Call
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>

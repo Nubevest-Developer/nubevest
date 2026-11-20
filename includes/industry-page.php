@@ -430,7 +430,7 @@ include __DIR__ . '/header.php';
       <span class="ip-hero__kicker">INDUSTRY &middot; <?= htmlspecialchars($name_upper, ENT_QUOTES, 'UTF-8') ?></span>
       <h1><?= htmlspecialchars($i['name'], ENT_QUOTES, 'UTF-8') ?> &mdash; <span class="ip-hero__grad">practical solutions from Nubevest.</span></h1>
       <p><?= $i['problem_lead'] ?></p>
-      <a href="<?= $i['cta_href'] ?? '/contact.php' ?>" class="ip-cta">
+      <a href="<?= $i['cta_href'] ?? 'https://app.nubevest.com.au/index.php/schedly_booking' ?>" class="ip-cta" target="_blank" rel="noopener">
         Book a Call
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -534,7 +534,7 @@ include __DIR__ . '/header.php';
         <div class="ip-endnote__t">Not sure where to start?</div>
         <div class="ip-endnote__s">Tell us where the business is losing time or opportunities &mdash; we&rsquo;ll recommend a practical starting point, one accountable Nubevest relationship.</div>
       </div>
-      <a href="/contact.php" class="ip-endnote__btn">
+      <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="ip-endnote__btn" target="_blank" rel="noopener">
         Book a Call
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>

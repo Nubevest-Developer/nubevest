@@ -917,6 +917,75 @@ include 'includes/header.php';
   </div>
 </section>
 
+<!-- CLIENT SUPPORT -->
+<section id="support" class="cs-section">
+  <div class="container">
+    <div class="cs-head reveal">
+      <span class="cs-kicker">CLIENT SUPPORT</span>
+      <h2 class="cs-title">Need help with an active service?</h2>
+      <p class="cs-lead">Existing Nubevest clients can raise a support ticket from the client portal, or send us a quick support request here &mdash; we&rsquo;ll route it to the right team.</p>
+    </div>
+
+    <div class="cs-grid reveal">
+      <!-- Portal ticket card -->
+      <article class="cs-card cs-card--portal">
+        <div class="cs-card__ico" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="cs-card__title">Existing clients &mdash; raise a ticket</h3>
+        <p class="cs-card__text">Log in to the Nubevest client portal and submit a support ticket. You&rsquo;ll see status updates, attach files, and get replies in one place.</p>
+        <a href="https://app.nubevest.com.au/index.php/" target="_blank" rel="noopener" class="cs-btn cs-btn--primary">
+          Log in &amp; open a ticket
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="cs-card__hint">Portal: app.nubevest.com.au</div>
+      </article>
+
+      <!-- Quick support request card -->
+      <article class="cs-card cs-card--quick">
+        <div class="cs-card__ico" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="cs-card__title">Don&rsquo;t have a login yet?</h3>
+        <p class="cs-card__text">Send a quick support request &mdash; include your business name, the service and what&rsquo;s happening. We&rsquo;ll create a ticket and get back to you.</p>
+
+        <form class="cs-form" method="post" action="https://app.nubevest.com.au/index.php/leads/add_lead_external" target="_blank">
+          <input type="hidden" name="source" value="website-support">
+          <div class="cs-form__row">
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" required placeholder="Your full name">
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@company.com.au">
+            </label>
+          </div>
+          <div class="cs-form__row">
+            <label>
+              <span>Business / organisation</span>
+              <input type="text" name="company" placeholder="Business name">
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="Optional">
+            </label>
+          </div>
+          <label class="cs-form__full">
+            <span>What&rsquo;s happening?</span>
+            <textarea name="message" rows="4" required placeholder="Describe the issue, the service affected and when it started."></textarea>
+          </label>
+          <button type="submit" class="cs-btn cs-btn--ghost">
+            Submit support request
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="cs-form__alt">Prefer email? Write to <a href="mailto:support@nubevest.com.au">support@nubevest.com.au</a> or call <a href="tel:1300959514">1300&nbsp;959&nbsp;514</a>.</p>
+        </form>
+      </article>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <?php include 'includes/footer.php'; ?>

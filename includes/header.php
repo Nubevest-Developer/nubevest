@@ -13,7 +13,7 @@ if (!headers_sent() && in_array(($_SERVER['REQUEST_METHOD'] ?? 'GET'), ['GET','H
 $page = $page ?? '';
 // Optional per-page overrides: $header_cta (['label', 'href', 'attrs']), $og_image,
 // $body_class, $extra_head (markup appended to <head>).
-$header_cta = $header_cta ?? ['label' => 'Book a Call', 'href' => '/contact.php'];
+$header_cta = $header_cta ?? ['label' => 'Book a Call', 'href' => 'https://app.nubevest.com.au/index.php/schedly_booking', 'attrs' => 'target="_blank" rel="noopener"'];
 $header_cta_attrs = !empty($header_cta['attrs']) ? ' ' . $header_cta['attrs'] : '';
 // Detect base path so both prod (domain root) and local XAMPP subfolder work.
 if (!defined('BASE_URL')) {

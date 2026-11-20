@@ -631,7 +631,7 @@ include 'includes/header.php';
           </ul>
 
           <div class="sh-actions">
-            <a href="/contact.php" class="sh-btn sh-btn--primary">
+            <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="sh-btn sh-btn--primary" target="_blank" rel="noopener">
               Book a Call
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>

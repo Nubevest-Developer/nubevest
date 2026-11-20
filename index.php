@@ -314,7 +314,7 @@ include 'includes/header.php';
   </div>
   <div class="container hero__container">
     <div class="hero__content reveal">
-      <span class="kicker kicker--pill hero__kicker"><i></i>BUSINESS GROWTH + TECHNOLOGY + OPERATIONS</span>
+      <span class="kicker kicker--pill hero__kicker">BUSINESS GROWTH + TECHNOLOGY + OPERATIONS</span>
       <h1 class="hero__title">
         One business partner for <span class="hero__title-gradient">growth, technology &amp; operations.</span>
       </h1>
@@ -322,8 +322,9 @@ include 'includes/header.php';
       <a href="#nubevest-next" class="hero__outline-text" aria-label="Introducing Nubevest Next"><span class="hero__outline-text-chip">NEW</span><span class="hero__outline-text-body">Introducing <strong>Nubevest Next</strong></span><span class="hero__outline-text-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></a>
       <p class="hero__lead">From your website and first enquiry to the systems, technology and support behind the business, Nubevest brings the right services together through one accountable relationship.</p>
       <div class="hero__cta">
-        <a href="/contact.php" class="btn btn--primary">Book a Call</a>
-        <a href="/solutions.php" class="btn btn--secondary btn--arrow-blue">Explore how we help</a>
+        <a href="/websites" class="btn btn--primary">Explore Plans</a>
+        <a href="/work" class="btn btn--secondary btn--arrow-blue">View Our Work</a>
+        <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="hero__cta-link" target="_blank" rel="noopener">Book a Call</a>
       </div>
     </div>
 
@@ -335,21 +336,7 @@ include 'includes/header.php';
           </div>
           <div class="hero-dash__pill-body">
             <div class="hero-dash__pill-title">Websites</div>
-            <div class="hero-dash__pill-sub">Live traffic <span>+18%</span></div>
-          </div>
-        </div>
-        <div class="hero-dash__stats">
-          <div class="hero-dash__stat">
-            <div class="hero-dash__stat-label">UPTIME</div>
-            <div class="hero-dash__stat-value">99.98<em>%</em> <span class="hero-dash__stat-dot"></span></div>
-          </div>
-          <div class="hero-dash__stat">
-            <div class="hero-dash__stat-label">RESPONSE TIME</div>
-            <div class="hero-dash__stat-value">&lt; 2<em>h</em> <span class="hero-dash__stat-dot"></span></div>
-          </div>
-          <div class="hero-dash__stat">
-            <div class="hero-dash__stat-label">SYSTEMS</div>
-            <div class="hero-dash__stat-value">18<em>/18</em> <span class="hero-dash__stat-dot"></span></div>
+            <div class="hero-dash__pill-sub">Design, build &amp; care</div>
           </div>
         </div>
       </div>
@@ -454,8 +441,652 @@ include 'includes/header.php';
 
 
 
+<!-- SELECTED CLIENT WORK -->
+<section class="cw-section" id="work">
+  <div class="container">
+    <div class="cw-head">
+      <div>
+        <span class="cw-kicker">SELECTED CLIENT WORK</span>
+        <h2 class="cw-title">See what we&rsquo;ve built.</h2>
+      </div>
+      <a href="/portfolio.php" class="cw-view">
+        View full portfolio
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="cw-grid">
+
+      <article class="cw-card">
+        <a href="https://serveglobe.org.au" target="_blank" rel="noopener" class="cw-card__shot" aria-label="Visit the ServeGlobe website">
+          <img src="/assets/images/portfolio/cache/serveglobe-desktop.jpg" alt="Screenshot of the ServeGlobe website" loading="lazy" width="800" height="500">
+        </a>
+        <div class="cw-card__body">
+          <span class="cw-card__tag">COMMUNITY</span>
+          <h3 class="cw-card__name">ServeGlobe</h3>
+          <p class="cw-card__desc">A website that makes it easier to learn about its work, donate and volunteer.</p>
+        </div>
+      </article>
+
+      <article class="cw-card">
+        <a href="https://vibrantlivingsupport.com.au" target="_blank" rel="noopener" class="cw-card__shot" aria-label="Visit the Vibrant Living Support website">
+          <img src="/assets/images/portfolio/cache/vibrantlivingsupport-com-au-1200.jpg" alt="Screenshot of the Vibrant Living Support website" loading="lazy" width="800" height="500">
+        </a>
+        <div class="cw-card__body">
+          <span class="cw-card__tag">DISABILITY SUPPORT</span>
+          <h3 class="cw-card__name">Vibrant Living Support</h3>
+          <p class="cw-card__desc">Clear service information and referral pathways for an NDIS provider.</p>
+        </div>
+      </article>
+
+      <article class="cw-card">
+        <a href="https://yarravalleyhilltop.com.au" target="_blank" rel="noopener" class="cw-card__shot" aria-label="Visit the Yarra Valley Hilltop website">
+          <img src="/assets/images/portfolio/cache/yarravalleyhilltop-com-au-1200.jpg" alt="Screenshot of the Yarra Valley Hilltop website" loading="lazy" width="800" height="500">
+        </a>
+        <div class="cw-card__body">
+          <span class="cw-card__tag">ECOMMERCE</span>
+          <h3 class="cw-card__name">Yarra Valley Hilltop</h3>
+          <p class="cw-card__desc">An online shop for a local producer&rsquo;s fresh produce and pantry goods.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES AND PLANS (tabbed) -->
+<section class="sp-section" id="services">
+  <div class="container">
+    <div class="sp-head">
+      <div class="sp-head__left">
+        <span class="sp-kicker">SERVICES AND PLANS</span>
+        <h2 class="sp-title">What do you need help with?</h2>
+      </div>
+      <p class="sp-head__lead">Choose a starting point. You can review your selection and any extras before checkout.</p>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="sp-tabs" role="tablist" aria-label="Service categories">
+      <button type="button" class="sp-tab is-active" role="tab" aria-selected="true" data-sp-tab="build" id="sp-tab-build" aria-controls="sp-panel-build">
+        <span class="sp-tab__name">Build</span>
+        <span class="sp-tab__sub">Websites &amp; software</span>
+      </button>
+      <button type="button" class="sp-tab" role="tab" aria-selected="false" data-sp-tab="grow" id="sp-tab-grow" aria-controls="sp-panel-grow">
+        <span class="sp-tab__name">Grow</span>
+        <span class="sp-tab__sub">SEO &amp; ads</span>
+      </button>
+      <button type="button" class="sp-tab" role="tab" aria-selected="false" data-sp-tab="create" id="sp-tab-create" aria-controls="sp-panel-create">
+        <span class="sp-tab__name">Create</span>
+        <span class="sp-tab__sub">Design, print &amp; signage</span>
+      </button>
+      <button type="button" class="sp-tab" role="tab" aria-selected="false" data-sp-tab="manage" id="sp-tab-manage" aria-controls="sp-panel-manage">
+        <span class="sp-tab__name">Manage</span>
+        <span class="sp-tab__sub">Care &amp; IT</span>
+      </button>
+    </div>
+
+    <!-- BUILD panel -->
+    <div class="sp-panel is-active" role="tabpanel" id="sp-panel-build" aria-labelledby="sp-tab-build" data-sp-panel="build">
+      <div class="sp-panel__head">
+        <h3 class="sp-panel__title">Website plans</h3>
+        <div class="sp-pay" role="group" aria-label="Website payment options">
+          <button type="button" class="sp-pay__btn is-active" data-sp-pay="monthly">12 monthly payments</button>
+          <button type="button" class="sp-pay__btn" data-sp-pay="upfront">Upfront</button>
+        </div>
+      </div>
+      <div class="hp-plans__grid sp-plans-grid">
+
+        <!-- Starter -->
+        <div class="plan-card plan-card--starter">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Starter</div>
+              <div class="plan-card__pages">1 Page Website</div>
+            </div>
+          </div>
+          <div class="plan-card__price" data-sp-price-upfront='<sup>$</sup>599 <span class="plan-card__price-note">upfront</span>' data-sp-price-monthly='<sup>$</sup>69 <span class="plan-card__price-note">/month</span>'><sup>$</sup>69 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront" data-sp-sub-upfront="or <strong>$69/month</strong> &times; 12 (<strong>$828</strong> total)" data-sp-sub-monthly="or <strong>$599</strong> upfront &mdash; <strong>$828</strong> total over 12 months">or <strong>$599</strong> upfront</div>
+          <ul class="plan-card__features">
+            <li>1 professionally designed page</li>
+            <li>Mobile-friendly design</li>
+            <li>Contact form &amp; basic SEO</li>
+            <li>12 months hosting &amp; SSL</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Starter" data-plan-sub="1 Page Website · $69/month or $599 upfront" data-plan-mode="purchase">Choose Starter &rarr;</button>
+        </div>
+
+        <!-- Business -->
+        <div class="plan-card plan-card--popular">
+          <span class="plan-card__badge">MOST POPULAR</span>
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--amber">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="13" width="6" height="8" stroke="currentColor" stroke-width="2"/><rect x="9" y="9" width="2" height="2" fill="currentColor"/><rect x="13" y="9" width="2" height="2" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Business</div>
+              <div class="plan-card__pages">Up to 5 Pages</div>
+            </div>
+          </div>
+          <div class="plan-card__price" data-sp-price-upfront='<sup>$</sup>899 <span class="plan-card__price-note">upfront</span>' data-sp-price-monthly='<sup>$</sup>99 <span class="plan-card__price-note">/month</span>'><sup>$</sup>99 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront" data-sp-sub-upfront="or <strong>$99/month</strong> &times; 12 (<strong>$1,188</strong> total)" data-sp-sub-monthly="or <strong>$899</strong> upfront &mdash; <strong>$1,188</strong> total over 12 months">or <strong>$899</strong> upfront</div>
+          <ul class="plan-card__features">
+            <li>Up to 5 professionally designed pages</li>
+            <li>Mobile-friendly design</li>
+            <li>Contact form &amp; basic SEO</li>
+            <li>12 months hosting &amp; SSL</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Business" data-plan-sub="Up to 5 Pages · $99/month or $899 upfront" data-plan-mode="purchase">Choose Business &rarr;</button>
+        </div>
+
+        <!-- Growth -->
+        <div class="plan-card plan-card--growth">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--purple">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 15V3m0 0l-4 4m4-4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l3.5-2 3.5 2 3-2 3.5 2 3.5-2 3 2v4H2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Growth</div>
+              <div class="plan-card__pages">Up to 10 Pages</div>
+            </div>
+          </div>
+          <div class="plan-card__price" data-sp-price-upfront='<sup>$</sup>1,499 <span class="plan-card__price-note">upfront</span>' data-sp-price-monthly='<sup>$</sup>149 <span class="plan-card__price-note">/month</span>'><sup>$</sup>149 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront" data-sp-sub-upfront="or <strong>$149/month</strong> &times; 12 (<strong>$1,788</strong> total)" data-sp-sub-monthly="or <strong>$1,499</strong> upfront &mdash; <strong>$1,788</strong> total over 12 months">or <strong>$1,499</strong> upfront</div>
+          <ul class="plan-card__features">
+            <li>Up to 10 professionally designed pages</li>
+            <li>Mobile-friendly design</li>
+            <li>Contact form &amp; basic SEO</li>
+            <li>12 months hosting &amp; SSL</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Growth" data-plan-sub="Up to 10 Pages · $149/month or $1,499 upfront" data-plan-mode="purchase">Choose Growth &rarr;</button>
+        </div>
+
+        <!-- Store -->
+        <div class="plan-card plan-card--store">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--green">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="21" r="1" fill="currentColor"/><circle cx="20" cy="21" r="1" fill="currentColor"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Store</div>
+              <div class="plan-card__pages">5 Pages + 10 Products</div>
+            </div>
+          </div>
+          <div class="plan-card__price" data-sp-price-upfront='<sup>$</sup>1,999 <span class="plan-card__price-note">upfront</span>' data-sp-price-monthly='<sup>$</sup>199 <span class="plan-card__price-note">/month</span>'><sup>$</sup>199 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront" data-sp-sub-upfront="or <strong>$199/month</strong> &times; 12 (<strong>$2,388</strong> total)" data-sp-sub-monthly="or <strong>$1,999</strong> upfront &mdash; <strong>$2,388</strong> total over 12 months">or <strong>$1,999</strong> upfront</div>
+          <ul class="plan-card__features">
+            <li>5 content pages + 10 products</li>
+            <li>Ecommerce setup</li>
+            <li>Mobile-friendly design</li>
+            <li>12 months hosting &amp; SSL</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Store" data-plan-sub="5 Pages + 10 Products · $199/month or $1,999 upfront" data-plan-mode="purchase">Choose Store &rarr;</button>
+        </div>
+
+      </div>
+      <p class="sp-note">All prices in AUD, GST-inclusive. Website hosting and SSL are included for the first 12 months; from month 13, hosting continues at $25/month (optional, with your consent). Client supplies logo, images, business details and core copy. Domain registration, premium plugins and ecommerce platform fees are not included.</p>
+    </div>
+
+    <!-- GROW panel -->
+    <div class="sp-panel" role="tabpanel" id="sp-panel-grow" aria-labelledby="sp-tab-grow" data-sp-panel="grow" hidden>
+      <div class="sp-panel__head">
+        <h3 class="sp-panel__title">Marketing plans</h3>
+      </div>
+      <div class="hp-plans__grid sp-plans-grid">
+
+        <!-- SEO Starter -->
+        <div class="plan-card plan-card--starter">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">SEO Starter</div>
+              <div class="plan-card__pages">Essentials package</div>
+            </div>
+          </div>
+          <div class="plan-card__price"><sup>$</sup>299 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront">Start with the essentials for search visibility</div>
+          <ul class="plan-card__features">
+            <li>Keyword research &amp; strategy</li>
+            <li>On-page optimisation</li>
+            <li>Monthly performance report</li>
+            <li>Google Search Console setup</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="SEO Starter" data-plan-sub="SEO essentials · $299/month" data-plan-mode="purchase">Choose SEO Starter &rarr;</button>
+        </div>
+
+        <!-- SEO Growth -->
+        <div class="plan-card plan-card--popular">
+          <span class="plan-card__badge">MOST POPULAR</span>
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--amber">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 7h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">SEO Growth</div>
+              <div class="plan-card__pages">Multi-service / locations</div>
+            </div>
+          </div>
+          <div class="plan-card__price"><sup>$</sup>399 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront">Ongoing SEO for businesses with more services or locations</div>
+          <ul class="plan-card__features">
+            <li>Everything in SEO Starter</li>
+            <li>Off-page SEO &amp; backlink building</li>
+            <li>Local SEO &amp; Google Business Profile</li>
+            <li>Content recommendations</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="SEO Growth" data-plan-sub="Ongoing SEO · $399/month" data-plan-mode="purchase">Choose SEO Growth &rarr;</button>
+        </div>
+
+        <!-- Google Ads -->
+        <div class="plan-card plan-card--growth">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--purple">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Google Ads</div>
+              <div class="plan-card__pages">Search &amp; display campaigns</div>
+            </div>
+          </div>
+          <div class="plan-card__price"><sup>$</sup>299 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront">plus one-off <strong>$199</strong> setup fee</div>
+          <ul class="plan-card__features">
+            <li>Campaign setup &amp; keyword research</li>
+            <li>Ongoing bid &amp; budget management</li>
+            <li>Conversion tracking</li>
+            <li>Monthly performance report</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Google Ads" data-plan-sub="Campaign management · $299/month + $199 setup" data-plan-mode="purchase">Choose Google Ads &rarr;</button>
+        </div>
+
+        <!-- Meta Ads -->
+        <div class="plan-card plan-card--store">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--green">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Meta Ads</div>
+              <div class="plan-card__pages">Facebook &amp; Instagram</div>
+            </div>
+          </div>
+          <div class="plan-card__price"><sup>$</sup>299 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront">plus one-off <strong>$199</strong> setup fee</div>
+          <ul class="plan-card__features">
+            <li>Campaign setup &amp; audience targeting</li>
+            <li>Creative review &amp; A/B testing</li>
+            <li>Meta Pixel &amp; conversion tracking</li>
+            <li>Monthly performance report</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Meta Ads" data-plan-sub="Campaign management · $299/month + $199 setup" data-plan-mode="purchase">Choose Meta Ads &rarr;</button>
+        </div>
+
+      </div>
+      <p class="sp-note">Example AUD prices including GST. Advertising spend (Google &amp; Meta budgets) is billed separately and paid directly to the platform.</p>
+    </div>
+
+    <!-- CREATE panel -->
+    <div class="sp-panel" role="tabpanel" id="sp-panel-create" aria-labelledby="sp-tab-create" data-sp-panel="create" hidden>
+      <div class="sp-panel__head">
+        <h3 class="sp-panel__title">Design and production</h3>
+      </div>
+      <div class="hp-plans__grid sp-plans-grid sp-plans-grid--2">
+
+        <!-- Brand and design -->
+        <div class="plan-card plan-card--starter">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 13l-6-6-6 6h12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 2l7.586 7.586" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="2" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Brand and design</div>
+              <div class="plan-card__pages">Visual identity &amp; assets</div>
+            </div>
+          </div>
+          <div class="plan-card__price plan-card__price--quote">Custom <span class="plan-card__price-note">quote</span></div>
+          <div class="plan-card__upfront">Scope &amp; pricing confirmed before work begins</div>
+          <ul class="plan-card__features">
+            <li>Logo &amp; visual identity design</li>
+            <li>Brand guidelines &amp; colour palette</li>
+            <li>Social media &amp; marketing assets</li>
+            <li>Print-ready creative files</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Brand and design" data-plan-sub="Visual identity & assets · Custom quote" data-plan-mode="quote">Request a quote &rarr;</button>
+        </div>
+
+        <!-- Print and signage -->
+        <div class="plan-card plan-card--growth">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--purple">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9V2h12v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="2" y="9" width="20" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 14h12v8H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Print and signage</div>
+              <div class="plan-card__pages">Print, signage &amp; events</div>
+            </div>
+          </div>
+          <div class="plan-card__price plan-card__price--quote">Custom <span class="plan-card__price-note">quote</span></div>
+          <div class="plan-card__upfront">Scope &amp; pricing confirmed before work begins</div>
+          <ul class="plan-card__features">
+            <li>Business cards, flyers &amp; brochures</li>
+            <li>Shopfront signage &amp; banners</li>
+            <li>Event materials &amp; display stands</li>
+            <li>Vehicle &amp; window decals</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Print and signage" data-plan-sub="Print, signage & events · Custom quote" data-plan-mode="quote">Request a quote &rarr;</button>
+        </div>
+
+      </div>
+      <p class="sp-note">The team confirms scope and pricing before work begins. Example AUD prices including GST where applicable.</p>
+    </div>
+
+    <!-- MANAGE panel -->
+    <div class="sp-panel" role="tabpanel" id="sp-panel-manage" aria-labelledby="sp-tab-manage" data-sp-panel="manage" hidden>
+      <div class="sp-panel__head">
+        <h3 class="sp-panel__title">Care and technology support</h3>
+      </div>
+      <div class="hp-plans__grid sp-plans-grid sp-plans-grid--3">
+
+        <!-- Website Care -->
+        <div class="plan-card plan-card--starter">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Website Care</div>
+              <div class="plan-card__pages">Essential upkeep</div>
+            </div>
+          </div>
+          <div class="plan-card__price"><sup>$</sup>30 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront">Updates, backups &amp; minor content edits</div>
+          <ul class="plan-card__features">
+            <li>Core, theme &amp; plugin updates</li>
+            <li>Weekly off-site backups</li>
+            <li>Uptime &amp; security monitoring</li>
+            <li>Up to 30 mins content edits/month</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Website Care" data-plan-sub="Essential upkeep · $30/month" data-plan-mode="purchase">Choose Website Care &rarr;</button>
+        </div>
+
+        <!-- Website Care Plus -->
+        <div class="plan-card plan-card--popular">
+          <span class="plan-card__badge">MOST POPULAR</span>
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--amber">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Website Care Plus</div>
+              <div class="plan-card__pages">Priority support</div>
+            </div>
+          </div>
+          <div class="plan-card__price"><sup>$</sup>69 <span class="plan-card__price-note">/month</span></div>
+          <div class="plan-card__upfront">More time for edits &amp; priority support</div>
+          <ul class="plan-card__features">
+            <li>Everything in Website Care</li>
+            <li>Up to 2 hours content edits/month</li>
+            <li>Priority response &amp; SLA</li>
+            <li>Quarterly performance report</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Website Care Plus" data-plan-sub="Priority support · $69/month" data-plan-mode="purchase">Choose Website Care Plus &rarr;</button>
+        </div>
+
+        <!-- Managed IT -->
+        <div class="plan-card plan-card--growth">
+          <div class="plan-card__header">
+            <div class="plan-card__icon plan-card__icon--purple">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 10a6 6 0 0 0-11.74-1.5A4 4 0 1 0 7 17h11a4 4 0 0 0 .67-7.95z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="plan-card__name">Managed IT</div>
+              <div class="plan-card__pages">IT, cloud &amp; workplace</div>
+            </div>
+          </div>
+          <div class="plan-card__price plan-card__price--quote">Custom <span class="plan-card__price-note">quote</span></div>
+          <div class="plan-card__upfront">Scoped for your team &amp; devices</div>
+          <ul class="plan-card__features">
+            <li>Microsoft 365 &amp; Google Workspace</li>
+            <li>Device, network &amp; cloud support</li>
+            <li>Cybersecurity &amp; backup management</li>
+            <li>Help desk &amp; onboarding</li>
+          </ul>
+          <button type="button" class="plan-card__cta js-choose-plan" data-plan-name="Managed IT" data-plan-sub="IT, cloud & workplace · Custom quote" data-plan-mode="quote">Request a quote &rarr;</button>
+        </div>
+
+      </div>
+      <p class="sp-note">Example AUD prices including GST. Existing websites are checked for care eligibility before onboarding.</p>
+    </div>
+  </div>
+
+  <!-- Plan modal: Purchase vs Enquiry -->
+  <div class="sp-modal" id="sp-modal" aria-hidden="true" role="dialog" aria-labelledby="sp-modal-title">
+    <div class="sp-modal__backdrop" data-sp-close></div>
+    <div class="sp-modal__dialog" role="document">
+      <button type="button" class="sp-modal__close" data-sp-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="sp-modal__head">
+        <span class="sp-modal__kicker">SELECTED PLAN</span>
+        <h3 class="sp-modal__title" id="sp-modal-title">Plan</h3>
+        <p class="sp-modal__sub" id="sp-modal-sub">Plan summary</p>
+      </div>
+
+      <!-- Step 1: choose action -->
+      <div class="sp-modal__step" data-sp-step="choose">
+        <div class="sp-modal__options">
+          <button type="button" class="sp-opt sp-opt--buy" data-sp-go="buy">
+            <span class="sp-opt__ico">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 7h3l2 10h10l2-7H8" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg>
+            </span>
+            <span class="sp-opt__name">Buy now</span>
+            <span class="sp-opt__text">Go straight to checkout and pay by card or bank transfer. Our team will contact you to kick off the project within 1 business day.</span>
+            <span class="sp-opt__arrow">Proceed to payment &rarr;</span>
+          </button>
+          <button type="button" class="sp-opt sp-opt--enq" data-sp-go="enquire">
+            <span class="sp-opt__ico">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sp-opt__name">Send an enquiry</span>
+            <span class="sp-opt__text">Not ready to buy? Tell us about your business &mdash; we&rsquo;ll reply with a tailored proposal and answer your questions first.</span>
+            <span class="sp-opt__arrow">Open enquiry form &rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: enquiry form -->
+      <div class="sp-modal__step" data-sp-step="enquire" hidden>
+        <form class="sp-form" method="post" action="https://app.nubevest.com.au/index.php/leads/add_lead_external" target="_blank">
+          <input type="hidden" name="source" value="website-plan-enquiry">
+          <input type="hidden" name="plan" id="sp-form-plan" value="">
+          <div class="sp-form__row">
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" required placeholder="Your full name">
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@company.com.au">
+            </label>
+          </div>
+          <div class="sp-form__row">
+            <label>
+              <span>Business / organisation</span>
+              <input type="text" name="company" placeholder="Business name">
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="Optional">
+            </label>
+          </div>
+          <label class="sp-form__full">
+            <span>What&rsquo;s the goal?</span>
+            <textarea name="message" rows="4" required placeholder="Tell us briefly about your business and what you&rsquo;re hoping to achieve."></textarea>
+          </label>
+          <div class="sp-form__actions">
+            <button type="button" class="sp-form__back" data-sp-back>&larr; Back</button>
+            <button type="submit" class="sp-form__submit">Send enquiry</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: buy confirmation -->
+      <div class="sp-modal__step" data-sp-step="buy" hidden>
+        <div class="sp-buy">
+          <div class="sp-buy__ico">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4 class="sp-buy__title">Ready to proceed with <span id="sp-buy-plan">your plan</span>?</h4>
+          <p class="sp-buy__text">We&rsquo;ll send you a secure payment link for the full plan amount, confirm your details and kick off the project within 1 business day. A Nubevest team member will reach out shortly after.</p>
+          <form class="sp-form" method="post" action="https://app.nubevest.com.au/index.php/leads/add_lead_external" target="_blank">
+            <input type="hidden" name="source" value="website-plan-purchase">
+            <input type="hidden" name="plan" id="sp-buy-form-plan" value="">
+            <div class="sp-form__row">
+              <label>
+                <span>Full name</span>
+                <input type="text" name="name" required placeholder="Your full name">
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" required placeholder="you@company.com.au">
+              </label>
+            </div>
+            <div class="sp-form__row">
+              <label>
+                <span>Business / organisation</span>
+                <input type="text" name="company" required placeholder="Business name">
+              </label>
+              <label>
+                <span>Phone</span>
+                <input type="tel" name="phone" required placeholder="04&hellip;">
+              </label>
+            </div>
+            <div class="sp-form__actions">
+              <button type="button" class="sp-form__back" data-sp-back>&larr; Back</button>
+              <button type="submit" class="sp-form__submit sp-form__submit--buy">Send me the payment link</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var section = document.getElementById('services');
+    if(!section) return;
+    var tabs = section.querySelectorAll('.sp-tab');
+    var panels = section.querySelectorAll('.sp-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        var key = tab.getAttribute('data-sp-tab');
+        tabs.forEach(function(t){
+          var active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function(p){
+          var match = p.getAttribute('data-sp-panel') === key;
+          p.classList.toggle('is-active', match);
+          if(match){ p.removeAttribute('hidden'); } else { p.setAttribute('hidden',''); }
+        });
+      });
+    });
+    // Payment toggle (Build only)
+    var payBtns = section.querySelectorAll('.sp-pay__btn');
+    payBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var mode = btn.getAttribute('data-sp-pay');
+        payBtns.forEach(function(b){ b.classList.toggle('is-active', b === btn); });
+        var buildPanel = section.querySelector('[data-sp-panel="build"]');
+        if(!buildPanel) return;
+        buildPanel.querySelectorAll('[data-sp-price-' + mode + ']').forEach(function(el){
+          var val = el.getAttribute('data-sp-price-' + mode);
+          if(val !== null){ el.innerHTML = val; }
+        });
+        buildPanel.querySelectorAll('[data-sp-sub-' + mode + ']').forEach(function(el){
+          var val = el.getAttribute('data-sp-sub-' + mode);
+          if(val !== null){ el.innerHTML = val; }
+        });
+      });
+    });
+
+    // Plan modal (Purchase / Enquiry)
+    var modal = document.getElementById('sp-modal');
+    if(!modal) return;
+    var titleEl = modal.querySelector('#sp-modal-title');
+    var subEl = modal.querySelector('#sp-modal-sub');
+    var buyPlanEl = modal.querySelector('#sp-buy-plan');
+    var enqHidden = modal.querySelector('#sp-form-plan');
+    var buyHidden = modal.querySelector('#sp-buy-form-plan');
+    var steps = modal.querySelectorAll('.sp-modal__step');
+    var buyOpt = modal.querySelector('.sp-opt--buy');
+
+    function showStep(name){
+      steps.forEach(function(s){
+        if(s.getAttribute('data-sp-step') === name){ s.removeAttribute('hidden'); }
+        else { s.setAttribute('hidden',''); }
+      });
+    }
+    function openModal(name, sub, mode){
+      titleEl.textContent = name;
+      subEl.textContent = sub;
+      if(buyPlanEl) buyPlanEl.textContent = name;
+      if(enqHidden) enqHidden.value = name;
+      if(buyHidden) buyHidden.value = name;
+      if(buyOpt){
+        if(mode === 'quote'){ buyOpt.style.display = 'none'; }
+        else { buyOpt.style.display = ''; }
+      }
+      showStep('choose');
+      // For quote-only plans, skip straight to the enquiry form
+      if(mode === 'quote'){ showStep('enquire'); }
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    section.querySelectorAll('.js-choose-plan').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        openModal(
+          btn.getAttribute('data-plan-name') || 'Plan',
+          btn.getAttribute('data-plan-sub') || '',
+          btn.getAttribute('data-plan-mode') || 'purchase'
+        );
+      });
+    });
+
+    modal.querySelectorAll('[data-sp-close]').forEach(function(el){
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && modal.classList.contains('is-open')){ closeModal(); }
+    });
+    modal.querySelectorAll('[data-sp-go]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        showStep(btn.getAttribute('data-sp-go'));
+      });
+    });
+    modal.querySelectorAll('[data-sp-back]').forEach(function(btn){
+      btn.addEventListener('click', function(){ showStep('choose'); });
+    });
+  })();
+  </script>
+</section>
+
 <!-- WEBSITE PACKAGES HERO -->
-<section class="hp-hero">
+<section class="hp-hero" hidden>
   <div class="hp-hero__bg">
     <div class="hp-hero__bg-grad"></div>
   </div>
@@ -514,7 +1145,7 @@ include 'includes/header.php';
 </section>
 
 <!-- WEBSITE PLAN CARDS -->
-<section class="hp-plans" id="plans">
+<section class="hp-plans" id="plans" hidden>
   <div class="container">
     <div class="hp-plans__header">
       <h2>Website packages that fit <span>your business</span></h2>
@@ -621,6 +1252,7 @@ include 'includes/header.php';
   </div>
 </section>
 
+
 <!-- WEBSITE CARE ADD-ON -->
 <section class="hp-care" id="care">
   <div class="container">
@@ -628,7 +1260,6 @@ include 'includes/header.php';
       <!-- Left: info -->
       <div class="care-bar__info">
         <div class="care-bar__badge">
-          <span class="care-bar__badge-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Optional Add-on
         </div>
         <h3 class="care-bar__title">Website <span>Care</span></h3>
@@ -692,7 +1323,6 @@ include 'includes/header.php';
   <div class="container">
     <div class="hp-steps__header">
       <div class="hp-steps__badge">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         How It Works
       </div>
       <h2>Three steps to your <span>new website</span></h2>
@@ -757,7 +1387,7 @@ include 'includes/header.php';
 <section class="hp-faq" id="faqs">
   <div class="container">
     <div class="hp-faq__header">
-      <span class="hp-faq__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#247BD4" stroke-width="2"/><path d="M9 9a3 3 0 115.83 1c0 1.5-2.83 2-2.83 3.5M12 17.5v.01" stroke="#247BD4" stroke-width="2" stroke-linecap="round"/></svg> FAQ</span>
+      <span class="hp-faq__badge">FAQ</span>
       <h2>Frequently asked <span>questions</span></h2>
       <p>Get clear answers to common questions about our website plans, process, and support.</p>
     </div>
@@ -873,7 +1503,7 @@ include 'includes/header.php';
   <div class="container">
     <div class="nxt">
       <div class="nxt__head reveal">
-        <span class="kicker kicker--pill nxt__kicker"><i></i>INTRODUCING &middot; NUBEVEST NEXT</span>
+        <span class="kicker kicker--pill nxt__kicker">INTRODUCING &middot; NUBEVEST NEXT</span>
         <h2 class="nxt__title">A next&ndash;generation program for <span class="nxt__title-accent">growing businesses.</span></h2>
         <span class="partner__underline" aria-hidden="true"></span>
         <p class="nxt__lead">Nubevest Next is a 12&ndash;month growth program that bundles the website, CRM, automation, managed IT and growth support of a modern business into a single accountable engagement &mdash; so leaders can focus on customers, not coordinating suppliers.</p>
@@ -967,14 +1597,6 @@ include 'includes/header.php';
 
       <div class="sp2__kicker-wrap">
         <span class="sp2__kicker">
-          <span class="sp2__kicker-ico">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <circle cx="9" cy="8" r="3" stroke="#fff" stroke-width="1.8"/>
-              <circle cx="16.5" cy="9" r="2.2" stroke="#fff" stroke-width="1.8"/>
-              <path d="M3 19c0-3 3-5 6-5s6 2 6 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M14 19c0-2 2-4 5-4s2 2 2 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </span>
           <span class="sp2__kicker-t"><b>SPECIALISED TEAMS</b> <em>&middot;</em> <span class="sp2__kicker-grad">ONE ACCOUNTABLE PARTNER</span></span>
         </span>
       </div>
@@ -1127,7 +1749,6 @@ include 'includes/header.php';
   <div class="container">
     <div class="co-header reveal">
       <span class="co-header__kicker">
-        <span class="co-header__kicker-dot"></span>
         <span>CONNECTED OUTCOMES</span>
       </span>
       <h2 class="co-header__title">
@@ -1220,19 +1841,20 @@ include 'includes/header.php';
       </article>
     </div>
 
-    <div class="co-strip reveal">
-      <span class="co-strip__badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="#247BD4" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M8.5 12l2.5 2.5L15.5 10" stroke="#247BD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        One accountable relationship
-      </span>
-      <p class="co-strip__text">You don&rsquo;t need to know which Nubevest service you need &mdash; tell us where the business is losing time, and we&rsquo;ll recommend a practical starting point.</p>
-      <a href="/contact.php" class="co-strip__cta">
-        Book a Call
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="co-booking reveal">
+      <div class="co-booking__head">
+        <span class="co-strip__badge">One accountable relationship</span>
+        <h3 class="co-booking__title">Book a Call</h3>
+        <p class="co-strip__text">You don&rsquo;t need to know which Nubevest service you need &mdash; tell us where the business is losing time, and we&rsquo;ll recommend a practical starting point.</p>
+      </div>
+      <a href="https://app.nubevest.com.au/index.php/schedly_booking" target="_blank" rel="noopener" class="co-booking__cta">
+        <span class="co-booking__cta-ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span>Open the booking calendar</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+      <p class="co-booking__note">Opens the Nubevest booking page in a new tab &mdash; pick a time and we&rsquo;ll be in touch.</p>
     </div>
   </div>
 </section>
@@ -1243,7 +1865,7 @@ include 'includes/header.php';
   <div class="container">
     <div class="industries">
       <div class="industries__left reveal-left">
-        <span class="kicker kicker--pill"><i></i>INDUSTRIES</span>
+        <span class="kicker kicker--pill">INDUSTRIES</span>
         <h2>Experience across <br>the industries <br><span class="industries__accent">we serve.</span></h2>
         <span class="industries__underline" aria-hidden="true"></span>
         <p class="industries__lead">Useful technology reflects the way an organisation actually operates. Nubevest brings broad technical capability together with practical experience across sectors that shape Australian business.</p>
@@ -1271,7 +1893,7 @@ include 'includes/header.php';
         </div>
       </div>
       <div class="industries__right reveal-right">
-        <a href="/industries/ndis-providers.php" class="industry-card industry-card--1">
+        <a href="/industries/ndis-providers" class="industry-card industry-card--1">
           <span class="industry-card__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6-7 10-7 10z" stroke="#ED6459" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </span>
@@ -1283,7 +1905,7 @@ include 'includes/header.php';
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a href="/industries/ndis-providers.php" class="industry-card industry-card--2">
+        <a href="/industries/professional-services" class="industry-card industry-card--2">
           <span class="industry-card__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="6" width="12" height="12" rx="2" transform="rotate(45 12 12)" stroke="#247BD4" stroke-width="1.8"/></svg>
           </span>
@@ -1295,7 +1917,7 @@ include 'includes/header.php';
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a href="/industries/ndis-providers.php" class="industry-card industry-card--3">
+        <a href="/industries/trades" class="industry-card industry-card--3">
           <span class="industry-card__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#F5B719" stroke-width="1.8"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#F5B719" stroke-width="1.8" stroke-linecap="round"/></svg>
           </span>
@@ -1307,7 +1929,7 @@ include 'includes/header.php';
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a href="/industries/ndis-providers.php" class="industry-card industry-card--4">
+        <a href="/industries/education-training" class="industry-card industry-card--4">
           <span class="industry-card__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 3v18M5 4h11l-2 4 2 4H5" stroke="#009CAA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
@@ -1319,7 +1941,7 @@ include 'includes/header.php';
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a href="/industries/ndis-providers.php" class="industry-card industry-card--5">
+        <a href="/industries/retail-hospitality-ecommerce" class="industry-card industry-card--5">
           <span class="industry-card__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 5h2l2.5 10h9L20 8H7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19" r="1.5" stroke="#ef4444" stroke-width="1.8"/><circle cx="17" cy="19" r="1.5" stroke="#ef4444" stroke-width="1.8"/></svg>
           </span>
@@ -1331,7 +1953,7 @@ include 'includes/header.php';
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a href="/industries/ndis-providers.php" class="industry-card industry-card--6">
+        <a href="/industries/small-growing-businesses" class="industry-card industry-card--6">
           <span class="industry-card__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 17 L8 12 L12 15 L18 8" stroke="#149B65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h4v4" stroke="#149B65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
@@ -1583,7 +2205,7 @@ include 'includes/header.php';
   <div class="why-section__dots why-section__dots--r" aria-hidden="true"></div>
   <div class="container">
     <div class="why-head reveal">
-      <span class="kicker kicker--pill why-head__kicker"><i></i>WHY BUSINESSES CHOOSE NUBEVEST</span>
+      <span class="kicker kicker--pill why-head__kicker">WHY BUSINESSES CHOOSE NUBEVEST</span>
       <h2 class="why-head__title">Why businesses work with <span class="why-head__title-grad">Nubevest.</span></h2>
       <p class="why-head__lead">We combine technology, experience and practical thinking<br>to deliver results that matter.</p>
     </div>

@@ -124,7 +124,7 @@ $industries = [
         <h3>Not sure where you fit?</h3>
         <p>Most Nubevest engagements start with a short conversation about the problem, not the label. We&rsquo;ll recommend where to begin.</p>
       </div>
-      <a href="/contact.php" class="btn btn--primary ind-cta__btn">Book a Call
+      <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="btn btn--primary ind-cta__btn" target="_blank" rel="noopener">Book a Call
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
