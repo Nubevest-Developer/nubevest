@@ -470,171 +470,116 @@
 </main>
 
 ﻿<!-- FOOTER v3 (matches mockup) -->
-<footer class="footer footer--v3" role="contentinfo">
+<footer class="footer footer--v3 nf" role="contentinfo">
+  <div class="nf__glow nf__glow--left" aria-hidden="true"></div>
+  <div class="nf__glow nf__glow--right" aria-hidden="true"></div>
+  <div class="nf__wave" aria-hidden="true">
+    <svg viewBox="0 0 1600 220" preserveAspectRatio="none" fill="none"><path d="M0 160 Q 400 60 800 160 T 1600 160" stroke="url(#nfwave)" stroke-width="2" fill="none"/><defs><linearGradient id="nfwave" x1="0" x2="1600" y1="0" y2="0"><stop offset="0" stop-color="#7c3aed" stop-opacity="0"/><stop offset=".5" stop-color="#6366f1" stop-opacity=".55"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></linearGradient></defs></svg>
+  </div>
+
   <div class="container">
 
-    <!-- CTA BANNER (a page can hide it with $footer_cta = false) -->
-        <div class="fv3-cta">
-      <div class="fv3-cta__bg" aria-hidden="true">
-        <span class="fv3-cta__arc fv3-cta__arc--1"></span>
-        <span class="fv3-cta__arc fv3-cta__arc--2"></span>
-      </div>
-      <div class="fv3-cta__inner">
-        <div class="fv3-cta__ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="#60a5fa" stroke-width="1.8" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="fv3-cta__text">
-          <h3 class="fv3-cta__title">One partner for growth, technology <span class="fv3-cta__title-grad">and operations.</span></h3>
-          <p class="fv3-cta__sub">Tell us where the business is losing time, opportunities or confidence &mdash; we&rsquo;ll recommend a practical starting point.</p>
-        </div>
-        <a href="https://app.nubevest.com.au/index.php/schedly_booking" class="fv3-cta__btn" target="_blank" rel="noopener">
-          <span class="fv3-cta__btn-ico">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span>Book a Call</span>
-        </a>
-      </div>
-    </div>
-    
-    <!-- TOP -->
-    <div class="fv3__top">
+    <div class="nf__top">
 
-      <!-- Brand block -->
-      <div class="fv3__brand">
-        <a href="" class="fv3__logo" aria-label="Nubevest">
-          <img src="assets/images/nubevest-logo.png" alt="Nubevest">
+      <!-- BRAND block -->
+      <div class="nf__brand">
+        <a href="/" class="nf__logo" aria-label="Nubevest">
+          <img src="../assets/images/nubevest-logo.png" alt="Nubevest">
         </a>
-        <p class="fv3__desc">Nubevest is a Melbourne-founded business growth and technology company. Our services, platforms and specialist businesses work together through one clear Nubevest relationship.</p>
+        <p class="nf__desc">Melbourne-founded business growth and technology company. One accountable Nubevest relationship across websites, marketing, systems and support.</p>
 
-        <div class="fv3__contact">
-          <a href="tel:1300959514" class="fv3__contact-row">
-            <span class="fv3__contact-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 5h3l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 7a2 2 0 0 1 2-2z" stroke="#60a5fa" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <div class="nf__contact">
+          <a href="tel:1300959514" class="nf__contact-row">
+            <span class="nf__contact-ico">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 5h3l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 7a2 2 0 0 1 2-2z" stroke="#60a5fa" stroke-width="1.8" stroke-linejoin="round"/></svg>
             </span>
             <span>1300 959 514</span>
           </a>
-          <a href="mailto:info@nubevest.com.au" class="fv3__contact-row">
-            <span class="fv3__contact-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#60a5fa" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="mailto:info@nubevest.com.au" class="nf__contact-row">
+            <span class="nf__contact-ico">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#60a5fa" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <span>info@nubevest.com.au</span>
           </a>
-          <div class="fv3__contact-row fv3__contact-row--addr">
-            <span class="fv3__contact-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="#60a5fa" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="#60a5fa" stroke-width="1.8"/></svg>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Unit+112%2F43+Danaher+Drive,+South+Morang+VIC+3752" target="_blank" rel="noopener" class="nf__contact-row nf__contact-row--addr">
+            <span class="nf__contact-ico">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z" stroke="#60a5fa" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="#60a5fa" stroke-width="1.8"/></svg>
             </span>
             <span>Unit 112/43 Danaher Drive,<br>South Morang VIC 3752</span>
-          </div>
+          </a>
+        </div>
+
+        <div class="nf__social">
+          <a href="https://www.facebook.com/NubevestAus" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.15.32-1.94 2-1.94h2V2.14A29 29 0 0 0 14.24 2C11.24 2 9.5 3.66 9.5 6.7V10H6.5v4h3v8z"/></svg>
+          </a>
+          <a href="https://x.com/nubevest" target="_blank" rel="noopener" aria-label="X">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.78l-4.78-6.24L4.78 22H2l7-8L2 2h6.95l4.3 5.74L18.244 2zm-1.19 18h1.67L7.08 4H5.3l11.754 16z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/nubevest/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.4c0-1.3-.02-2.97-1.8-2.97-1.82 0-2.1 1.42-2.1 2.88V21H10z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@nubevest" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3-5.2 3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/nubevest/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.pinterest.com/nubevest" target="_blank" rel="noopener" aria-label="Pinterest">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.64 19.32c-.1-.82-.18-2.08.04-2.98.2-.82 1.3-5.22 1.3-5.22s-.33-.66-.33-1.64c0-1.54.9-2.69 2-2.69.94 0 1.4.71 1.4 1.56 0 .95-.61 2.37-.92 3.68-.27 1.1.55 2 1.63 2 1.95 0 3.46-2.06 3.46-5.03 0-2.63-1.89-4.47-4.59-4.47-3.13 0-4.96 2.35-4.96 4.78 0 .95.36 1.96.82 2.51.09.11.1.21.07.32l-.3 1.2c-.05.2-.15.24-.36.15-1.33-.62-2.17-2.57-2.17-4.14 0-3.37 2.45-6.47 7.07-6.47 3.71 0 6.59 2.65 6.59 6.18 0 3.69-2.33 6.65-5.56 6.65-1.09 0-2.11-.57-2.46-1.23l-.67 2.54c-.24.93-.9 2.1-1.34 2.81A10 10 0 1 0 12 2z"/></svg>
+          </a>
         </div>
       </div>
 
-      <!-- Nav columns -->
-      <div class="fv3__nav">
-        <div class="fv3__col">
-          <h4 class="fv3__h">Services</h4>
-          <ul class="fv3__list">
-            <li><a href="websites.html">Website Packages</a></li>
-            <li><a href="websites.html#care">Website Care</a></li>
-            <li><a href="marketing.html">Marketing &amp; SEO</a></li>
-            <li><a href="marketing.html#consultation">Consultation</a></li>
-            <li><a href="print-signage/">Design &amp; Print</a></li>
-            <li><a href="solutions/software-apps.html">Software &amp; Apps</a></li>
-            <li><a href="solutions/crm-automation-ai.html">CRM &amp; Automation</a></li>
-            <li><a href="solutions/managed-it-cloud-cybersecurity.html">Managed IT</a></li>
-          </ul>
-        </div>
-
-        <div class="fv3__col">
-          <h4 class="fv3__h">Our Brands</h4>
-          <ul class="fv3__list fv3__list--brands">
-            <li><a href="brands/plannor.html"><span class="fv3__b-name">Plannor</span><span class="fv3__b-sub">NDIS provider platform</span></a></li>
-            <li><a href="brands/gometa-crm.html"><span class="fv3__b-name">Go Meta CRM</span><span class="fv3__b-sub">Leads &amp; workflow platform</span></a></li>
-            <li><a href="brands/ndis-pages.html"><span class="fv3__b-name">NDIS Pages</span><span class="fv3__b-sub">Provider discovery &mdash; in development</span></a></li>
-            <li><a href="brands/metameet.html"><span class="fv3__b-name">MetaMeet</span><span class="fv3__b-sub">Domains, hosting, email &amp; SSL</span></a></li>
-            <li><a href="brands/monitormart.html"><span class="fv3__b-name">MonitorMart</span><span class="fv3__b-sub">Hardware &amp; procurement</span></a></li>
-          </ul>
-        </div>
-
-        <div class="fv3__col">
-          <h4 class="fv3__h">Specialist Businesses</h4>
-          <ul class="fv3__list fv3__list--brands">
-            <li><a href="brands/skill-to-upskill.html"><span class="fv3__b-name">Skill to Upskill</span><span class="fv3__b-sub">Education &amp; RPL pathways</span></a></li>
-            <li><a href="brands/kangar-dubai-experts.html"><span class="fv3__b-name">Kangar Dubai Experts</span><span class="fv3__b-sub">Dubai property guidance</span></a></li>
-            <li><a href="brands/nuber.html"><span class="fv3__b-name">Nube Rentals</span><span class="fv3__b-sub">Long-term vehicle rentals</span></a></li>
-          </ul>
-        </div>
-
-        <div class="fv3__col">
-          <h4 class="fv3__h">Company</h4>
-          <ul class="fv3__list">
-            <li><a href="about.html">About</a></li>
-            <li><a href="industries/">Industries</a></li>
-            <li><a href="work.html">Our Work</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="licences-business-info.html">Licences &amp; Info</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html#support">Client Support</a></li>
-            <li><a href="assets/docs/Nubevest_Services_Pricing.pdf" target="_blank">View Our Services &amp; Pricing</a></li>
-          </ul>
-        </div>
-
-        <div class="fv3__col">
-          <h4 class="fv3__h">Insights &amp; Resources</h4>
-          <ul class="fv3__list">
-            <li><a href="solutions/digital-growth.html">Business Growth</a></li>
-            <li><a href="solutions/websites-ecommerce.html">Websites &amp; Digital Marketing</a></li>
-            <li><a href="solutions/crm-automation-ai.html">CRM, Automation &amp; AI</a></li>
-            <li><a href="solutions/managed-it-cloud-cybersecurity.html">Managed IT &amp; Cybersecurity</a></li>
-            <li><a href="industries/ndis-providers.html">NDIS Business</a></li>
-            <li><a href="solutions/">Guides &amp; Downloads</a></li>
-            <li><a href="contact.html">FAQs</a></li>
-          </ul>
-        </div>
+      <!-- SERVICES column -->
+      <div class="nf__col">
+        <span class="nf__bar nf__bar--blue"></span>
+        <h4 class="nf__h">SERVICES</h4>
+        <ul class="nf__list">
+          <li><a href="../websites.html"><span class="nf__li-ico nf__li-ico--blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20"/><path d="M8 22h8"/><path d="M12 18v4"/></svg></span>Websites</a></li>
+          <li><a href="../marketing.html"><span class="nf__li-ico nf__li-ico--blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>Marketing &amp; SEO</a></li>
+          <li><a href="../print-signage/.html"><span class="nf__li-ico nf__li-ico--blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>Design &amp; Print</a></li>
+          <li><a href="../solutions/managed-it-cloud-cybersecurity.html"><span class="nf__li-ico nf__li-ico--blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Managed IT</a></li>
+        </ul>
       </div>
+
+      <!-- BRANDS column -->
+      <div class="nf__col">
+        <span class="nf__bar nf__bar--purple"></span>
+        <h4 class="nf__h">BRANDS</h4>
+        <ul class="nf__list">
+          <li><a href="../brands/plannor.html"><span class="nf__li-ico nf__li-ico--purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>Plannor</a></li>
+          <li><a href="../brands/gometa-crm.html"><span class="nf__li-ico nf__li-ico--purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M3 21v-1a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v1"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-1a6 6 0 0 0-3-5.2"/></svg></span>Go Meta CRM</a></li>
+          <li><a href="../brands/metameet.html"><span class="nf__li-ico nf__li-ico--purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>MetaMeet</a></li>
+          <li><a href="../brands/.html"><span class="nf__li-ico nf__li-ico--purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>All brands</a></li>
+        </ul>
+      </div>
+
+      <!-- COMPANY column -->
+      <div class="nf__col">
+        <span class="nf__bar nf__bar--teal"></span>
+        <h4 class="nf__h">COMPANY</h4>
+        <ul class="nf__list">
+          <li><a href="../about.html"><span class="nf__li-ico nf__li-ico--teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>About</a></li>
+          <li><a href="../work.html"><span class="nf__li-ico nf__li-ico--teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>Our Work</a></li>
+          <li><a href="../industries/.html"><span class="nf__li-ico nf__li-ico--teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 13v.01M9 17v.01"/></svg></span>Industries</a></li>
+          <li><a href="../contact.html"><span class="nf__li-ico nf__li-ico--teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>Contact</a></li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- BOTTOM -->
-    <div class="fv3__bottom">
-      <div class="fv3__legal">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="terms-of-use.html">Website Terms</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="terms-of-use.html#services">Service Terms</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="event-terms.html">Event Terms &amp; Cancellation</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="disclaimer.html">Disclaimer</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="privacy-policy.html#cookies">Cookies</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="privacy-policy.html#accessibility">Accessibility</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="privacy-policy.html#security">Security</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="contact.html#complaints">Complaints</a>
-        <span class="fv3__legal-sep">&middot;</span>
-        <a href="sitemap.html">Sitemap</a>
+    <div class="nf__bottom">
+      <p class="nf__copy">&copy; 2026 <strong>Nubevest</strong> Pty Ltd. All rights reserved.</p>
+      <div class="nf__legal">
+        <a href="../privacy-policy.html">Privacy</a>
+        <a href="../terms-of-use.html">Terms</a>
+        <a href="../sitemap.html">Sitemap</a>
       </div>
-      <div class="fv3__meta">
-        <p class="fv3__copy">&copy; 2026 <strong>Nubevest Pty Ltd</strong>. All rights reserved.</p>
-        <div class="fv3__social">
-        <a href="https://www.linkedin.com/company/nubevest/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.4c0-1.3-.02-2.97-1.8-2.97-1.82 0-2.1 1.42-2.1 2.88V21H10z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/NubevestAus" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.15.32-1.94 2-1.94h2V2.14A29 29 0 0 0 14.24 2C11.24 2 9.5 3.66 9.5 6.7V10H6.5v4h3v8z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/nubevest/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@nubevest" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3-5.2 3z"/></svg>
-        </a>
-      </div>
+      <div class="nf__trust">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="#4ade80" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Secure &amp; Trusted
       </div>
     </div>
   </div>
