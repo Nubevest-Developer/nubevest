@@ -37,6 +37,7 @@ include 'includes/header.php';
 .mk-hero__title {
   font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px;
+  color: #fff;
 }
 .mk-hero__title-grad {
   background: linear-gradient(90deg, #ec4899, #f59e0b);
