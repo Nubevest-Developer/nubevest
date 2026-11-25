@@ -171,56 +171,120 @@ include 'includes/header.php';
 }
 
 /* Tier cards */
-.mk-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+.mk-tiers {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px;
+  align-items: stretch;
+}
 .mk-tier {
-  background: #fff; border: 1px solid var(--gray-200); border-radius: 16px;
-  padding: 32px 28px; position: relative; transition: var(--transition);
+  background: #fff; border: 1px solid var(--gray-200); border-radius: 20px;
+  padding: 36px 28px 32px; position: relative;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
 }
-.mk-tier:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.mk-tier::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #cbd5e1, #94a3b8);
+  z-index: 1;
+}
+.mk-tier::after {
+  content: '';
+  position: absolute; top: 0; right: 0; width: 180px; height: 180px;
+  background: radial-gradient(circle at top right, rgba(203,213,225,0.35), transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+.mk-tier > * { position: relative; z-index: 1; }
+.mk-tier:hover {
+  box-shadow: 0 25px 50px -20px rgba(15,23,42,0.18);
+  transform: translateY(-6px);
+  border-color: var(--gray-300);
+}
+
+.mk-tier--silver::before   { background: linear-gradient(90deg, #cbd5e1, #94a3b8); }
+.mk-tier--silver::after    { background: radial-gradient(circle at top right, rgba(148,163,184,0.25), transparent 60%); }
+.mk-tier--gold::before     { background: linear-gradient(90deg, #ec4899, #f59e0b); }
+.mk-tier--gold::after      { background: radial-gradient(circle at top right, rgba(236,72,153,0.22), transparent 60%); }
+.mk-tier--platinum::before { background: linear-gradient(90deg, #8b5cf6, #3b82f6); }
+.mk-tier--platinum::after  { background: radial-gradient(circle at top right, rgba(139,92,246,0.22), transparent 60%); }
+
 .mk-tier--featured {
-  border-color: #ec4899;
-  box-shadow: 0 0 0 1px #ec4899, 0 8px 30px -10px rgba(236,72,153,0.25);
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #ec4899, 0 25px 50px -15px rgba(236,72,153,0.35);
+  transform: translateY(-8px);
 }
+.mk-tier--featured:hover { transform: translateY(-14px); box-shadow: 0 0 0 2px #ec4899, 0 35px 60px -15px rgba(236,72,153,0.45); }
+
 .mk-tier__badge {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  padding: 4px 16px; border-radius: 9999px;
-  background: linear-gradient(90deg, #ec4899, #f472b6); color: #fff;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  white-space: nowrap;
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  padding: 6px 18px; border-radius: 9999px;
+  background: linear-gradient(90deg, #ec4899, #f59e0b); color: #fff;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  white-space: nowrap; z-index: 2;
+  box-shadow: 0 10px 25px -8px rgba(236,72,153,0.5);
+  display: inline-flex; align-items: center; gap: 6px;
 }
-.mk-tier__name {
-  font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800;
-  color: var(--gray-900); margin-bottom: 4px;
+.mk-tier__badge::before { content: '★'; font-size: 0.75rem; }
+
+.mk-tier__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.mk-tier__icon {
+  width: 42px; height: 42px; border-radius: 12px;
+  display: grid; place-items: center; flex-shrink: 0;
+  font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem;
+}
+.mk-tier--silver .mk-tier__icon   { background: linear-gradient(135deg, #e2e8f0, #cbd5e1); color: #475569; }
+.mk-tier--gold .mk-tier__icon     { background: linear-gradient(135deg, #fde68a, #f59e0b); color: #78350f; }
+.mk-tier--platinum .mk-tier__icon { background: linear-gradient(135deg, #c7d2fe, #818cf8); color: #312e81; }
+
+.mk-tier__name { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+.mk-tier__sub { font-size: 0.78rem; color: var(--gray-400); margin-top: 3px; letter-spacing: 0.02em; }
+
+.mk-tier__price-wrap {
+  display: flex; align-items: baseline; gap: 10px;
+  padding-bottom: 24px; margin-bottom: 24px;
+  border-bottom: 1px dashed var(--gray-200);
 }
 .mk-tier__price {
-  font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800;
-  color: var(--gray-900); line-height: 1.1; margin-bottom: 4px;
+  font-family: var(--font-heading); font-size: 2.75rem; font-weight: 800;
+  color: var(--gray-900); line-height: 1;
+  display: inline-flex; align-items: flex-start;
 }
-.mk-tier__price sup { font-size: 1.2rem; top: -0.8em; }
-.mk-tier__period { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 24px; }
-.mk-tier__list { list-style: none; padding: 0; margin: 0 0 28px; }
+.mk-tier__price sup { font-size: 1.1rem; top: 0.2em; margin-right: 2px; color: var(--gray-500); font-weight: 700; }
+.mk-tier__period { font-size: 0.85rem; color: var(--gray-400); }
+
+.mk-tier__list { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
 .mk-tier__list li {
-  padding: 8px 0; border-bottom: 1px solid var(--gray-100);
-  font-size: 0.9rem; color: var(--gray-600); display: flex; align-items: flex-start; gap: 10px;
+  padding: 9px 0;
+  font-size: 0.9rem; color: var(--gray-700); display: flex; align-items: flex-start; gap: 10px;
+  line-height: 1.5;
 }
-.mk-tier__list li:last-child { border-bottom: none; }
 .mk-tier__check {
-  flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
+  flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
   background: #ecfdf5; display: grid; place-items: center; margin-top: 2px;
+  border: 1px solid #a7f3d0;
 }
 .mk-tier__check svg { width: 10px; height: 10px; }
+.mk-tier--featured .mk-tier__check { background: #fce7f3; border-color: #fbcfe8; }
+.mk-tier--featured .mk-tier__check svg path { stroke: #ec4899 !important; }
+
 .mk-tier__cta {
-  display: block; text-align: center; padding: 12px 20px; border-radius: 10px;
-  font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: var(--transition);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 20px; border-radius: 12px;
+  font-size: 0.95rem; font-weight: 700; text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .mk-tier__cta--primary {
-  background: linear-gradient(135deg, #ec4899, #f472b6); color: #fff;
+  background: linear-gradient(135deg, #ec4899, #f59e0b); color: #fff;
+  box-shadow: 0 10px 25px -10px rgba(236,72,153,0.5);
 }
-.mk-tier__cta--primary:hover { opacity: 0.9; }
+.mk-tier__cta--primary:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -10px rgba(236,72,153,0.6); }
 .mk-tier__cta--outline {
-  background: transparent; color: var(--gray-700); border: 1px solid var(--gray-200);
+  background: #fff; color: var(--gray-800); border: 1.5px solid var(--gray-200);
 }
-.mk-tier__cta--outline:hover { border-color: var(--gray-400); }
+.mk-tier__cta--outline:hover { border-color: var(--gray-800); background: var(--gray-50); }
+.mk-tier__cta::after { content: '→'; transition: transform .2s ease; }
+.mk-tier__cta:hover::after { transform: translateX(3px); }
 
 /* Setup note */
 .mk-setup {
@@ -385,10 +449,15 @@ include 'includes/header.php';
 
     <div class="mk-tiers">
       <!-- Silver -->
-      <div class="mk-tier">
-        <div class="mk-tier__name">Silver</div>
-        <div class="mk-tier__price"><sup>$</sup>299</div>
-        <div class="mk-tier__period">per month</div>
+      <div class="mk-tier mk-tier--silver">
+        <div class="mk-tier__head">
+          <div class="mk-tier__icon">S</div>
+          <div><div class="mk-tier__name">Silver</div><div class="mk-tier__sub">Starter plan</div></div>
+        </div>
+        <div class="mk-tier__price-wrap">
+          <div class="mk-tier__price"><sup>$</sup>299</div>
+          <div class="mk-tier__period">per month</div>
+        </div>
         <ul class="mk-tier__list">
           <li><span class="mk-tier__check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> One location</li>
           <li><span class="mk-tier__check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Google Business Profile support</li>
@@ -399,11 +468,16 @@ include 'includes/header.php';
       </div>
 
       <!-- Gold -->
-      <div class="mk-tier mk-tier--featured">
+      <div class="mk-tier mk-tier--gold mk-tier--featured">
         <span class="mk-tier__badge">Most Popular</span>
-        <div class="mk-tier__name">Gold</div>
-        <div class="mk-tier__price"><sup>$</sup>399</div>
-        <div class="mk-tier__period">per month</div>
+        <div class="mk-tier__head">
+          <div class="mk-tier__icon">G</div>
+          <div><div class="mk-tier__name">Gold</div><div class="mk-tier__sub">Most chosen</div></div>
+        </div>
+        <div class="mk-tier__price-wrap">
+          <div class="mk-tier__price"><sup>$</sup>399</div>
+          <div class="mk-tier__period">per month</div>
+        </div>
         <ul class="mk-tier__list">
           <li><span class="mk-tier__check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> One location</li>
           <li><span class="mk-tier__check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Google Business Profile support</li>
@@ -415,10 +489,15 @@ include 'includes/header.php';
       </div>
 
       <!-- Platinum -->
-      <div class="mk-tier">
-        <div class="mk-tier__name">Platinum</div>
-        <div class="mk-tier__price"><sup>$</sup>499</div>
-        <div class="mk-tier__period">per month</div>
+      <div class="mk-tier mk-tier--platinum">
+        <div class="mk-tier__head">
+          <div class="mk-tier__icon">P</div>
+          <div><div class="mk-tier__name">Platinum</div><div class="mk-tier__sub">Full coverage</div></div>
+        </div>
+        <div class="mk-tier__price-wrap">
+          <div class="mk-tier__price"><sup>$</sup>499</div>
+          <div class="mk-tier__period">per month</div>
+        </div>
         <ul class="mk-tier__list">
           <li><span class="mk-tier__check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> One location</li>
           <li><span class="mk-tier__check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Google Business Profile support</li>
