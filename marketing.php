@@ -14,18 +14,33 @@ include 'includes/header.php';
 .mk-hero {
   position: relative;
   background: linear-gradient(160deg, #0f172a 0%, #1e1b3a 50%, #2d1a3e 100%);
-  padding: calc(var(--header-height) + 60px) 0 80px;
+  padding: calc(var(--header-height) + 60px) 0 100px;
   overflow: hidden;
   color: #fff;
 }
 .mk-hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(236,72,153,0.18) 0%, transparent 70%),
-              radial-gradient(ellipse 40% 40% at 20% 80%, rgba(139,92,246,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 75% 35%, rgba(236,72,153,0.22) 0%, transparent 65%),
+              radial-gradient(ellipse 45% 45% at 15% 85%, rgba(139,92,246,0.18) 0%, transparent 70%),
+              radial-gradient(ellipse 30% 30% at 90% 85%, rgba(245,158,11,0.10) 0%, transparent 70%);
   pointer-events: none;
 }
-.mk-hero .container { position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.mk-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%);
+  pointer-events: none;
+}
+.mk-hero .container {
+  position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center;
+}
 .mk-hero__kicker {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 16px; border-radius: 9999px;
@@ -33,7 +48,12 @@ include 'includes/header.php';
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   color: #f9a8d4; margin-bottom: 20px;
 }
-.mk-hero__kicker i { width: 6px; height: 6px; border-radius: 50%; background: #ec4899; }
+.mk-hero__kicker i { width: 6px; height: 6px; border-radius: 50%; background: #ec4899; box-shadow: 0 0 0 0 rgba(236,72,153,0.7); animation: mkPulse 2s infinite; }
+@keyframes mkPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(236,72,153,0.7); }
+  70%  { box-shadow: 0 0 0 8px rgba(236,72,153,0); }
+  100% { box-shadow: 0 0 0 0 rgba(236,72,153,0); }
+}
 .mk-hero__title {
   font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px;
@@ -44,9 +64,89 @@ include 'includes/header.php';
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .mk-hero__lead {
-  font-size: 1.1rem; color: #cbd5e1; line-height: 1.7; max-width: 640px; margin-bottom: 32px;
+  font-size: 1.1rem; color: #cbd5e1; line-height: 1.7; max-width: 560px; margin-bottom: 28px;
 }
-.mk-hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.mk-hero__cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+.mk-hero__trust {
+  display: flex; flex-wrap: wrap; gap: 22px 28px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.mk-hero__trust-item { display: flex; flex-direction: column; gap: 2px; }
+.mk-hero__trust-num { font-size: 1.5rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; }
+.mk-hero__trust-num span { background: linear-gradient(90deg, #ec4899, #f59e0b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.mk-hero__trust-lbl { font-size: 0.78rem; color: #94a3b8; letter-spacing: 0.02em; }
+
+/* Hero visual */
+.mk-hero__visual { position: relative; height: 480px; }
+.mk-hero__orb {
+  position: absolute; width: 320px; height: 320px; border-radius: 50%; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 30%, rgba(236,72,153,0.35), rgba(139,92,246,0.15) 60%, transparent 75%);
+  filter: blur(20px);
+  animation: mkOrbFloat 8s ease-in-out infinite;
+}
+@keyframes mkOrbFloat { 0%,100% { transform: translate(-50%,-50%) scale(1);} 50% { transform: translate(-50%,-55%) scale(1.08);} }
+
+.mk-chcard {
+  position: absolute; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5);
+  animation: mkCardFloat 6s ease-in-out infinite;
+}
+.mk-chcard__ico { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; }
+.mk-chcard__ttl { font-size: 0.82rem; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 3px; }
+.mk-chcard__sub { font-size: 0.72rem; color: #94a3b8; line-height: 1.1; }
+
+.mk-chcard--seo   { top: 10%;  left: 0;   animation-delay: 0s; }
+.mk-chcard--meta  { top: 45%;  right: 0;  animation-delay: 1.5s; }
+.mk-chcard--google{ bottom: 15%; left: 8%; animation-delay: 3s; }
+
+.mk-chcard--seo .mk-chcard__ico    { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
+.mk-chcard--meta .mk-chcard__ico   { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+.mk-chcard--google .mk-chcard__ico { background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.25); }
+
+@keyframes mkCardFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-10px); }
+}
+
+.mk-metric {
+  position: absolute; top: 2%; right: 4%;
+  background: rgba(15,23,42,0.75); border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-radius: 14px; padding: 12px 14px; min-width: 150px;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5);
+}
+.mk-metric__row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.mk-metric__lbl { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; }
+.mk-metric__val { font-size: 1.1rem; font-weight: 800; color: #10b981; }
+.mk-metric__val::before { content: '↑'; margin-right: 2px; }
+.mk-metric__bars { display: flex; align-items: flex-end; gap: 4px; height: 32px; }
+.mk-metric__bar { flex: 1; background: linear-gradient(180deg, #ec4899, #f59e0b); border-radius: 2px; opacity: 0.85; animation: mkBarGrow 2.4s ease-in-out infinite; }
+.mk-metric__bar:nth-child(1) { height: 30%; animation-delay: 0s; }
+.mk-metric__bar:nth-child(2) { height: 50%; animation-delay: 0.3s; }
+.mk-metric__bar:nth-child(3) { height: 40%; animation-delay: 0.6s; }
+.mk-metric__bar:nth-child(4) { height: 70%; animation-delay: 0.9s; }
+.mk-metric__bar:nth-child(5) { height: 85%; animation-delay: 1.2s; }
+.mk-metric__bar:nth-child(6) { height: 100%; animation-delay: 1.5s; }
+@keyframes mkBarGrow { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(0.75); } }
+
+@media (max-width: 960px) {
+  .mk-hero .container { grid-template-columns: 1fr; gap: 40px; }
+  .mk-hero__visual { height: 360px; max-width: 420px; margin: 0 auto; width: 100%; }
+}
+@media (max-width: 600px) {
+  .mk-hero__visual { height: 320px; }
+  .mk-hero__orb { width: 240px; height: 240px; }
+  .mk-chcard { padding: 10px 12px; }
+  .mk-chcard__ico { width: 34px; height: 34px; }
+  .mk-chcard__ttl { font-size: 0.75rem; }
+  .mk-chcard__sub { font-size: 0.68rem; }
+  .mk-metric { min-width: 130px; padding: 10px 12px; }
+  .mk-hero__trust { gap: 16px 22px; }
+  .mk-hero__trust-num { font-size: 1.25rem; }
+}
 
 /* Sections */
 .mk-section {
@@ -193,15 +293,80 @@ include 'includes/header.php';
 <!-- HERO -->
 <section class="mk-hero">
   <div class="container">
-    <span class="mk-hero__kicker"><i></i> MARKETING SERVICES</span>
-    <h1 class="mk-hero__title">
-      Grow your business with<br>
-      <span class="mk-hero__title-grad">SEO, ads &amp; expert strategy.</span>
-    </h1>
-    <p class="mk-hero__lead">SEO, Meta Ads, Google Ads and consultation services designed for small businesses. Compare plans, choose what fits, and let our specialists handle execution while you run your business.</p>
-    <div class="mk-hero__cta">
-      <a href="#seo" class="btn btn--primary">View Plans</a>
-      <a href="/contact.php" class="btn btn--secondary btn--arrow-blue">Book a Consultation</a>
+    <div class="mk-hero__text">
+      <span class="mk-hero__kicker"><i></i> MARKETING SERVICES</span>
+      <h1 class="mk-hero__title">
+        Grow your business with<br>
+        <span class="mk-hero__title-grad">SEO, ads &amp; expert strategy.</span>
+      </h1>
+      <p class="mk-hero__lead">SEO, Meta Ads, Google Ads and consultation services designed for small businesses. Compare plans, choose what fits, and let our specialists handle execution while you run your business.</p>
+      <div class="mk-hero__cta">
+        <a href="#seo" class="btn btn--primary">View Plans</a>
+        <a href="/contact.php" class="btn btn--secondary btn--arrow-blue">Book a Consultation</a>
+      </div>
+      <div class="mk-hero__trust">
+        <div class="mk-hero__trust-item">
+          <span class="mk-hero__trust-num"><span>4</span></span>
+          <span class="mk-hero__trust-lbl">Channels covered</span>
+        </div>
+        <div class="mk-hero__trust-item">
+          <span class="mk-hero__trust-num"><span>100%</span></span>
+          <span class="mk-hero__trust-lbl">AU specialists</span>
+        </div>
+        <div class="mk-hero__trust-item">
+          <span class="mk-hero__trust-num"><span>Monthly</span></span>
+          <span class="mk-hero__trust-lbl">Reporting &amp; reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mk-hero__visual" aria-hidden="true">
+      <div class="mk-hero__orb"></div>
+
+      <div class="mk-chcard mk-chcard--seo">
+        <div class="mk-chcard__ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+        <div>
+          <div class="mk-chcard__ttl">SEO</div>
+          <div class="mk-chcard__sub">Search visibility</div>
+        </div>
+      </div>
+
+      <div class="mk-chcard mk-chcard--meta">
+        <div class="mk-chcard__ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95 0-5.52-4.48-10-10-10z"/></svg>
+        </div>
+        <div>
+          <div class="mk-chcard__ttl">Meta Ads</div>
+          <div class="mk-chcard__sub">Facebook &amp; Instagram</div>
+        </div>
+      </div>
+
+      <div class="mk-chcard mk-chcard--google">
+        <div class="mk-chcard__ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
+        </div>
+        <div>
+          <div class="mk-chcard__ttl">Google Ads</div>
+          <div class="mk-chcard__sub">Search &amp; display</div>
+        </div>
+      </div>
+
+      <div class="mk-metric">
+        <div class="mk-metric__row">
+          <span class="mk-metric__lbl">Growth</span>
+          <span class="mk-metric__val">42%</span>
+        </div>
+        <div class="mk-metric__bars">
+          <span class="mk-metric__bar"></span>
+          <span class="mk-metric__bar"></span>
+          <span class="mk-metric__bar"></span>
+          <span class="mk-metric__bar"></span>
+          <span class="mk-metric__bar"></span>
+          <span class="mk-metric__bar"></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
