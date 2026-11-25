@@ -255,6 +255,7 @@ include 'includes/header.php';
   box-shadow: 0 0 0 2px #ec4899, 0 25px 50px -15px rgba(236,72,153,0.35);
   transform: translateY(-8px);
 }
+.mk-tier--featured::before { display: none; }
 .mk-tier--featured:hover { transform: translateY(-14px); box-shadow: 0 0 0 2px #ec4899, 0 35px 60px -15px rgba(236,72,153,0.45); }
 
 .mk-tier__badge {
