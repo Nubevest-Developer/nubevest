@@ -477,20 +477,22 @@
   padding: 36px 28px 32px; position: relative;
   transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
   display: flex; flex-direction: column;
-  overflow: hidden;
   isolation: isolate;
 }
 .mk-tier::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: linear-gradient(90deg, #cbd5e1, #94a3b8);
+  border-top-left-radius: 20px; border-top-right-radius: 20px;
   z-index: 1;
 }
 .mk-tier::after {
   content: '';
   position: absolute; top: 0; right: 0; width: 180px; height: 180px;
   background: radial-gradient(circle at top right, rgba(203,213,225,0.35), transparent 60%);
+  border-top-right-radius: 20px;
   pointer-events: none; z-index: 0;
+  overflow: hidden;
 }
 .mk-tier > * { position: relative; z-index: 1; }
 .mk-tier:hover {
