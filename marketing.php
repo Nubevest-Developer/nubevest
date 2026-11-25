@@ -162,12 +162,51 @@ include 'includes/header.php';
   margin-bottom: 16px;
 }
 .mk-section__title {
-  font-family: var(--font-heading); font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 2.75rem);
   font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
-  color: var(--gray-900); margin-bottom: 16px;
+  color: var(--gray-900); margin-bottom: 18px;
+}
+.mk-section__title-hl {
+  background: linear-gradient(90deg, #ec4899, #f59e0b);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .mk-section__lead {
   font-size: 1.05rem; color: var(--gray-500); line-height: 1.7; max-width: 640px; margin-bottom: 48px;
+}
+
+/* Section header block (centered, decorated) */
+.mk-section__header {
+  text-align: center; max-width: 760px; margin: 0 auto 56px;
+  position: relative;
+}
+.mk-section__header .mk-section__kicker { margin-bottom: 20px; }
+.mk-section__header .mk-section__title { margin-bottom: 16px; }
+.mk-section__header .mk-section__lead { margin: 0 auto 28px; }
+
+.mk-section__tile {
+  display: inline-grid; place-items: center;
+  width: 72px; height: 72px; border-radius: 20px;
+  margin-bottom: 20px; position: relative;
+  box-shadow: 0 20px 40px -20px rgba(15,23,42,0.25);
+}
+.mk-section__tile::after {
+  content: '';
+  position: absolute; inset: -8px; border-radius: 24px;
+  border: 1px dashed currentColor; opacity: 0.25;
+}
+.mk-section__tile svg { width: 32px; height: 32px; }
+.mk-section__tile--seo    { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #059669; }
+.mk-section__tile--meta   { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #2563eb; }
+.mk-section__tile--google { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #ea580c; }
+.mk-section__tile--consult{ background: linear-gradient(135deg, #ede9fe, #ddd6fe); color: #7c3aed; }
+
+.mk-section__divider {
+  display: inline-block; width: 60px; height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, #ec4899, #f59e0b); margin: 0 0 24px;
+}
+
+.mk-coming--float {
+  display: inline-flex; margin: 0 auto 28px;
 }
 
 /* Tier cards */
@@ -438,14 +477,19 @@ include 'includes/header.php';
 <!-- SEO -->
 <section class="mk-section" id="seo">
   <div class="container">
-    <span class="mk-section__kicker" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#10b981" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="#10b981" stroke-width="2" stroke-linecap="round"/></svg>
-      SEO
-    </span>
-    <h2 class="mk-section__title">Search Engine Optimisation</h2>
-    <p class="mk-section__lead">Improve your visibility on Google and attract the right local customers. We handle audits, on-page improvements, content and Google Business Profile management.</p>
-
-    <span class="mk-coming">Online Purchase Coming Soon</span>
+    <div class="mk-section__header">
+      <div class="mk-section__tile mk-section__tile--seo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </div>
+      <span class="mk-section__kicker" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#10b981" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="#10b981" stroke-width="2" stroke-linecap="round"/></svg>
+        SEO
+      </span>
+      <h2 class="mk-section__title">Search Engine <span class="mk-section__title-hl">Optimisation</span></h2>
+      <span class="mk-section__divider"></span>
+      <p class="mk-section__lead">Improve your visibility on Google and attract the right local customers. We handle audits, on-page improvements, content and Google Business Profile management.</p>
+      <span class="mk-coming mk-coming--float">Online Purchase Coming Soon</span>
+    </div>
 
     <div class="mk-tiers">
       <!-- Silver -->
@@ -517,14 +561,19 @@ include 'includes/header.php';
 <!-- META ADS -->
 <section class="mk-section mk-section--alt" id="meta-ads">
   <div class="container">
-    <span class="mk-section__kicker" style="background:rgba(59,130,246,0.1);color:#3b82f6;border:1px solid rgba(59,130,246,0.2);">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3b82f6" stroke-width="2"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke="#3b82f6" stroke-width="2"/></svg>
-      META ADS
-    </span>
-    <h2 class="mk-section__title">Meta Ads Management</h2>
-    <p class="mk-section__lead">Facebook and Instagram advertising managed by specialists. We create campaigns, design assets and optimise performance so your ad spend works harder.</p>
-
-    <span class="mk-coming">Online Purchase Coming Soon</span>
+    <div class="mk-section__header">
+      <div class="mk-section__tile mk-section__tile--meta" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95 0-5.52-4.48-10-10-10z"/></svg>
+      </div>
+      <span class="mk-section__kicker" style="background:rgba(59,130,246,0.1);color:#3b82f6;border:1px solid rgba(59,130,246,0.2);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3b82f6" stroke-width="2"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke="#3b82f6" stroke-width="2"/></svg>
+        META ADS
+      </span>
+      <h2 class="mk-section__title">Meta Ads <span class="mk-section__title-hl">Management</span></h2>
+      <span class="mk-section__divider"></span>
+      <p class="mk-section__lead">Facebook and Instagram advertising managed by specialists. We create campaigns, design assets and optimise performance so your ad spend works harder.</p>
+      <span class="mk-coming mk-coming--float">Online Purchase Coming Soon</span>
+    </div>
 
     <div class="mk-tiers">
       <!-- Silver -->
@@ -583,14 +632,19 @@ include 'includes/header.php';
 <!-- GOOGLE ADS -->
 <section class="mk-section" id="google-ads">
   <div class="container">
-    <span class="mk-section__kicker" style="background:rgba(234,67,53,0.1);color:#ea4335;border:1px solid rgba(234,67,53,0.2);">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#ea4335" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#ea4335" stroke-width="2" stroke-linecap="round"/></svg>
-      GOOGLE ADS
-    </span>
-    <h2 class="mk-section__title">Google Ads Management</h2>
-    <p class="mk-section__lead">Reach customers actively searching for your services. We set up, manage and optimise Google Search campaigns so you appear at the right time.</p>
-
-    <span class="mk-coming">Online Purchase Coming Soon</span>
+    <div class="mk-section__header">
+      <div class="mk-section__tile mk-section__tile--google" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
+      </div>
+      <span class="mk-section__kicker" style="background:rgba(234,67,53,0.1);color:#ea4335;border:1px solid rgba(234,67,53,0.2);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#ea4335" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#ea4335" stroke-width="2" stroke-linecap="round"/></svg>
+        GOOGLE ADS
+      </span>
+      <h2 class="mk-section__title">Google Ads <span class="mk-section__title-hl">Management</span></h2>
+      <span class="mk-section__divider"></span>
+      <p class="mk-section__lead">Reach customers actively searching for your services. We set up, manage and optimise Google Search campaigns so you appear at the right time.</p>
+      <span class="mk-coming mk-coming--float">Online Purchase Coming Soon</span>
+    </div>
 
     <div class="mk-tiers">
       <!-- Silver -->
@@ -651,12 +705,18 @@ include 'includes/header.php';
 <!-- CONSULTATION & DESIGN -->
 <section class="mk-section mk-section--alt" id="consultation">
   <div class="container">
-    <span class="mk-section__kicker" style="background:rgba(139,92,246,0.1);color:#8b5cf6;border:1px solid rgba(139,92,246,0.2);">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="#8b5cf6" stroke-width="2" stroke-linejoin="round"/></svg>
-      CONSULTATION &amp; DESIGN
-    </span>
-    <h2 class="mk-section__title">Consultation &amp; Design Services</h2>
-    <p class="mk-section__lead">Expert advice, actionable marketing plans and professional design assets. Book a session, get a strategy, or order design work &mdash; all at clear, upfront prices.</p>
+    <div class="mk-section__header">
+      <div class="mk-section__tile mk-section__tile--consult" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z"/></svg>
+      </div>
+      <span class="mk-section__kicker" style="background:rgba(139,92,246,0.1);color:#8b5cf6;border:1px solid rgba(139,92,246,0.2);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="#8b5cf6" stroke-width="2" stroke-linejoin="round"/></svg>
+        CONSULTATION &amp; DESIGN
+      </span>
+      <h2 class="mk-section__title">Consultation &amp; <span class="mk-section__title-hl">Design Services</span></h2>
+      <span class="mk-section__divider"></span>
+      <p class="mk-section__lead">Expert advice, actionable marketing plans and professional design assets. Book a session, get a strategy, or order design work &mdash; all at clear, upfront prices.</p>
+    </div>
 
     <div class="mk-consult-grid">
       <div class="mk-consult-card">
