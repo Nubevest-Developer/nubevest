@@ -478,10 +478,7 @@ include 'includes/header.php';
 <section class="mk-section" id="seo">
   <div class="container">
     <div class="mk-section__header">
-      <div class="mk-section__tile mk-section__tile--seo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      </div>
-      <span class="mk-section__kicker" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">
+<span class="mk-section__kicker" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#10b981" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="#10b981" stroke-width="2" stroke-linecap="round"/></svg>
         SEO
       </span>
@@ -562,10 +559,7 @@ include 'includes/header.php';
 <section class="mk-section mk-section--alt" id="meta-ads">
   <div class="container">
     <div class="mk-section__header">
-      <div class="mk-section__tile mk-section__tile--meta" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95 0-5.52-4.48-10-10-10z"/></svg>
-      </div>
-      <span class="mk-section__kicker" style="background:rgba(59,130,246,0.1);color:#3b82f6;border:1px solid rgba(59,130,246,0.2);">
+<span class="mk-section__kicker" style="background:rgba(59,130,246,0.1);color:#3b82f6;border:1px solid rgba(59,130,246,0.2);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3b82f6" stroke-width="2"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke="#3b82f6" stroke-width="2"/></svg>
         META ADS
       </span>
@@ -633,10 +627,7 @@ include 'includes/header.php';
 <section class="mk-section" id="google-ads">
   <div class="container">
     <div class="mk-section__header">
-      <div class="mk-section__tile mk-section__tile--google" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
-      </div>
-      <span class="mk-section__kicker" style="background:rgba(234,67,53,0.1);color:#ea4335;border:1px solid rgba(234,67,53,0.2);">
+<span class="mk-section__kicker" style="background:rgba(234,67,53,0.1);color:#ea4335;border:1px solid rgba(234,67,53,0.2);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#ea4335" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#ea4335" stroke-width="2" stroke-linecap="round"/></svg>
         GOOGLE ADS
       </span>
@@ -706,10 +697,7 @@ include 'includes/header.php';
 <section class="mk-section mk-section--alt" id="consultation">
   <div class="container">
     <div class="mk-section__header">
-      <div class="mk-section__tile mk-section__tile--consult" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z"/></svg>
-      </div>
-      <span class="mk-section__kicker" style="background:rgba(139,92,246,0.1);color:#8b5cf6;border:1px solid rgba(139,92,246,0.2);">
+<span class="mk-section__kicker" style="background:rgba(139,92,246,0.1);color:#8b5cf6;border:1px solid rgba(139,92,246,0.2);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="#8b5cf6" stroke-width="2" stroke-linejoin="round"/></svg>
         CONSULTATION &amp; DESIGN
       </span>
