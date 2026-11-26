@@ -286,17 +286,7 @@ $industries = [
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 30px -18px rgba(37,99,235,.25);
   }
-  .ind-cta__mark {
-    flex: none;
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #c026d3 100%);
-    color: #fff;
-    box-shadow: 0 8px 20px -8px rgba(124,58,237,.6);
-  }
+  .ind-cta__mark { display: none !important; }
   .ind-cta__body { flex: 1; }
   .ind-cta__body h3 { margin: 0 0 4px; font-size: 1.1rem; color: #0f172a; }
   .ind-cta__body p  { margin: 0; color: #64748b; font-size: .95rem; }
