@@ -311,8 +311,8 @@ include __DIR__ . '/header.php';
 
 /* BRAND CALLOUTS — visual badges with monogram */
 .ip-brands {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px; max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px; width: 100%;
 }
 .ip-brands a {
   position: relative;
