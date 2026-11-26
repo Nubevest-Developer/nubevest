@@ -17805,9 +17805,9 @@ table { max-width: 100%; }
   margin-bottom: 12px;
 }
 .pf-card__ico {
+  display: none !important;
   width: 42px; height: 42px;
   border-radius: 11px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--pfc1), var(--pfc2));
@@ -18385,9 +18385,9 @@ table { max-width: 100%; }
   border-radius: 0 0 3px 3px;
 }
 .ec-pillar__ico {
+  display: none !important;
   width: 36px; height: 36px;
   border-radius: 10px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--ecp1), var(--ecp2));
@@ -18546,9 +18546,9 @@ table { max-width: 100%; }
   letter-spacing: -0.01em;
 }
 .wd-row__ico {
+  display: none !important;
   width: 34px; height: 34px;
   border-radius: 10px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--wdc1), var(--wdc2));
