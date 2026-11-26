@@ -3815,8 +3815,9 @@ h4 { font-size: var(--fs-lg); }
 .nxt__pillars {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin: 0 0 40px;
+  gap: 20px;
+  max-width: 1120px;
+  margin: 0 auto 40px;
 }
 .nxt__pillar {
   position: relative;
@@ -3825,19 +3826,18 @@ h4 { font-size: var(--fs-lg); }
   background: #ffffff;
   border: 1px solid #eef1f5;
   border-radius: 14px;
-  padding: 26px 22px 22px;
+  padding: 24px 22px 22px;
   box-shadow: 0 10px 28px -20px rgba(15, 23, 42, 0.18);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  overflow: hidden;
   text-decoration: none;
   color: inherit;
   --nxt-c: #3b82f6;
+  overflow: hidden;
 }
 .nxt__pillar::before {
   content: "";
-  position: absolute; top: 0; left: 24px; right: 24px;
+  position: absolute; top: 0; left: 0; right: 0;
   height: 3px;
-  border-radius: 0 0 3px 3px;
   background: var(--nxt-c);
 }
 .nxt__pillar--build    { --nxt-c: #3b82f6; }
@@ -3850,10 +3850,10 @@ h4 { font-size: var(--fs-lg); }
   box-shadow: 0 20px 36px -22px rgba(15, 23, 42, 0.25);
 }
 .nxt__pillar h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #0f172a;
-  margin: 6px 0 10px;
+  margin: 2px 0 10px;
   letter-spacing: -0.01em;
 }
 .nxt__first { color: var(--nxt-c); }
@@ -3861,16 +3861,17 @@ h4 { font-size: var(--fs-lg); }
   color: #64748b;
   font-size: 0.92rem;
   line-height: 1.55;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   flex: 1;
 }
 .nxt__learn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #2563eb;
+  color: var(--nxt-c);
   font-weight: 600;
   font-size: 0.92rem;
+  margin-top: auto;
 }
 .nxt__pillar:hover .nxt__learn svg { transform: translateX(3px); }
 .nxt__learn svg { transition: transform 0.2s ease; }
