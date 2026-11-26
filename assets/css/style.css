@@ -14562,10 +14562,14 @@ table { max-width: 100%; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--stc1), var(--stc2));
-  box-shadow: 0 10px 20px -10px var(--stc1);
+  background: transparent;
+  border: 1.5px solid var(--stc1);
+  box-shadow: none;
+  color: var(--stc1);
   margin-bottom: 12px;
 }
+.sw-tile__ico svg [stroke="#fff"] { stroke: var(--stc1); }
+.sw-tile__ico svg [fill="#fff"] { fill: var(--stc1); }
 .sw-tile__t {
   font-size: 1rem;
   font-weight: 800;
