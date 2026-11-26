@@ -9559,12 +9559,7 @@ body:has(.hero:not(.hero--new)) .mobile-toggle::after { background: #ffffff !imp
   line-height: 1;
 }
 .au-model__card--featured .au-model__num { color: rgba(124,58,237,0.14); }
-.au-model__icon-wrap {
-  width: 56px; height: 56px; border-radius: 14px;
-  background: #dbeafe;
-  display: grid; place-items: center;
-  margin-bottom: 20px;
-}
+.au-model__icon-wrap { display: none !important; }
 .au-model__icon-wrap--purple { background: #ede9fe; }
 .au-model__icon-wrap--green { background: #d1fae5; }
 .au-model__card h3 { color: #0f172a; font-size: 1.2rem; font-weight: 800; margin: 0 0 10px; letter-spacing: -0.01em; }
