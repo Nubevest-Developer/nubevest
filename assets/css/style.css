@@ -14988,9 +14988,13 @@ table { max-width: 100%; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--cac1), var(--cac2));
-  box-shadow: 0 10px 20px -10px var(--cac1);
+  background: transparent;
+  border: 1.5px solid var(--cac1);
+  color: var(--cac1);
+  box-shadow: none;
 }
+.ca-card__ico svg [stroke="#fff"] { stroke: var(--cac1); }
+.ca-card__ico svg [fill="#fff"] { fill: var(--cac1); }
 .ca-card__num {
   font-size: 1.1rem;
   font-weight: 900;
