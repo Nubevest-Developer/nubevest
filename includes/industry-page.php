@@ -133,10 +133,6 @@ include __DIR__ . '/header.php';
   border-radius: 999px;
   font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
 }
-.ip-kicker::before {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: linear-gradient(135deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
-}
 
 /* PAIN POINTS — clean numbered cards with left accent rail */
 .ip-pain {
