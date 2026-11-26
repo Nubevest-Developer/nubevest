@@ -23586,8 +23586,9 @@ table { max-width: 100%; }
   max-width: min(720px, calc(100vw - 40px));
 }
 /* Right-anchor mega menus for items past the 2nd nav position
-   (Our Brands / Our Work) so they extend leftward and don't clip */
-.header__nav-list > li:nth-child(n+3).has-mega .mega-menu {
+   (Our Brands / Our Work) so they extend leftward and don't clip.
+   Exclude the wide variant, which has its own centered rule. */
+.header__nav-list > li:nth-child(n+3).has-mega .mega-menu:not(.mega-menu--wide) {
   left: auto !important;
   right: 0 !important;
 }
