@@ -18862,14 +18862,7 @@ table { max-width: 100%; }
   color: #0f172a;
   letter-spacing: -0.01em;
 }
-.pl-dash__logo {
-  width: 26px; height: 26px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+.pl-dash__logo { display: none !important; }
 .pl-dash__preview {
   padding: 3px 10px;
   background: linear-gradient(135deg, #f59e0b, #fbbf24);
@@ -18986,6 +18979,7 @@ table { max-width: 100%; }
 }
 
 /* Floating chips */
+.pl-chip svg { display: none; }
 .pl-chip {
   position: absolute;
   z-index: 3;
