@@ -11235,16 +11235,7 @@ table { max-width: 100%; }
   line-height: 1.7;
   margin: 0 0 22px;
 }
-.nd-wa__partner {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 16px 10px 12px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  border: 1px solid #fde68a;
-  margin-bottom: 26px;
-}
+.nd-wa__partner { display: none !important; }
 .nd-wa__partner-mark {
   width: 34px; height: 34px;
   border-radius: 10px;
