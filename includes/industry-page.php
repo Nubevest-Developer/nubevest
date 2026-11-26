@@ -325,34 +325,38 @@ include __DIR__ . '/header.php';
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
 }
+.ip-brands a {
+  --bc1: <?= $i['tint'][0] ?>;
+  --bc2: <?= $i['tint'][1] ?>;
+}
 .ip-brands a::before {
   content: "";
   position: absolute;
   top: -40px; right: -40px;
   width: 120px; height: 120px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, color-mix(in oklab, <?= $i['tint'][0] ?> 18%, transparent), transparent 70%);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--bc1) 18%, transparent), transparent 70%);
   opacity: 0;
   transition: opacity .3s ease;
 }
 .ip-brands a:hover {
   transform: translateY(-4px);
-  border-color: color-mix(in oklab, <?= $i['tint'][0] ?> 35%, #e6e9f2);
-  box-shadow: 0 20px 38px -22px color-mix(in oklab, <?= $i['tint'][0] ?> 40%, rgba(15,23,42,0.22));
+  border-color: color-mix(in oklab, var(--bc1) 35%, #e6e9f2);
+  box-shadow: 0 20px 38px -22px color-mix(in oklab, var(--bc1) 40%, rgba(15,23,42,0.22));
 }
 .ip-brands a:hover::before { opacity: 1; }
 .ip-brands__mono {
   width: 42px; height: 42px; border-radius: 12px;
-  background: linear-gradient(135deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
+  background: linear-gradient(135deg, var(--bc1), var(--bc2));
   color: #fff;
   display: inline-grid; place-items: center;
   font-weight: 900; font-size: 1.1rem; letter-spacing: -.02em;
   margin-bottom: 12px;
-  box-shadow: 0 10px 20px -10px color-mix(in oklab, <?= $i['tint'][0] ?> 55%, transparent);
+  box-shadow: 0 10px 20px -10px color-mix(in oklab, var(--bc1) 55%, transparent);
 }
 .ip-brands__name { color: #0f172a; font-weight: 800; letter-spacing: -0.005em; font-size: 1.02rem; }
 .ip-brands__endorse {
-  color: color-mix(in oklab, <?= $i['tint'][0] ?> 65%, #475569);
+  color: color-mix(in oklab, var(--bc1) 65%, #475569);
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
   text-transform: uppercase; margin-top: 2px;
 }
@@ -360,7 +364,7 @@ include __DIR__ . '/header.php';
   margin-top: 14px;
   display: inline-flex; align-items: center; gap: 6px;
   font-size: .85rem; font-weight: 700;
-  color: color-mix(in oklab, <?= $i['tint'][0] ?> 70%, #334155);
+  color: color-mix(in oklab, var(--bc1) 70%, #334155);
 }
 .ip-brands a:hover .ip-brands__arrow svg { transform: translateX(4px); }
 .ip-brands__arrow svg { transition: transform .25s ease; }
@@ -503,14 +507,28 @@ include __DIR__ . '/header.php';
       <p>Each is a Nubevest platform, service brand or specialist Nubevest business &mdash; visibly connected to Nubevest, never a separate company.</p>
     </div>
     <div class="ip-brands">
-      <?php foreach ($i['brand_callouts'] as $bc):
-        $bcName   = html_entity_decode($bc['name'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-        $bcEndor  = html_entity_decode($bc['endorsement'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-        // Monogram: first letter of first two words (e.g. GoMeta CRM → GC), or first two chars.
-        $words    = preg_split('/\s+/', trim($bcName));
-        $mono     = mb_strtoupper(mb_substr($words[0] ?? '?', 0, 1) . mb_substr($words[1] ?? mb_substr($words[0] ?? '', 1, 1), 0, 1));
+      <?php
+        $BRAND_PALETTE = [
+          'gometa crm'          => ['#8b5cf6', '#06b6d4'],
+          'plannor'             => ['#10b981', '#3b82f6'],
+          'ndis pages'          => ['#ec4899', '#8b5cf6'],
+          'metameet'            => ['#3b82f6', '#06b6d4'],
+          'monitormart'         => ['#f59e0b', '#ef4444'],
+          'workers australia'   => ['#8b5cf6', '#a855f7'],
+          'skill to upskill'    => ['#10b981', '#34d399'],
+          'kangar dubai experts'=> ['#eab308', '#f97316'],
+          'nube rentals'        => ['#2563eb', '#0ea5e9'],
+          'nubevest events'     => ['#ec4899', '#f59e0b'],
+        ];
+        foreach ($i['brand_callouts'] as $bc):
+          $bcName   = html_entity_decode($bc['name'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+          $bcEndor  = html_entity_decode($bc['endorsement'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+          // Monogram: first letter of first two words (e.g. GoMeta CRM → GC), or first two chars.
+          $words    = preg_split('/\s+/', trim($bcName));
+          $mono     = mb_strtoupper(mb_substr($words[0] ?? '?', 0, 1) . mb_substr($words[1] ?? mb_substr($words[0] ?? '', 1, 1), 0, 1));
+          $pal      = $BRAND_PALETTE[mb_strtolower($bcName)] ?? [$i['tint'][0], $i['tint'][1]];
       ?>
-      <a href="<?= $bc['href'] ?>">
+      <a href="<?= $bc['href'] ?>" style="--bc1:<?= $pal[0] ?>;--bc2:<?= $pal[1] ?>;">
         <span class="ip-brands__mono"><?= htmlspecialchars($mono, ENT_QUOTES, 'UTF-8') ?></span>
         <div class="ip-brands__name"><?= htmlspecialchars($bcName, ENT_QUOTES, 'UTF-8') ?></div>
         <div class="ip-brands__endorse"><?= htmlspecialchars($bcEndor, ENT_QUOTES, 'UTF-8') ?></div>
