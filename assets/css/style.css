@@ -14837,9 +14837,9 @@ table { max-width: 100%; }
   margin-bottom: 14px;
 }
 .oa-pillar__ico {
+  display: none !important;
   width: 40px; height: 40px;
   border-radius: 11px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--pc1), var(--pc2));
