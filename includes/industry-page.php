@@ -86,9 +86,11 @@ include __DIR__ . '/header.php';
 }
 .ip-hero h1 {
   font-size: clamp(2.1rem, 4.6vw, 3.25rem);
-  font-weight: 800; letter-spacing: -0.028em; line-height: 1.08;
+  font-weight: 800; letter-spacing: -0.028em; line-height: 1.12;
   color: #0f172a; margin: 24px 0 18px;
+  text-wrap: balance;
 }
+.ip-hero h1 br { display: block; }
 .ip-hero__grad {
   background: linear-gradient(90deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
   -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -436,7 +438,7 @@ include __DIR__ . '/header.php';
   <div class="container">
     <div class="ip-hero__inner">
       <span class="ip-hero__kicker">INDUSTRY &middot; <?= htmlspecialchars($name_upper, ENT_QUOTES, 'UTF-8') ?></span>
-      <h1><?= htmlspecialchars($i['name'], ENT_QUOTES, 'UTF-8') ?> &mdash; <span class="ip-hero__grad">practical solutions from Nubevest.</span></h1>
+      <h1><?= htmlspecialchars($i['name'], ENT_QUOTES, 'UTF-8') ?><br><span class="ip-hero__grad">practical solutions from Nubevest.</span></h1>
       <p><?= $i['problem_lead'] ?></p>
       <a href="<?= $i['cta_href'] ?? 'https://app.nubevest.com.au/index.php/schedly_booking' ?>" class="ip-cta" target="_blank" rel="noopener">
         Book a Call
