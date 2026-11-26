@@ -345,22 +345,62 @@ include 'includes/header.php';
 }
 
 /* Consultation grid */
-.mk-consult-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
-.mk-consult-card {
-  background: #fff; border: 1px solid var(--gray-200); border-radius: 14px;
-  padding: 28px 24px; transition: var(--transition);
+.mk-consult-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px; margin-bottom: 40px;
+  max-width: 1180px; margin-left: auto; margin-right: auto;
 }
-.mk-consult-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.mk-consult-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1px solid #eef1f5;
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  overflow: hidden;
+}
+.mk-consult-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #ec4899, #f59e0b);
+  opacity: 0; transition: opacity .25s ease;
+}
+.mk-consult-card:hover {
+  transform: translateY(-4px);
+  border-color: #fbcfe8;
+  box-shadow: 0 20px 36px -22px rgba(236,72,153,0.35);
+}
+.mk-consult-card:hover::before { opacity: 1; }
+.mk-consult-card__freq {
+  display: inline-flex; align-self: flex-start;
+  padding: 4px 10px; border-radius: 999px;
+  background: #f1f5f9; color: #475569;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 14px;
+  order: 1;
+}
+.mk-consult-card__name { order: 2; }
+.mk-consult-card__price { order: 3; }
+.mk-consult-card__desc { order: 4; }
 .mk-consult-card__name {
-  font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
-  color: var(--gray-900); margin-bottom: 6px;
+  font-family: var(--font-heading);
+  font-size: 1.02rem; font-weight: 800;
+  color: var(--gray-900); line-height: 1.3;
+  margin-bottom: 14px; min-height: 2.6em;
 }
 .mk-consult-card__price {
-  font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;
-  color: #ec4899; margin-bottom: 4px;
+  font-family: var(--font-heading);
+  font-size: 1.85rem; font-weight: 800;
+  background: linear-gradient(135deg, #ec4899, #f59e0b);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  line-height: 1; margin-bottom: 14px;
+  padding-bottom: 14px; border-bottom: 1px dashed #e2e8f0;
 }
-.mk-consult-card__freq { font-size: 0.8rem; color: var(--gray-400); margin-bottom: 12px; }
-.mk-consult-card__desc { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; }
+.mk-consult-card__desc {
+  font-size: 0.88rem; color: #64748b; line-height: 1.6;
+  flex: 1;
+}
 
 /* Bottom CTA */
 .mk-bottom-cta {
