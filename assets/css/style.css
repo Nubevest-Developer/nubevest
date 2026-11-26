@@ -17488,15 +17488,7 @@ table { max-width: 100%; }
   justify-content: space-between;
   margin-bottom: 14px;
 }
-.oc-card__ico {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--ocb1), var(--ocb2));
-  box-shadow: 0 12px 22px -12px var(--ocb1);
-}
+.oc-card__ico { display: none !important; }
 .oc-card__num {
   font-size: 1.2rem;
   font-weight: 900;
