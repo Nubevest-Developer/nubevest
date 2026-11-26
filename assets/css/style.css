@@ -2273,15 +2273,7 @@ h4 { font-size: var(--fs-lg); }
   flex: 1;
 }
 .sol-card__body { display: flex; flex-direction: column; min-width: 0; }
-.sol-card__icon {
-  width: 46px; height: 46px;
-  border-radius: 12px;
-  display: grid; place-items: center;
-  color: #fff;
-  background: var(--sc-icon, linear-gradient(135deg, #3b82f6, #2563eb));
-  box-shadow: 0 10px 22px -6px var(--sc-shadow, rgba(37,99,235,0.5));
-  margin-bottom: 18px;
-}
+.sol-card__icon { display: none; }
 .sol-card__title {
   font-size: 1.2rem;
   font-weight: 800;
