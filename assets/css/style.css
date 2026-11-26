@@ -18723,14 +18723,7 @@ table { max-width: 100%; }
   -webkit-backdrop-filter: blur(10px);
   margin-bottom: 22px;
 }
-.pl-kicker__ico {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+.pl-kicker__ico { display: none !important; }
 .pl-kicker__sep { color: rgba(255,255,255,0.35); font-weight: 700; }
 .pl-kicker__dev {
   display: inline-flex;
@@ -18743,12 +18736,7 @@ table { max-width: 100%; }
   font-weight: 900;
   letter-spacing: 0.10em;
 }
-.pl-kicker__dev-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #422006;
-  animation: pl-blink 1.8s ease-in-out infinite;
-}
+.pl-kicker__dev-dot { display: none !important; }
 @keyframes pl-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
