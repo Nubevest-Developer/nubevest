@@ -14464,7 +14464,13 @@ table { max-width: 100%; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background: transparent !important;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: none;
+  color: #334155;
 }
+.sw-quick__ico svg [stroke="#fff"] { stroke: #334155; }
+.sw-quick__ico svg [fill="#fff"] { fill: #334155; }
 .sw-quick__t {
   font-size: 0.82rem;
   font-weight: 800;
