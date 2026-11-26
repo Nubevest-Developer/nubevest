@@ -17680,13 +17680,7 @@ table { max-width: 100%; }
   color: #6d28d9;
   margin-bottom: 20px;
 }
-.pf-statement__badge-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #8b5cf6;
-  box-shadow: 0 0 0 4px rgba(139,92,246,0.20);
-  animation: pf-blink 2s ease-in-out infinite;
-}
+.pf-statement__badge-dot { display: none !important; }
 @keyframes pf-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
