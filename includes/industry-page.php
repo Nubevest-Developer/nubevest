@@ -67,22 +67,12 @@ include __DIR__ . '/header.php';
 .ip-hero__inner { position: relative; max-width: 920px; margin: 0 auto; text-align: center; }
 .ip-hero__kicker {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 8px 18px 8px 14px;
+  padding: 8px 18px;
   background: #ffffff; border: 1px solid #e2e8f0;
   border-radius: 999px;
   color: #334155;
   font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
   box-shadow: 0 8px 22px -12px rgba(15,23,42,0.18), 0 0 0 4px rgba(255,255,255,.6);
-}
-.ip-hero__kicker::before {
-  content: ""; width: 9px; height: 9px; border-radius: 50%;
-  background: linear-gradient(135deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
-  box-shadow: 0 0 0 4px <?= $i['tint'][2] ?>;
-  animation: ipPulse 2.4s ease-in-out infinite;
-}
-@keyframes ipPulse {
-  0%, 100% { box-shadow: 0 0 0 4px <?= $i['tint'][2] ?>; }
-  50%      { box-shadow: 0 0 0 8px color-mix(in oklab, <?= $i['tint'][0] ?> 12%, transparent); }
 }
 .ip-hero h1 {
   font-size: clamp(2.1rem, 4.6vw, 3.25rem);
