@@ -558,9 +558,6 @@ include __DIR__ . '/header.php';
 <section class="ip-section">
   <div class="container">
     <div class="ip-endnote">
-      <span class="ip-endnote__icon" aria-hidden="true">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-      </span>
       <div class="ip-endnote__body">
         <div class="ip-endnote__t">Not sure where to start?</div>
         <div class="ip-endnote__s">Tell us where the business is losing time or opportunities &mdash; we&rsquo;ll recommend a practical starting point, one accountable Nubevest relationship.</div>
