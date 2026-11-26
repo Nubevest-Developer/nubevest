@@ -1567,7 +1567,7 @@ h4 { font-size: var(--fs-lg); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px 8px 14px;
+  padding: 8px 18px;
   background: #e6efff;
   border: 1px solid #dbe6ff;
   border-radius: 999px;
@@ -1576,11 +1576,7 @@ h4 { font-size: var(--fs-lg); }
   font-weight: 800;
   letter-spacing: 0.16em;
 }
-.kicker--pill i {
-  width: 7px; height: 7px;
-  background: #2563eb;
-  border-radius: 50%;
-}
+.kicker--pill i { display: none; }
 .kicker--pill::before { content: none; }
 .process-section .section-header h2 {
   font-size: clamp(2rem, 3.6vw, 3rem);
