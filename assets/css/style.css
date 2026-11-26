@@ -5544,7 +5544,7 @@ body:has(.hero:not(.hero--new)) .mobile-toggle::after { background: #ffffff !imp
 /* CTA bottom */
 .ab-cta__inner {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 22px;
   padding: 22px 26px;
@@ -5557,7 +5557,7 @@ body:has(.hero:not(.hero--new)) .mobile-toggle::after { background: #ffffff !imp
 .ab-cta__text p { color: #64748b; font-size: 0.85rem; margin: 0; }
 .ab-cta__btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 20px;
+  padding: 12px 22px;
   background: #7c3aed;
   color: #ffffff;
   border-radius: 10px;
@@ -5566,6 +5566,7 @@ body:has(.hero:not(.hero--new)) .mobile-toggle::after { background: #ffffff !imp
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 .ab-cta__btn:hover { background: #6d28d9; transform: translateY(-1px); }
 
