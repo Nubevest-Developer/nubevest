@@ -435,9 +435,9 @@ include __DIR__ . '/header.php';
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="ip-hero__chips">
-        <span class="ip-hero__chip"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>One accountable relationship</span>
-        <span class="ip-hero__chip"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Websites, CRM, IT &amp; hardware</span>
-        <span class="ip-hero__chip"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Australia-wide delivery</span>
+        <span class="ip-hero__chip">One accountable relationship</span>
+        <span class="ip-hero__chip">Websites, CRM, IT &amp; hardware</span>
+        <span class="ip-hero__chip">Australia-wide delivery</span>
       </div>
     </div>
   </div>
