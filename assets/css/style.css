@@ -11350,17 +11350,7 @@ table { max-width: 100%; }
   font-weight: 800;
   letter-spacing: -0.01em;
 }
-.nd-wa__chip {
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: #dbeafe;
-  color: #1d4ed8;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.nd-wa__chip--purple { background: #ede9fe; color: #6d28d9; }
-.nd-wa__chip--green  { background: #d1fae5; color: #047857; }
+.nd-wa__chip { display: none !important; }
 .nd-wa__step-body p {
   margin: 0;
   color: #64748b;
