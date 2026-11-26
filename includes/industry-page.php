@@ -215,6 +215,8 @@ include __DIR__ . '/header.php';
   gap: 18px; max-width: 1200px; margin: 0 auto;
 }
 .ip-mix a {
+  --mc1: <?= $i['tint'][0] ?>;
+  --mc2: <?= $i['tint'][1] ?>;
   position: relative;
   display: flex; flex-direction: column;
   padding: 26px 26px 22px;
@@ -234,7 +236,7 @@ include __DIR__ . '/header.php';
   top: -80px; right: -80px;
   width: 240px; height: 240px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, color-mix(in oklab, <?= $i['tint'][0] ?> 22%, transparent), transparent 70%);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--mc1) 22%, transparent), transparent 70%);
   opacity: 0;
   transition: opacity .35s ease;
   z-index: -1;
@@ -245,21 +247,21 @@ include __DIR__ . '/header.php';
   content: "";
   position: absolute; inset: auto 0 0 0;
   height: 3px;
-  background: linear-gradient(90deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
+  background: linear-gradient(90deg, var(--mc1), var(--mc2));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .4s cubic-bezier(.2,.7,.2,1);
 }
 .ip-mix a:hover {
   transform: translateY(-4px);
-  border-color: color-mix(in oklab, <?= $i['tint'][0] ?> 40%, #e6e9f2);
-  box-shadow: 0 24px 44px -22px color-mix(in oklab, <?= $i['tint'][0] ?> 50%, rgba(15,23,42,0.22));
+  border-color: color-mix(in oklab, var(--mc1) 40%, #e6e9f2);
+  box-shadow: 0 24px 44px -22px color-mix(in oklab, var(--mc1) 50%, rgba(15,23,42,0.22));
 }
 .ip-mix a:hover::before { opacity: 1; }
 .ip-mix a:hover::after { transform: scaleX(1); }
 .ip-mix a:hover .ip-mix__check { transform: rotate(-5deg) scale(1.06); }
 .ip-mix a:hover .ip-mix__go {
-  color: <?= $i['tint'][0] ?>;
+  color: var(--mc1);
   gap: 10px;
 }
 .ip-mix a:hover .ip-mix__go svg { transform: translateX(4px); }
@@ -270,20 +272,20 @@ include __DIR__ . '/header.php';
 }
 .ip-mix__check {
   width: 44px; height: 44px; border-radius: 14px;
-  background: linear-gradient(135deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
+  background: linear-gradient(135deg, var(--mc1), var(--mc2));
   color: #fff;
   display: grid; place-items: center;
-  box-shadow: 0 10px 22px -10px color-mix(in oklab, <?= $i['tint'][0] ?> 60%, transparent);
+  box-shadow: 0 10px 22px -10px color-mix(in oklab, var(--mc1) 60%, transparent);
   transition: transform .35s cubic-bezier(.2,.7,.2,1);
 }
 .ip-mix__check svg { width: 20px; height: 20px; }
 .ip-mix__tag {
   font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-  color: color-mix(in oklab, <?= $i['tint'][0] ?> 65%, #64748b);
+  color: color-mix(in oklab, var(--mc1) 65%, #64748b);
   padding: 5px 10px;
   border-radius: 999px;
-  background: color-mix(in oklab, <?= $i['tint'][0] ?> 10%, #ffffff);
-  border: 1px solid color-mix(in oklab, <?= $i['tint'][0] ?> 18%, transparent);
+  background: color-mix(in oklab, var(--mc1) 10%, #ffffff);
+  border: 1px solid color-mix(in oklab, var(--mc1) 18%, transparent);
 }
 
 .ip-mix__body { min-width: 0; flex-grow: 1; }
@@ -304,7 +306,7 @@ include __DIR__ . '/header.php';
   padding-top: 16px;
   border-top: 1px dashed #e5e7eb;
   font-size: .85rem; font-weight: 700;
-  color: color-mix(in oklab, <?= $i['tint'][0] ?> 55%, #64748b);
+  color: color-mix(in oklab, var(--mc1) 55%, #64748b);
   transition: gap .25s ease, color .25s ease;
 }
 .ip-mix__go svg { transition: transform .25s ease; }
@@ -479,8 +481,19 @@ include __DIR__ . '/header.php';
       <p>Nubevest leads the engagement, brings in the right services, platforms and specialist Nubevest businesses, and explains who&rsquo;s responsible for what.</p>
     </div>
     <div class="ip-mix">
-      <?php foreach ($i['solution_mix'] as $idx => $s): ?>
-      <a href="<?= $s['href'] ?>">
+      <?php
+        $MIX_PALETTE = [
+          ['#3b82f6', '#06b6d4'], // blue → cyan
+          ['#8b5cf6', '#ec4899'], // violet → pink
+          ['#f59e0b', '#ef4444'], // amber → red
+          ['#10b981', '#06b6d4'], // emerald → cyan
+          ['#ec4899', '#f59e0b'], // pink → amber
+          ['#6366f1', '#3b82f6'], // indigo → blue
+        ];
+        foreach ($i['solution_mix'] as $idx => $s):
+          $mp = $MIX_PALETTE[$idx % count($MIX_PALETTE)];
+      ?>
+      <a href="<?= $s['href'] ?>" style="--mc1:<?= $mp[0] ?>;--mc2:<?= $mp[1] ?>;">
         <div class="ip-mix__head">
           <span class="ip-mix__check"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l6 6 10-12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <span class="ip-mix__tag">0<?= $idx + 1 ?></span>
