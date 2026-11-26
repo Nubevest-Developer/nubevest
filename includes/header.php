@@ -151,9 +151,9 @@ if (BASE_URL !== '' && !defined('BASE_URL_REWRITE_ON')) {
           </div>
         </li>
         <li><a href="/print-signage/" class="header__nav-link <?= $page === 'design-print' ? 'active' : '' ?>">Design &amp; Print</a></li>
-        <li class="has-mega">
+        <li class="has-mega has-mega--wide">
           <a href="/solutions/" class="header__nav-link <?= $page === 'solutions' ? 'active' : '' ?>">Solutions</a>
-          <div class="mega-menu" role="menu">
+          <div class="mega-menu mega-menu--wide" role="menu">
             <a href="/solutions/websites-ecommerce.php" class="mega-menu__item" role="menuitem">
               <div class="mega-menu__icon icon-web">&#9672;</div>
               <div><div class="mega-menu__label">Websites &amp; eCommerce</div><div class="mega-menu__desc">Design, development &amp; online stores</div></div>
