@@ -371,7 +371,7 @@ include __DIR__ . '/header.php';
     radial-gradient(700px 300px at 100% 100%, color-mix(in oklab, <?= $i['tint'][1] ?> 30%, transparent), transparent 55%),
     linear-gradient(135deg, #0b1220, #1e293b);
   color: #cbd5e1; border-radius: 24px;
-  display: grid; grid-template-columns: auto 1fr auto; gap: 26px; align-items: center;
+  display: grid; grid-template-columns: 1fr auto; gap: 26px; align-items: center;
   box-shadow: 0 30px 60px -24px rgba(15,23,42,0.45);
   overflow: hidden;
 }
