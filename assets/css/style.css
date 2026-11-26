@@ -2273,7 +2273,7 @@ h4 { font-size: var(--fs-lg); }
   flex: 1;
 }
 .sol-card__body { display: flex; flex-direction: column; min-width: 0; }
-.sol-card__icon { display: none; }
+.sol-card__icon { display: none !important; }
 .sol-card__title {
   font-size: 1.2rem;
   font-weight: 800;
