@@ -543,7 +543,6 @@ include __DIR__ . '/header.php';
           $pal      = $BRAND_PALETTE[mb_strtolower($bcName)] ?? [$i['tint'][0], $i['tint'][1]];
       ?>
       <a href="<?= $bc['href'] ?>" style="--bc1:<?= $pal[0] ?>;--bc2:<?= $pal[1] ?>;">
-        <span class="ip-brands__mono"><?= htmlspecialchars($mono, ENT_QUOTES, 'UTF-8') ?></span>
         <div class="ip-brands__name"><?= htmlspecialchars($bcName, ENT_QUOTES, 'UTF-8') ?></div>
         <div class="ip-brands__endorse"><?= htmlspecialchars($bcEndor, ENT_QUOTES, 'UTF-8') ?></div>
         <span class="ip-brands__arrow">Learn more
