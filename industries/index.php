@@ -207,18 +207,7 @@ $industries = [
     justify-content: space-between;
     margin-bottom: 22px;
   }
-  .ind-card__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    background: color-mix(in srgb, var(--acc) 12%, #ffffff);
-    color: var(--acc);
-    transition: background .3s ease, color .3s ease, transform .35s cubic-bezier(.2,.7,.2,1);
-    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--acc) 18%, transparent);
-  }
-  .ind-card__icon svg { width: 26px; height: 26px; }
+  .ind-card__icon { display: none !important; }
 
   .ind-card__badge {
     display: inline-flex;
