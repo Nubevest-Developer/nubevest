@@ -10714,16 +10714,20 @@ table { max-width: 100%; }
    ========================================================= */
 .au-model__link {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-top: 18px;
-  padding: 10px 16px;
+  padding: 11px 22px;
+  min-width: 160px;
   background: linear-gradient(90deg, #3b82f6, #6366f1);
   color: #ffffff !important;
   border-radius: 10px;
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
+  white-space: nowrap;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 6px 18px -6px rgba(59,130,246,0.5);
 }
