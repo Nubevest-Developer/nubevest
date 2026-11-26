@@ -5552,12 +5552,7 @@ body:has(.hero:not(.hero--new)) .mobile-toggle::after { background: #ffffff !imp
   border: 1px solid #e9e5ff;
   border-radius: 16px;
 }
-.ab-cta__icon {
-  width: 48px; height: 48px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: #ede9fe;
-  flex-shrink: 0;
-}
+.ab-cta__icon { display: none !important; }
 .ab-cta__text h3 { color: #0f172a; font-size: 1.05rem; font-weight: 800; margin: 0 0 4px; letter-spacing: -0.01em; }
 .ab-cta__text p { color: #64748b; font-size: 0.85rem; margin: 0; }
 .ab-cta__btn {
