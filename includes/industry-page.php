@@ -260,15 +260,7 @@ include __DIR__ . '/header.php';
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 18px;
 }
-.ip-mix__check {
-  width: 44px; height: 44px; border-radius: 14px;
-  background: linear-gradient(135deg, var(--mc1), var(--mc2));
-  color: #fff;
-  display: grid; place-items: center;
-  box-shadow: 0 10px 22px -10px color-mix(in oklab, var(--mc1) 60%, transparent);
-  transition: transform .35s cubic-bezier(.2,.7,.2,1);
-}
-.ip-mix__check svg { width: 20px; height: 20px; }
+.ip-mix__check { display: none !important; }
 .ip-mix__tag {
   font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
   color: color-mix(in oklab, var(--mc1) 65%, #64748b);
