@@ -27,18 +27,13 @@ include __DIR__ . '/header.php';
 @media (max-width: 900px) { .bp-hero__grid { grid-template-columns: 1fr; } }
 .bp-badge {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 8px 16px 8px 12px;
+  padding: 8px 16px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 999px;
   color: #334155;
   font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
   box-shadow: 0 6px 18px -10px rgba(15,23,42,0.18);
-}
-.bp-badge::before {
-  content: ""; width: 8px; height: 8px; border-radius: 50%;
-  background: linear-gradient(135deg, <?= $b['tint'][0] ?>, <?= $b['tint'][1] ?>);
-  box-shadow: 0 0 0 4px <?= $b['tint'][2] ?>;
 }
 .bp-name { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; color: #0f172a; margin: 22px 0 6px; }
 .bp-class { color: color-mix(in oklab, <?= $b['tint'][0] ?> 65%, #1e293b); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
