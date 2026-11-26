@@ -148,11 +148,13 @@ include __DIR__ . '/header.php';
 
 /* PAIN POINTS — clean numbered cards with left accent rail */
 .ip-pain {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 18px; max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px; width: 100%;
   counter-reset: pain;
 }
 .ip-pain__item {
+  --pc1: <?= $i['tint'][0] ?>;
+  --pc2: <?= $i['tint'][1] ?>;
   position: relative;
   background: #ffffff;
   border: 1px solid #e6e9f2;
@@ -168,7 +170,7 @@ include __DIR__ . '/header.php';
 .ip-pain__item::before {
   content: "";
   position: absolute; top: 0; bottom: 0; left: 0; width: 4px;
-  background: linear-gradient(180deg, <?= $i['tint'][0] ?>, <?= $i['tint'][1] ?>);
+  background: linear-gradient(180deg, var(--pc1), var(--pc2));
   transform: scaleY(.3);
   transform-origin: top;
   transition: transform .35s cubic-bezier(.2,.7,.2,1);
@@ -176,8 +178,8 @@ include __DIR__ . '/header.php';
 }
 .ip-pain__item:hover {
   transform: translateY(-3px);
-  border-color: color-mix(in oklab, <?= $i['tint'][0] ?> 30%, #e6e9f2);
-  box-shadow: 0 18px 34px -22px color-mix(in oklab, <?= $i['tint'][0] ?> 40%, rgba(15,23,42,0.25));
+  border-color: color-mix(in oklab, var(--pc1) 30%, #e6e9f2);
+  box-shadow: 0 18px 34px -22px color-mix(in oklab, var(--pc1) 40%, rgba(15,23,42,0.25));
 }
 .ip-pain__item:hover::before { transform: scaleY(1); }
 
@@ -188,7 +190,7 @@ include __DIR__ . '/header.php';
 }
 .ip-pain__num {
   font-size: 1.6rem; font-weight: 900; letter-spacing: -.04em; line-height: 1;
-  color: color-mix(in oklab, <?= $i['tint'][0] ?> 60%, #0f172a);
+  color: color-mix(in oklab, var(--pc1) 60%, #0f172a);
   font-variant-numeric: tabular-nums;
 }
 .ip-pain__num::before { content: "0" counter(pain); }
@@ -457,8 +459,19 @@ include __DIR__ . '/header.php';
       <p>Tell us which of these matches your situation &mdash; we&rsquo;ll shape the response accordingly.</p>
     </div>
     <div class="ip-pain">
-      <?php foreach ($i['pain_points'] as $p): ?>
-      <div class="ip-pain__item">
+      <?php
+        $PAIN_PALETTE = [
+          ['#3b82f6', '#06b6d4'],
+          ['#8b5cf6', '#ec4899'],
+          ['#f59e0b', '#ef4444'],
+          ['#10b981', '#06b6d4'],
+          ['#ec4899', '#f59e0b'],
+          ['#6366f1', '#3b82f6'],
+        ];
+        foreach ($i['pain_points'] as $idx => $p):
+          $pp = $PAIN_PALETTE[$idx % count($PAIN_PALETTE)];
+      ?>
+      <div class="ip-pain__item" style="--pc1:<?= $pp[0] ?>;--pc2:<?= $pp[1] ?>;">
         <div class="ip-pain__head">
           <span class="ip-pain__num" aria-hidden="true"></span>
           <span class="ip-pain__chip">
