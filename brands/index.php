@@ -195,19 +195,6 @@ include __DIR__ . '/../includes/header.php';
   </div>
 </section>
 
-<!-- NUBEVEST EVENTS -->
-<section class="section section--tint">
-  <div class="container">
-    <div class="au-head au-head--center reveal">
-      <span class="kicker kicker--pill"><i></i>NUBEVEST SERVICE</span>
-      <h2 class="au-h2">Nubevest <span class="au-grad">Events.</span></h2>
-      <p>Expos, networking events and end-to-end event management delivered directly by the Nubevest events team.</p>
-    </div>
-    <div style="text-align:center;margin-top:var(--space-xl);">
-      <a href="/events.php" class="btn btn--primary">Explore Nubevest Events</a>
-    </div>
-  </div>
-</section>
 
 </main>
 
