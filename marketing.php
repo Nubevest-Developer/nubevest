@@ -259,12 +259,12 @@ include 'includes/header.php';
 .mk-tier--featured:hover { transform: translateY(-14px); box-shadow: 0 0 0 2px #ec4899, 0 35px 60px -15px rgba(236,72,153,0.45); }
 
 .mk-tier__badge {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
   padding: 6px 18px; border-radius: 9999px;
   background: linear-gradient(90deg, #ec4899, #f59e0b); color: #fff;
   font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-  white-space: nowrap; z-index: 2;
-  box-shadow: 0 10px 25px -8px rgba(236,72,153,0.5);
+  white-space: nowrap; z-index: 3;
+  box-shadow: 0 0 0 4px #fff, 0 10px 25px -8px rgba(236,72,153,0.5);
   display: inline-flex; align-items: center; gap: 6px;
 }
 .mk-tier__badge::before { content: '★'; font-size: 0.75rem; }
