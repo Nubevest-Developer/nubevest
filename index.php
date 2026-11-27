@@ -206,7 +206,7 @@ include 'includes/header.php';
 /* Right: pricing cards */
 .care-bar__prices { display: flex; gap: 16px; align-items: stretch; }
 @media (max-width: 1100px) { .care-bar__prices { justify-content: center; } }
-@media (max-width: 560px) { .care-bar__prices { flex-direction: column; align-items: center; } }
+@media (max-width: 560px) { .care-bar__prices { flex-direction: column; align-items: stretch; gap: 28px; } .care-bar__price-box { width: 100%; min-width: 0; } }
 .care-bar__price-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 22px 22px 20px; min-width: 190px; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: visible; }
 .care-bar__price-box:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-2px); }
 .care-bar__price-box--plus { border-color: #33B5C2; border-width: 2px; box-shadow: 0 4px 24px rgba(99,102,241,0.15); }

@@ -150,6 +150,11 @@
 .np-hero__accent { display: block; font-family: inherit; color: var(--np-blue); white-space: nowrap; }
 .np-hero__lead { margin: 0 0 30px; max-width: 31rem; font-size: 1.05rem; line-height: 1.75; color: var(--np-muted); }
 .np-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+@media (max-width: 640px) {
+  .np-hero__actions { flex-direction: column; align-items: stretch; }
+  .np-hero__actions .np-btn { width: 100%; justify-content: center; white-space: nowrap; }
+  .np-hero__actions .np-btn svg { flex-shrink: 0; }
+}
 .np-hero__trust {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
   margin: 0; padding: 18px 0 0; list-style: none; border-top: 1px solid var(--np-rule);

@@ -413,11 +413,15 @@
 .mk-section .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
 .mk-section__kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 16px; border-radius: 9999px;
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 16px;
+  display: inline-flex !important; align-items: center !important; justify-content: center; gap: 6px;
+  flex-direction: row !important; flex-wrap: nowrap !important; white-space: nowrap !important;
+  padding: 5px 12px !important; border-radius: 9999px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  line-height: 1.1 !important; width: auto !important; height: auto !important; max-width: max-content;
+  margin: 0 auto 16px !important;
+  background: transparent !important;
 }
+.mk-section__kicker svg { flex-shrink: 0; width: 14px !important; height: 14px !important; }
 .mk-section__title {
   font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 2.75rem);
   font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
@@ -457,10 +461,7 @@
 .mk-section__tile--google { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #ea580c; }
 .mk-section__tile--consult{ background: linear-gradient(135deg, #ede9fe, #ddd6fe); color: #7c3aed; }
 
-.mk-section__divider {
-  display: inline-block; width: 60px; height: 3px; border-radius: 2px;
-  background: linear-gradient(90deg, #ec4899, #f59e0b); margin: 0 0 24px;
-}
+.mk-section__divider { display: none !important; }
 
 .mk-coming--float {
   display: inline-flex; margin: 0 auto 28px;
@@ -574,11 +575,13 @@
 .mk-tier--featured .mk-tier__check svg path { stroke: #ec4899 !important; }
 
 .mk-tier__cta {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
+  display: block; text-align: center;
+  white-space: nowrap;
   padding: 14px 20px; border-radius: 12px;
   font-size: 0.95rem; font-weight: 700; text-decoration: none;
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
+.mk-tier__cta svg { display: inline-block; vertical-align: middle; margin-left: 6px; }
 .mk-tier__cta--primary {
   background: linear-gradient(135deg, #ec4899, #f59e0b); color: #fff;
   box-shadow: 0 10px 25px -10px rgba(236,72,153,0.5);
@@ -588,8 +591,7 @@
   background: #fff; color: var(--gray-800); border: 1.5px solid var(--gray-200);
 }
 .mk-tier__cta--outline:hover { border-color: var(--gray-800); background: var(--gray-50); }
-.mk-tier__cta::after { content: '→'; transition: transform .2s ease; }
-.mk-tier__cta:hover::after { transform: translateX(3px); }
+.mk-tier__cta::after { content: none; }
 
 /* Setup note */
 .mk-setup {

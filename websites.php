@@ -73,7 +73,10 @@ include 'includes/header.php';
 .wp-hero__price-hint {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 6px;
+  max-width: 100%;
   background: rgba(59,130,246,0.12);
   border: 1px solid rgba(59,130,246,0.25);
   border-radius: 999px;
@@ -81,10 +84,16 @@ include 'includes/header.php';
   font-size: 0.95rem;
   font-weight: 700;
   color: #93c5fd;
+  text-align: center;
 }
+.wp-hero__price-hint > svg { flex-shrink: 0; }
 .wp-hero__price-hint strong {
   font-size: 1.3rem;
   color: #fff;
+}
+@media (max-width: 480px) {
+  .wp-hero__price-hint { font-size: 0.82rem; padding: 10px 16px; border-radius: 22px; gap: 4px; }
+  .wp-hero__price-hint strong { font-size: 1rem; }
 }
 
 /* --- Toggle --- */
