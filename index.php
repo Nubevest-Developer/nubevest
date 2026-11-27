@@ -157,10 +157,10 @@ include 'includes/header.php';
 .plan-card__badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #F5B719, #ED6459); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 5px 16px; border-radius: 99px; letter-spacing: 0.06em; white-space: nowrap; text-transform: uppercase; }
 .plan-card__header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .plan-card__icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; }
-.plan-card__icon--blue { background: #D4E8F7; color: #247BD4; }
-.plan-card__icon--amber { background: #FDF1D4; color: #F5B719; }
-.plan-card__icon--purple { background: #D6F2F4; color: #009CAA; }
-.plan-card__icon--green { background: #D3F1E2; color: #149B65; }
+.plan-card__icon--blue { background: transparent; color: #247BD4; border: 1.5px solid #247BD4; }
+.plan-card__icon--amber { background: transparent; color: #F5B719; border: 1.5px solid #F5B719; }
+.plan-card__icon--purple { background: transparent; color: #009CAA; border: 1.5px solid #009CAA; }
+.plan-card__icon--green { background: transparent; color: #149B65; border: 1.5px solid #149B65; }
 .plan-card__name { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--gray-900); }
 .plan-card__pages { font-size: 0.82rem; color: var(--gray-500); margin-top: 2px; }
 .plan-card__price { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
@@ -193,9 +193,9 @@ include 'includes/header.php';
 @media (max-width: 1100px) { .care-bar__features { justify-content: center; } }
 .care-bar__feat { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 .care-bar__feat-icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; }
-.care-bar__feat-icon--green { background: #D3F1E2; color: #0F7D50; }
-.care-bar__feat-icon--peach { background: #FDF6E5; color: #ED6459; }
-.care-bar__feat-icon--blue { background: #D4E8F7; color: #247BD4; }
+.care-bar__feat-icon--green { background: transparent; color: #0F7D50; border: 1.5px solid #0F7D50; }
+.care-bar__feat-icon--peach { background: transparent; color: #ED6459; border: 1.5px solid #ED6459; }
+.care-bar__feat-icon--blue { background: transparent; color: #247BD4; border: 1.5px solid #247BD4; }
 .care-bar__feat-label { font-size: 0.78rem; font-weight: 600; color: var(--gray-700); line-height: 1.3; }
 
 /* Center: laptop image */
@@ -213,8 +213,8 @@ include 'includes/header.php';
 .care-bar__price-box--plus:hover { box-shadow: 0 8px 36px rgba(99,102,241,0.22); transform: translateY(-2px); }
 .care-bar__price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #149B65, #0F7D50); color: #fff; font-size: 0.6rem; font-weight: 700; padding: 4px 14px; border-radius: 99px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; z-index: 2; }
 .care-bar__price-icon { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 10px; }
-.care-bar__price-icon--gray { background: #e8edf5; color: #334155; }
-.care-bar__price-icon--purple { background: #D6F2F4; color: #008B98; }
+.care-bar__price-icon--gray { background: transparent; color: #334155; border: 1.5px solid #334155; }
+.care-bar__price-icon--purple { background: transparent; color: #008B98; border: 1.5px solid #008B98; }
 .care-bar__price-name { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
 .care-bar__price-amount { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
 .care-bar__price-amount--blue { color: #247BD4; }
@@ -283,13 +283,13 @@ include 'includes/header.php';
 .faq-item__q { width: 100%; display: flex; align-items: center; padding: 18px 20px; font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--gray-900); background: none; border: none; cursor: pointer; text-align: left; gap: 14px; transition: color 0.3s; }
 .faq-item__q:hover { color: var(--blue); }
 .faq-item__icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.faq-item__icon--blue { background: #EBF3FA; }
-.faq-item__icon--green { background: #E8F8EF; }
-.faq-item__icon--sky { background: #EBF3FA; }
-.faq-item__icon--orange { background: #FDF6E5; }
-.faq-item__icon--pink { background: #FEF0EF; }
-.faq-item__icon--indigo { background: #E5F7F8; }
-.faq-item__icon--teal { background: #E5F7F8; }
+.faq-item__icon--blue { background: transparent; border: 1.5px solid #247BD4; }
+.faq-item__icon--green { background: transparent; border: 1.5px solid #149B65; }
+.faq-item__icon--sky { background: transparent; border: 1.5px solid #009CAA; }
+.faq-item__icon--orange { background: transparent; border: 1.5px solid #F5B719; }
+.faq-item__icon--pink { background: transparent; border: 1.5px solid #ED6459; }
+.faq-item__icon--indigo { background: transparent; border: 1.5px solid #009CAA; }
+.faq-item__icon--teal { background: transparent; border: 1.5px solid #009CAA; }
 .faq-item__q-text { flex: 1; }
 .faq-item__q svg.faq-chevron { flex-shrink: 0; transition: transform 0.3s; color: var(--gray-400); }
 .faq-item__q[aria-expanded="true"] svg.faq-chevron { transform: rotate(180deg); color: var(--blue); }
@@ -626,7 +626,6 @@ include 'includes/header.php';
         </div>
 
       </div>
-      <p class="sp-note">All prices in AUD, GST-inclusive. Website hosting and SSL are included for the first 12 months; from month 13, hosting continues at $25/month (optional, with your consent). Client supplies logo, images, business details and core copy. Domain registration, premium plugins and ecommerce platform fees are not included.</p>
     </div>
 
     <!-- GROW panel -->
@@ -1312,9 +1311,6 @@ include 'includes/header.php';
         </div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:16px; font-size:0.82rem; color:var(--gray-400);">
-      After month 12, the build instalment stops. Hosting &amp; SSL continues at $25/month. Care plans continue separately.
-    </p>
   </div>
 </section>
 

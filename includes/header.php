@@ -257,7 +257,6 @@ if (BASE_URL !== '' && !defined('BASE_URL_REWRITE_ON')) {
       </ul>
       <div class="header__ctas">
         <a href="https://metameet.com.au/" target="_blank" rel="noopener" class="btn btn--secondary btn--sm header__cta header__cta--domain">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="currentColor" stroke-width="1.8"/></svg>
           Buy Domain
         </a>
         <a href="<?= htmlspecialchars($header_cta['href']) ?>" class="btn btn--primary btn--sm header__cta"<?= $header_cta_attrs ?>><?= htmlspecialchars($header_cta['label']) ?></a>

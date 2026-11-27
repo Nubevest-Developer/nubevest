@@ -731,20 +731,6 @@ include 'includes/header.php';
       </div>
     </div>
 
-    <!-- Bottom CTA -->
-    <div class="cp2-cta reveal">
-      <div class="cp2-cta__body">
-        <h4 class="cp2-cta__t">Have a similar challenge?</h4>
-        <p class="cp2-cta__p">Tell us your challenge and we&rsquo;ll walk you through comparable work &mdash; without waiting for the case study to publish.</p>
-      </div>
-      <div class="cp2-cta__actions">
-        <a href="/contact.php" class="cp-btn cp-btn--primary">
-          Ask About Similar Work
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="/solutions.php" class="cp-btn cp-btn--ghost">Explore Solutions</a>
-      </div>
-    </div>
 
   </div>
 </section>
